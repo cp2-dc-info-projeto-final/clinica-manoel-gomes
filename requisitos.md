@@ -4,7 +4,7 @@
 
 ### RF 01
 
-O sistema deve ter um login pré definido para o administrador.
+O sistema deve ter uma área administrativa.
 
 ### RF 02
 
@@ -25,6 +25,18 @@ O sistema deve permitir o login de médicos com CRM e senha.
 ### RF 06
 
 O sistema deve possuir um calendário com datas e horários disponíveis para consultas de cada especialidade.
+
+### RF 07
+
+O sistema deve permitir que o paciente realize o agendamento.
+
+### RF 08
+
+O sistema deve permitir que o paciente consulte e vizualize seus agendamentos com data, hora, médico responsável e sua respectiva especialidade.
+
+### RF 09
+
+O sistema deve permitir que o médico acesse sua grade de horários com data, hora e nome do paciente.
 
 ## Requisitos Não-Funcionais
 
