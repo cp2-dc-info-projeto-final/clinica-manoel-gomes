@@ -2,7 +2,7 @@
 
 ## Lista dos Casos de Uso
 
- - [CDU 01](#CDU-01): Cadastro de Pacientes.
+ - [CDU 01: Cadastro de Pacientes](#CDU-01)
  - [CDU 02](#CDU-02): Cadastro de Médicos.
  - [CDU 03](#CDU-03): Login de Pacientes/Médicos.
  - [CDU 04](#CDU-04): Agendamento de Consultas.
