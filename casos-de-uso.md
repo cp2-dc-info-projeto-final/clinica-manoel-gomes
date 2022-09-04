@@ -117,56 +117,46 @@
 
 ### CDU 05
 
-Duis nec orci quis velit faucibus hendrerit tempus vel libero.
+**Atores:** Paciente.
 
 **Fluxo Principal**
 
-1. Praesent interdum lectus sit amet augue tincidunt imperdiet.
-2. Duis ac dolor vel nisi imperdiet vehicula et non sem.
-3. Nunc imperdiet tortor consequat, lobortis purus non, interdum risus.
+1. Paciente escolhe especialidade, data e horário disponível.
+2. Paciente finaliza agendamento
+3. Sistema registra dados.
 
 **Fluxo Alternativo A**
 
-1. Aliquam efficitur arcu ac fermentum egestas.
-2. Pellentesque ac diam vitae erat bibendum hendrerit.
-3. Mauris sed purus sit amet lectus efficitur placerat et eu diam.
-4. Aenean ullamcorper tellus quis nibh porttitor congue.
-5. Phasellus laoreet erat eget condimentum dictum.
+1. Paciente escolhe especialidade, data e horário disponível.
+2. Paciente finaliza agendamento.
+3. Paciente não possui cadastro ou não está logado.
+4. Sistema exibe mensagem informando o problema.
+5. Paciente é direcionada para a página de cadastro/login.
 
 ### CDU 06
 
-Duis nec orci quis velit faucibus hendrerit tempus vel libero.
+**Atores:** Paciente e Médico.
 
 **Fluxo Principal**
 
-1. Praesent interdum lectus sit amet augue tincidunt imperdiet.
-2. Duis ac dolor vel nisi imperdiet vehicula et non sem.
-3. Nunc imperdiet tortor consequat, lobortis purus non, interdum risus.
+1. Usuário clica em "perfil".
+2. Usuário é encaminhado para página de perfil.
+3. Usuário tem acesso a caledário com os seus respectivos agendamentos.
 
 **Fluxo Alternativo A**
 
-1. Aliquam efficitur arcu ac fermentum egestas.
-2. Pellentesque ac diam vitae erat bibendum hendrerit.
-3. Mauris sed purus sit amet lectus efficitur placerat et eu diam.
-4. Aenean ullamcorper tellus quis nibh porttitor congue.
-5. Phasellus laoreet erat eget condimentum dictum.
+1. Usuário clica em "perfil".
+2. Usuário é encaminhado para página de perfil.
+3. Usuário não possui cadastro ou não está logado.
+4. Sistema exibe mensagem informando o problema.
+5. Usuário é encaminhado para a página de cadastro/login.
 
 ### CDU 07
 
-Duis nec orci quis velit faucibus hendrerit tempus vel libero.
+**Atores:** Paciente e Médico.
 
 **Fluxo Principal**
 
-1. Praesent interdum lectus sit amet augue tincidunt imperdiet.
-2. Duis ac dolor vel nisi imperdiet vehicula et non sem.
-3. Nunc imperdiet tortor consequat, lobortis purus non, interdum risus.
-
-**Fluxo Alternativo A**
-
-1. Aliquam efficitur arcu ac fermentum egestas.
-2. Pellentesque ac diam vitae erat bibendum hendrerit.
-3. Mauris sed purus sit amet lectus efficitur placerat et eu diam.
-4. Aenean ullamcorper tellus quis nibh porttitor congue.
-5. Phasellus laoreet erat eget condimentum dictum.
-
-
+1. Usuário clica em "perfil".
+2. Usuário clica em "calendário".
+3. Usuário tem acesso as informações relacionadas aos agendamentos.
