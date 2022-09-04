@@ -28,10 +28,15 @@ Quisque id neque a erat imperdiet dictum et ut mauris.
 
 **Fluxo Principal**
 
-1. Vivamus nec velit id risus sodales fermentum ut a mi.
-2. Nunc a ligula ac libero pellentesque auctor ornare at sem.
-3. In quis ante scelerisque felis luctus malesuada.
-4. Pellentesque mattis dui quis eleifend accumsan.
+1. Paciente insere nome completo.
+2. Paciente insere CPF.
+3. Paciente insere data de nascimento.
+4. Paciente insere telefone.
+5. Paciente insere email.
+6. Paciente insere senha.
+7. Paciente finaliza cadastro.
+8. Sistema analisa as informações.
+9. Sistema registra dados.
 
 **Fluxo Alternativo A**
 
@@ -58,10 +63,15 @@ Morbi fringilla dolor at mattis vestibulum.
 
 **Fluxo Principal**
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-2. Mauris varius massa ac fermentum scelerisque.
-3. Morbi in tortor dignissim, bibendum tellus et, varius odio.
-4. Mauris egestas leo a suscipit feugiat.
+1. Admnistrador insere nome completo.
+2. Admnistrador insere CRM.
+3. Admnistrador insere especialidade.
+4. Admnistrador insere telefone.
+5. Admnistrador insere email.
+6. Admnistrador insere senha.
+7. Admnistrador finaliza cadastro.
+8. Sistema analisa as informações.
+9. Sistema registra dados.
 
 **Fluxo Alternativo A**
 
@@ -77,9 +87,11 @@ Duis nec orci quis velit faucibus hendrerit tempus vel libero.
 
 **Fluxo Principal**
 
-1. Praesent interdum lectus sit amet augue tincidunt imperdiet.
-2. Duis ac dolor vel nisi imperdiet vehicula et non sem.
-3. Nunc imperdiet tortor consequat, lobortis purus non, interdum risus.
+1. Usuário insere CPF/CRM.
+2. Usuário insere senha.
+3. Usuário finaliza login.
+4. Sistema analisa as informações.
+5. Sistema libera acesso.
 
 **Fluxo Alternativo A**
 
