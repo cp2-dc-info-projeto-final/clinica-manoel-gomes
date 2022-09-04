@@ -7,8 +7,8 @@
  - [CDU 03](#CDU-03): Login de Pacientes.
  - [CDU 04](#CDU-04): Login de Médicos.
  - [CDU 05](#CDU-05): Agendamento de Consultas.
- - [CDU 06](#CDU-06): Vizualização de Perfil.
- - [CDU 07](#CDU-07): Vizualização de Calendário/Grade Horária.
+ - [CDU 06](#CDU-06): Visualização de Perfil.
+ - [CDU 07](#CDU-07): Visualização de Calendário/Grade Horária.
 
 
 ## Lista dos Atores
