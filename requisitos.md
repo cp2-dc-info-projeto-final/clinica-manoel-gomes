@@ -38,6 +38,10 @@ O sistema deve permitir que o paciente consulte e vizualize seus agendamentos co
 
 O sistema deve permitir que o médico acesse sua grade de horários com data, hora e nome do paciente.
 
+### RF 010
+
+O sistema deve possuir uma área de perfil com informações do usuário e um caléndario com as informações de agendamento.
+
 ## Requisitos Não-Funcionais
 
 ### RNF 01
