@@ -22,9 +22,9 @@
 
 ## Descrição dos Casos de Uso
 
-### CDU 01 **- Cadastro de Pacientes**
+### CDU 01
 
-Quisque id neque a erat imperdiet dictum et ut mauris.
+**Atores:** Paciente.
 
 **Fluxo Principal**
 
@@ -59,7 +59,7 @@ Quisque id neque a erat imperdiet dictum et ut mauris.
 
 ### CDU 02: Cadastro de Médicos
 
-Morbi fringilla dolor at mattis vestibulum.
+**Atores:** Administrador.
 
 **Fluxo Principal**
 
@@ -83,7 +83,7 @@ Morbi fringilla dolor at mattis vestibulum.
 
 ### CDU 03: Login de Pacientes/Médicos
 
-Duis nec orci quis velit faucibus hendrerit tempus vel libero.
+**Atores:** Paciente e Médico.
 
 **Fluxo Principal**
 
