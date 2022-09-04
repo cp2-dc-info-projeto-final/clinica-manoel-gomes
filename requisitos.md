@@ -32,7 +32,7 @@ O sistema deve permitir que o paciente realize o agendamento.
 
 ### RF 08
 
-O sistema deve permitir que o paciente consulte e vizualize seus agendamentos com data, hora, médico responsável e sua respectiva especialidade.
+O sistema deve permitir que o paciente consulte e visualize seus agendamentos com data, hora, médico responsável e sua respectiva especialidade.
 
 ### RF 09
 
