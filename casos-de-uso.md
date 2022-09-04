@@ -22,7 +22,7 @@
 
 ## Descrição dos Casos de Uso
 
-### CDU 01**: Cadastro de Pacientes**
+### CDU 01 **- Cadastro de Pacientes**
 
 Quisque id neque a erat imperdiet dictum et ut mauris.
 
