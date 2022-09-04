@@ -22,7 +22,7 @@
 
 ## Descrição dos Casos de Uso
 
-### CDU 01
+### CDU 01: Cadastro de Pacientes
 
 Quisque id neque a erat imperdiet dictum et ut mauris.
 
@@ -57,7 +57,7 @@ Quisque id neque a erat imperdiet dictum et ut mauris.
 6. Nam vitae lacus porttitor, sodales orci vel, lobortis arcu.
 
 
-### CDU 02
+### CDU 02: Cadastro de Médicos
 
 Morbi fringilla dolor at mattis vestibulum.
 
@@ -81,7 +81,7 @@ Morbi fringilla dolor at mattis vestibulum.
 4. Quisque ac nulla convallis, lobortis nibh ac, tristique enim.
 5. Nulla ultricies metus nec risus mollis, interdum ultrices justo malesuada.
 
-### CDU 03
+### CDU 03: Login de Pacientes/Médicos
 
 Duis nec orci quis velit faucibus hendrerit tempus vel libero.
 
