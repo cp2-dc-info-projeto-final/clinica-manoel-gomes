@@ -10,7 +10,7 @@ Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colé
 
  ## Descrição do Projeto
 
-Projeto de desenvolvimento de um sistema para agendamento e gerenciamento de consultas da Clínica Manoel Gomes.
+Projeto voltado para o desenvolvimento de um sistema de agendamento e gerenciamento de consultas da Clínica Manoel Gomes.
 
 ## Documentação
 
