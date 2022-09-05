@@ -69,7 +69,7 @@
 
 **Fluxo Principal**
 
-1. Usuário insere as informações solicitadas: CPF e senha.
+1. Paciente insere as informações solicitadas: CPF e senha.
 2. Sistema analisa as informações.
 3. Sistema libera acesso.
 
