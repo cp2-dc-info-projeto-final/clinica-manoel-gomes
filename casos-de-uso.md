@@ -131,7 +131,7 @@
 2. Paciente finaliza agendamento.
 3. Paciente não possui cadastro ou não está logado.
 4. Sistema exibe mensagem informando o problema.
-5. Paciente é direcionada para a página de cadastro/login.
+5. Paciente é direcionado para a página de cadastro/login.
 
 ### CDU 06
 
