@@ -6,11 +6,11 @@
  - [CDU 02](#CDU-02): Cadastro de Pacientes.
  - [CDU 03](#CDU-03): Cadastro de Médicos.
  - [CDU 04](#CDU-04): Login de Usuários.
- - [CDU 05](#CDU-05): Agendamento de Consultas.
- - [CDU 06](#CDU-06): Disponibilização de Horários.
- - [CDU 07](#CDU-07): Disponibilização de Serviços.
- - [CDU 08](#CDU-08): Visualização de Perfil.
- - [CDU 09](#CDU-09): Visualização de Usuários.
+ - [CDU 05](#CDU-05): Disponibilização de Horários
+ - [CDU 06](#CDU-06): Disponibilização de Serviços.
+ - [CDU 07](#CDU-07): Agendamento de Consulta.
+ - [CDU 08](#CDU-08): Visualizar Perfil.
+ - [CDU 09](#CDU-09): Vizualizar Lista de Usuários.
 
 ## Lista dos Atores
 
@@ -74,17 +74,27 @@
 
 ### CDU 04
 
-**Atores:** Paciente.
+**Atores:** Paciente, Médico e Administrador.
 
 **Fluxo Principal**
 
-1. Paciente insere as informações solicitadas: CPF e senha.
+1. Usuário insere as informações solicitadas:
+
+**Paciente**
+- CPF e Senha.
+
+**Médico**
+- CRM e Senha.
+
+**Administrador**
+- Nome de usuário e Senha.
+
 2. Sistema analisa as informações.
 3. Sistema libera acesso.
 
 **Fluxo Alternativo A**
 
-1. Paciente insere as informações solicitadas: CPF e senha.
+1. Paciente insere as informações solicitadas.
 2. Sistema analisa as informações.
 3. A seguinte informação não está cadastrada: CPF.
 4. Sistema exibe mensagem informando o problema.
@@ -92,13 +102,46 @@
 
 **Fluxo Alternativo B**
 
-1. Paciente insere as informações solicitadas: CPF e senha.
+1. Administrador/Médico insere as informações solicitadas.
+2. Sistema analisa as informações.
+3. A seguinte informação não está cadastrada: Nome de usuário/CRM.
+4. Sistema nega acesso.
+5. Sistema exibe mensagem informando o problema.
+
+**Fluxo Alternativo C**
+
+1. Usuário insere as informações solicitadas.
 2. Sistema analisa as informações.
 3. A senha informada está incorreta.
 4. Sistema exibe mensagem informando o problema.
-5. Paciente repete o processo de login.
+5. Usuário repete o processo de login.
 
 ### CDU 05
+
+**Atores: Administrador.**
+
+**Fluxo Principal**
+
+1. Administrador insere datas disponíveis.
+2. Administrador insere horários disponíveis.
+3. Administrador registra as informações no banco de dados.
+4. Calendário de agendamentos é atualizado.
+
+**Fluxo Alternativo A**
+
+### CDU 06
+
+**Atores: Administrador.**
+
+**Fluxo Principal**
+
+1. Administrador insere especialidades disponíveis.
+2. Administrador registra as informações no banco de dados.
+3. Calendário de agendamentos é atualizado.
+
+**Fluxo Alternativo A**
+
+### CDU 07
 
 **Atores:** Paciente.
 
@@ -116,21 +159,6 @@
 4. Sistema exibe mensagem informando o problema.
 5. Paciente é direcionado para a página de cadastro/login.
 
-### CDU 06
-
-**Atores:**
-
-**Fluxo Principal**
-
-**Fluxo Alternativo A**
-
-### CDU 07
-
-**Atores:**
-
-**Fluxo Principal**
-
-**Fluxo Alternativo A**
 
 ### CDU 08
 
