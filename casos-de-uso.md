@@ -10,6 +10,7 @@
  - [CDU 06](#CDU-06): Disponibilização de Horários.
  - [CDU 07](#CDU-07): Disponibilização de Serviços.
  - [CDU 08](#CDU-08): Visualização de Perfil.
+ - [CDU 09](#CDU-09): Visualização de Usuários.
 
 ## Lista dos Atores
 
