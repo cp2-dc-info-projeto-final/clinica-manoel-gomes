@@ -10,8 +10,6 @@
  - [CDU 06](#CDU-06): Disponibilização de Horários.
  - [CDU 07](#CDU-07): Disponibilização de Serviços.
  - [CDU 08](#CDU-08): Visualização de Perfil.
- - [CDU 09](#CDU-09): Visualização de Calendário/Grade Horária.
-
 
 ## Lista dos Atores
 
@@ -150,13 +148,3 @@
 3. Usuário não possui cadastro ou não está logado.
 4. Sistema exibe mensagem informando o problema.
 5. Usuário é encaminhado para a página de cadastro/login.
-
-### CDU 09
-
-**Atores:** Paciente, Médico e Administrador.
-
-**Fluxo Principal**
-
-1. Usuário clica em "perfil".
-2. Usuário clica em "calendário".
-3. Usuário tem acesso as informações relacionadas aos agendamentos.
