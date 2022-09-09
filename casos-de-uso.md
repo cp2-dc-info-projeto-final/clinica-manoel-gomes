@@ -2,13 +2,15 @@
 
 ## Lista dos Casos de Uso
 
- - [CDU 01](#CDU-01): Cadastro de Pacientes.
- - [CDU 02](#CDU-02): Cadastro de Médicos.
- - [CDU 03](#CDU-03): Login de Pacientes.
- - [CDU 04](#CDU-04): Login de Médicos.
+ - [CDU 01](#CDU-01): Cadastro de Administrador.
+ - [CDU 02](#CDU-02): Cadastro de Pacientes.
+ - [CDU 03](#CDU-03): Cadastro de Médicos.
+ - [CDU 04](#CDU-04): Login de Usuários.
  - [CDU 05](#CDU-05): Agendamento de Consultas.
- - [CDU 06](#CDU-06): Visualização de Perfil.
- - [CDU 07](#CDU-07): Visualização de Calendário/Grade Horária.
+ - [CDU 06](#CDU-06): Disponibilização de Horários.
+ - [CDU 07](#CDU-07): Disponibilização de Serviços.
+ - [CDU 08](#CDU-08): Visualização de Perfil.
+ - [CDU 09](#CDU-09): Visualização de Calendário/Grade Horária.
 
 
 ## Lista dos Atores
@@ -24,6 +26,14 @@
 ## Descrição dos Casos de Uso
 
 ### CDU 01
+
+**Atores:**
+
+**Fluxo Principal**
+
+**Fluxo Alternativo A**
+
+### CDU 02
 
 **Atores:** Paciente.
 
@@ -43,7 +53,7 @@
 5. Sistema exibe mensagem informando o problema.
 6. Paciente repete o processo de cadastro.
 
-### CDU 02
+### CDU 03
 
 **Atores:** Administrador.
 
@@ -63,7 +73,7 @@
 5. Sistema exibe mensagem informando o problema.
 6. Administrador repete o processo de cadastro.
 
-### CDU 03
+### CDU 04
 
 **Atores:** Paciente.
 
@@ -89,32 +99,6 @@
 4. Sistema exibe mensagem informando o problema.
 5. Paciente repete o processo de login.
 
-### CDU 04
-
-**Atores:** Médico.
-
-**Fluxo Principal**
-
-1. Médico insere as informações solicitadas: CRM e senha.
-2. Sistema analisa as informações.
-3. Sistema libera acesso.
-
-**Fluxo Alternativo A**
-
-1. Médico insere as informações solicitadas: CRM e senha.
-2. Sistema analisa as informações.
-3. A seguinte informação não está cadastrada: CRM.
-4. Sistema exibe mensagem informando o problema.
-5. Sistema nega acesso.
-
-**Fluxo Alternativo B**
-
-1. Médico insere as informações solicitadas: CRM e senha.
-2. Sistema analisa as informações.
-3. A senha informada está incorreta.
-4. Sistema exibe mensagem informando o problema.
-5. Médico repete o processo de login.
-
 ### CDU 05
 
 **Atores:** Paciente.
@@ -135,6 +119,22 @@
 
 ### CDU 06
 
+**Atores:**
+
+**Fluxo Principal**
+
+**Fluxo Alternativo A**
+
+### CDU 07
+
+**Atores:**
+
+**Fluxo Principal**
+
+**Fluxo Alternativo A**
+
+### CDU 08
+
 **Atores:** Paciente, Médico e Administrador.
 
 **Fluxo Principal**
@@ -151,7 +151,7 @@
 4. Sistema exibe mensagem informando o problema.
 5. Usuário é encaminhado para a página de cadastro/login.
 
-### CDU 07
+### CDU 09
 
 **Atores:** Paciente, Médico e Administrador.
 
