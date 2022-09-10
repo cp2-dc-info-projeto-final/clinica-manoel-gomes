@@ -1,7 +1,8 @@
 # Correções
 
-- Adicionar caso de uso Disnponibilizar Horários
-- Criar caso de uso Listar serviços
-- Unir Login Paciente e Login Médico
-- Criar caso de uso Cadastro do Administrador
-- Refazer diagrama
+**Casos de Uso**
+- Criar caso de uso para disponibilização de datas e horários. (feito)
+- Criar caso de uso para cadastro de serviços. (feito)
+- Unir login paciente e login médico. (feito)
+- Criar caso de uso para cadastro do administrador. (feito)
+- Refazer diagrama. (feito)
