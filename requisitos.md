@@ -32,7 +32,7 @@ O sistema deve permitir que o paciente realize o agendamento.
 
 ### RF 08
 
-O sistema deve permitir que o paciente consulte e visualize seus agendamentos com data, hora, médico responsável e sua respectiva especialidade.
+O sistema deve permitir que o paciente consulte e visualize seus agendamentos com data, hora, CRM, médico responsável e sua respectiva especialidade.
 
 ### RF 09
 
@@ -40,7 +40,15 @@ O sistema deve permitir que o médico acesse sua grade de horários com data, ho
 
 ### RF 010
 
-O sistema deve possuir uma área de perfil com informações do usuário e um caléndario com as informações de agendamento.
+O sistema deve permitir o cadastro de especialidades, datas e horários por meio de um administrador.
+
+### RF 011
+
+O sistema deve permitir que o administrador visualize todos os agendamentos e a lista de todos os usuários cadastrados.
+
+### RF 012
+
+O sistema deve ter uma área de perfil.
 
 ## Requisitos Não-Funcionais
 
