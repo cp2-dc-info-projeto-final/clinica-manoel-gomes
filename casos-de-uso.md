@@ -2,15 +2,14 @@
 
 ## Lista dos Casos de Uso
 
- - [CDU 01](#CDU-01): Cadastro de Administrador.
+ - [CDU 01](#CDU-01): Cadastro de Administradores.
  - [CDU 02](#CDU-02): Cadastro de Pacientes.
  - [CDU 03](#CDU-03): Cadastro de Médicos.
  - [CDU 04](#CDU-04): Login de Usuários.
- - [CDU 05](#CDU-05): Disponibilização de Horários
- - [CDU 06](#CDU-06): Disponibilização de Serviços.
- - [CDU 07](#CDU-07): Agendamento de Consulta.
+ - [CDU 05](#CDU-05): Cadastro de Serviços.
+ - [CDU 06](#CDU-06): Disponibilização de Datas e Horários.
+ - [CDU 07](#CDU-07): Agendamento de Consultas.
  - [CDU 08](#CDU-08): Visualizar Perfil.
- - [CDU 09](#CDU-09): Vizualizar Lista de Usuários.
 
 ## Lista dos Atores
 
@@ -26,6 +25,8 @@
 
 ### CDU 01
 
+*Cadastro de Administradores.*
+
 **Atores:**
 
 **Fluxo Principal**
@@ -33,6 +34,8 @@
 **Fluxo Alternativo A**
 
 ### CDU 02
+
+*Cadastro de Pacientes.*
 
 **Atores:** Paciente.
 
@@ -54,6 +57,8 @@
 
 ### CDU 03
 
+*Cadastro de Médicos.*
+
 **Atores:** Administrador.
 
 **Fluxo Principal**
@@ -73,6 +78,8 @@
 6. Administrador repete o processo de cadastro.
 
 ### CDU 04
+
+*Login de Usuários.*
 
 **Atores:** Paciente, Médico e Administrador.
 
@@ -118,43 +125,73 @@
 
 ### CDU 05
 
-**Atores: Administrador.**
-
-**Fluxo Principal**
-
-1. Administrador insere datas disponíveis.
-2. Administrador insere horários disponíveis.
-3. Administrador registra as informações no banco de dados.
-4. Calendário de agendamentos é atualizado.
-
-**Fluxo Alternativo A**
-
-### CDU 06
+*Cadastro de Serviços.*
 
 **Atores: Administrador.**
 
 **Fluxo Principal**
 
 1. Administrador insere especialidades disponíveis.
-2. Administrador registra as informações no banco de dados.
-3. Calendário de agendamentos é atualizado.
+2. Administrador envia informações.
+3. Sistema analisa informações.
+4. Sistema registra as informações no banco de dados.
+5. Calendário de agendamentos é atualizado.
 
 **Fluxo Alternativo A**
 
+1. Administrador insere especialidades disponíveis.
+2. Administrador envia informações.
+3. Sistema analisa informações.
+4. A especialidade inserida já está cadastrada.
+5. Sistema não permite a operação.
+6. Sistema exibe mensagem informando o problema.
+
+### CDU 06
+
+*Disponibilização de Datas e Horários.*
+
+**Atores: Administrador.**
+
+**Fluxo Principal**
+
+1. Administrador seleciona uma determinada especialidade.
+2. Administrador insere datas disponíveis para a especialidade.
+3. Administrador insere horários disponíveis para a especialidade.
+4. Administrador envia informações.
+5. Sistema analisa informações.
+6. Sistema registra as informações no banco de dados.
+7. Calendário de agendamentos é atualizado.
+
+**Fluxo Alternativo A**
+
+1. Administrador seleciona uma determinada especialidade.
+1. Administrador insere datas disponíveis para a especialidade.
+2. Administrador insere horários disponíveis para a especialidade.
+3. Administrador envia informações.
+4. Sistema analisa informações.
+5. O horário inserido já está cadastrado ou já possui um agendamento.
+6. Sistema não permite a operação.
+7. Sistema exibe mensagem informando o problema.
+
 ### CDU 07
+
+*Agendamento de Consultas.*
 
 **Atores:** Paciente.
 
 **Fluxo Principal**
 
 1. Paciente escolhe especialidade, data e horário disponível.
-2. Paciente finaliza agendamento
-3. Sistema registra dados.
+2. Paciente finaliza agendamento.
+3. Sistema analisa informações.
+4. Sistema registra dados.
+5. O horário selecionado não ficará disponível para outros agendamentos.
 
 **Fluxo Alternativo A**
 
 1. Paciente escolhe especialidade, data e horário disponível.
 2. Paciente finaliza agendamento.
+3. Sistema analisa informações.
 3. Paciente não possui cadastro ou não está logado.
 4. Sistema exibe mensagem informando o problema.
 5. Paciente é direcionado para a página de cadastro/login.
@@ -162,13 +199,32 @@
 
 ### CDU 08
 
+*Vizualizar Perfil.*
+
 **Atores:** Paciente, Médico e Administrador.
 
 **Fluxo Principal**
 
 1. Usuário clica em "perfil".
 2. Usuário é encaminhado para página de perfil.
-3. Usuário tem acesso a caledário com os seus respectivos agendamentos.
+3. Usuário tem acesso as respectivas informações:
+
+**Paciente**
+- Nome completo do paciente.
+- CPF do paciente.
+- Calendário com as informações de agendamento do cliente: data, horário, nome do médico, CRM e especialidade.
+
+**Médico**
+- Nome completo do médico.
+- CRM do médico.
+- Calendário com as informações de agendamento do médico: data, horário, nome do paciente.
+
+**Administrador**
+- Lista de Usuários.
+- Calendário com todos os agendamentos.
+- Cadastro de Médicos.
+- Cadastro de Datas e Horários.
+- Cadastro de Especialidades.
 
 **Fluxo Alternativo A**
 
