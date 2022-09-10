@@ -27,7 +27,7 @@
 
 *Cadastro de Administradores.*
 
-**Atores:** Administrador não cadastrado
+**Atores:** Administrador
 
 **Fluxo Principal**
 
@@ -37,7 +37,8 @@
 4. Administrador clica em "Realizar cadastro".
 5. O sistema redireciona o administrador para uma página para confirmar os dados inseridos.
 6. Administrador clica em "Confirmar cadastro" caso os dados estejam corretos ou em "Corrigir dados" caso seja necessário corrigir algo.
-7. O acesso à "Área do Administrador" é concedido ao Novo Administrador.
+7. Os dados do Novo Administrador são inseridos no banco de dados.
+8. O acesso à "Área do Administrador / Perfil" é concedido ao Novo Administrador.
 
 **Fluxo Alternativo A**
 
