@@ -27,9 +27,17 @@
 
 *Cadastro de Administradores.*
 
-**Atores:**
+**Atores:** Administrador não cadastrado
 
 **Fluxo Principal**
+
+1. Usuário clica em "Cadastrar Novo Administrador" na página inicial.
+2. O usuário é encaminhado para a página de cadastro de administrador.
+3. O usuário preenche os campos com os dados necessários.
+4. O usuário clica em "Realizar cadastro".
+5. O sistema redireciona o usuário para uma página para confirmar os dados inseridos.
+6.  O usuário clica em "Confirmar cadastro" caso os dados estejam corretos ou em "Corrigir dados" caso seja necessário corrigir algo.
+7.  O usuário é redirecionado para "Área do Administrador".
 
 **Fluxo Alternativo A**
 
