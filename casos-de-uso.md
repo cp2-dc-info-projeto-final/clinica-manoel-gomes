@@ -27,20 +27,17 @@
 
 *Cadastro de Administradores.*
 
-**Atores:** Administrador
+**Atores:** Administrador.
 
 **Fluxo Principal**
 
-1. Administrador clica em "Cadastrar Novo Administrador" na página inicial.
+1. Administrador clica em "Cadastrar Novo Administrador" na área de perfil.
 2. Administrador é encaminhado para a página de cadastro de administrador.
 3. Administrador preenche os campos com os dados necessários.
 4. Administrador clica em "Realizar cadastro".
-5. O sistema redireciona o administrador para uma página para confirmar os dados inseridos.
-6. Administrador clica em "Confirmar cadastro" caso os dados estejam corretos ou em "Corrigir dados" caso seja necessário corrigir algo.
+5. Sistema analisa as informações.
 7. Os dados do Novo Administrador são inseridos no banco de dados.
 8. O acesso à "Área do Administrador / Perfil" é concedido ao Novo Administrador.
-
-**Fluxo Alternativo A**
 
 ### CDU 02
 
@@ -50,19 +47,23 @@
 
 **Fluxo Principal**
 
-1. Paciente insere as informações solicitadas: nome completo, CPF, data de nascimento, telefone, email e senha.
-2. Paciente finaliza cadastro.
-3. Sistema analisa as informações.
-4. Sistema registra dados.
+1. Paciente clica em "Cadastre-se" na página inicial.
+2. Paciente é encaminhado para a página de cadastro de pacientes.
+3. Paciente insere as informações solicitadas: nome completo, CPF, data de nascimento, telefone, email e senha.
+4. Paciente finaliza cadastro.
+5. Sistema analisa as informações.
+6. Sistema registra as informações no banco de dados.
 
 **Fluxo Alternativo A**
 
-1. Paciente insere as informações solicitadas: nome completo, CPF, data de nascimento, telefone, email e senha.
-2. Paciente finaliza cadastro.
-3. Sistema analisa as informações.
-4. As seguintes informações já estão cadastradas: CPF, telefone ou email.
-5. Sistema exibe mensagem informando o problema.
-6. Paciente repete o processo de cadastro.
+1. Paciente clica em "Cadastre-se" na página inicial.
+2. Paciente é encaminhado para a página de cadastro de pacientes.
+3. Paciente insere as informações solicitadas: nome completo, CPF, data de nascimento, telefone, email e senha.
+4. Paciente finaliza cadastro.
+5. Sistema analisa as informações.
+6. As seguintes informações já estão cadastradas: CPF, telefone ou email.
+7. Sistema exibe mensagem informando o problema.
+8. Paciente repete o processo de cadastro.
 
 ### CDU 03
 
@@ -72,19 +73,23 @@
 
 **Fluxo Principal**
 
-1. Administrador insere as informações solicitadas: nome completo, CRM, especialidade, telefone, email e senha.
-2. Administrador finaliza cadastro.
-3. Sistema analisa as informações.
-4. Sistema registra dados.
+1. Administrador clica em "Cadastrar Médico" na área de perfil.
+2. Administrador é encaminhado para a página de cadastro de médicos.
+3. Administrador insere as informações solicitadas: nome completo, CRM, especialidade, telefone, email e senha.
+4. Administrador finaliza cadastro.
+5. Sistema analisa as informações.
+6. Sistema registra as informações no banco de dados.
 
 **Fluxo Alternativo A**
 
-1. Administrador insere as informações solicitadas: nome completo, CRM, especialidade, telefone, email e senha.
-2. Administrador finaliza cadastro.
-3. Sistema analisa as informações.
-4. As seguintes informações já estão cadastradas: CRM, telefone ou email.
-5. Sistema exibe mensagem informando o problema.
-6. Administrador repete o processo de cadastro.
+1. Administrador clica em "Cadastrar Médico" na área de perfil.
+2. Administrador é encaminhado para a página de cadastro de médicos.
+3. Administrador insere as informações solicitadas: nome completo, CRM, especialidade, telefone, email e senha.
+4. Administrador finaliza cadastro.
+5. Sistema analisa as informações.
+6. As seguintes informações já estão cadastradas: CRM, telefone ou email.
+7. Sistema exibe mensagem informando o problema.
+8. Administrador repete o processo de cadastro.
 
 ### CDU 04
 
@@ -110,27 +115,33 @@
 
 **Fluxo Alternativo A**
 
-1. Paciente insere as informações solicitadas.
-2. Sistema analisa as informações.
-3. A seguinte informação não está cadastrada: CPF.
-4. Sistema exibe mensagem informando o problema.
-5. Paciente é encaminhado para a página de cadastro.
+1. Paciente clica em "Login" na página inicial.
+2. Paciente é encaminhado para a página de login.
+3. Paciente insere as informações solicitadas.
+4. Sistema analisa as informações.
+5. A seguinte informação não está cadastrada: CPF.
+6. Sistema exibe mensagem informando o problema.
+7. Paciente é encaminhado para a página de cadastro.
 
 **Fluxo Alternativo B**
 
-1. Administrador/Médico insere as informações solicitadas.
-2. Sistema analisa as informações.
-3. A seguinte informação não está cadastrada: Nome de usuário/CRM.
-4. Sistema nega acesso.
-5. Sistema exibe mensagem informando o problema.
+1. Administrador/Médico clica em "Login" na página inicial.
+2. Administrador/Médico é encaminhado para a página de login.
+3. Administrador/Médico insere as informações solicitadas.
+4. Sistema analisa as informações.
+5. A seguinte informação não está cadastrada: Nome de usuário/CRM.
+6. Sistema nega acesso.
+7. Sistema exibe mensagem informando o problema.
 
 **Fluxo Alternativo C**
 
-1. Usuário insere as informações solicitadas.
-2. Sistema analisa as informações.
-3. A senha informada está incorreta.
-4. Sistema exibe mensagem informando o problema.
-5. Usuário repete o processo de login.
+1. Usuário clica em "Login" na página inicial.
+2. Usuário é encaminhado para a página de login.
+3. Usuário insere as informações solicitadas.
+4. Sistema analisa as informações.
+5. A senha informada está incorreta.
+6. Sistema exibe mensagem informando o problema.
+7. Usuário repete o processo de login.
 
 ### CDU 05
 
@@ -190,20 +201,24 @@
 
 **Fluxo Principal**
 
-1. Paciente escolhe especialidade, data e horário disponível.
-2. Paciente finaliza agendamento.
-3. Sistema analisa as informações.
-4. Sistema registra dados.
-5. O horário selecionado não ficará disponível para outros agendamentos.
+1. Paciente clica em "Agendar Consulta" na página inicial.
+2. Paciente é encaminhado para a página de agendamento.
+3. Paciente escolhe especialidade, data e horário disponível.
+4. Paciente finaliza agendamento.
+5. Sistema analisa as informações.
+6. Sistema registra dados.
+7. O horário selecionado não ficará disponível para outros agendamentos.
 
 **Fluxo Alternativo A**
 
-1. Paciente escolhe especialidade, data e horário disponível.
-2. Paciente finaliza agendamento.
-3. Sistema analisa as informações.
-3. Paciente não possui cadastro ou não está logado.
-4. Sistema exibe mensagem informando o problema.
-5. Paciente é direcionado para a página de cadastro/login.
+1. Paciente clica em "Agendar Consulta" na página inicial.
+2. Paciente é encaminhado para a página de agendamento.
+3. Paciente escolhe especialidade, data e horário disponível.
+4. Paciente finaliza agendamento.
+5. Sistema analisa as informações.
+6. Paciente não possui cadastro ou não está logado.
+7. Sistema exibe mensagem informando o problema.
+8. Paciente é direcionado para a página de cadastro/login.
 
 
 ### CDU 08
