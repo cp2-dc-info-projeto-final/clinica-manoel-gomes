@@ -31,13 +31,13 @@
 
 **Fluxo Principal**
 
-1. Usuário clica em "Cadastrar Novo Administrador" na página inicial.
-2. Usuário é encaminhado para a página de cadastro de administrador.
-3. Usuário preenche os campos com os dados necessários.
-4. Usuário clica em "Realizar cadastro".
-5. O sistema redireciona o usuário para uma página para confirmar os dados inseridos.
-6. Usuário clica em "Confirmar cadastro" caso os dados estejam corretos ou em "Corrigir dados" caso seja necessário corrigir algo.
-7. Usuário é redirecionado para "Área do Administrador".
+1. Administrador clica em "Cadastrar Novo Administrador" na página inicial.
+2. Administrador é encaminhado para a página de cadastro de administrador.
+3. Administrador preenche os campos com os dados necessários.
+4. Administrador clica em "Realizar cadastro".
+5. O sistema redireciona o administrador para uma página para confirmar os dados inseridos.
+6. Administrador clica em "Confirmar cadastro" caso os dados estejam corretos ou em "Corrigir dados" caso seja necessário corrigir algo.
+7. O acesso à "Área do Administrador" é concedido ao Novo Administrador.
 
 **Fluxo Alternativo A**
 
