@@ -19,7 +19,7 @@
 
 ## Diagrama de Casos de Uso
 
-<img src= "https://user-images.githubusercontent.com/89115632/189178009-ab5c2748-6de9-4248-ae4e-ce9e0fda7546.png" width = 400px>
+<img src= "https://user-images.githubusercontent.com/89115632/189499168-1c79efef-9837-4b3f-86e6-1f73d1b8bfb6.png" width = 400px>
 
 ## Descrição dos Casos de Uso
 
