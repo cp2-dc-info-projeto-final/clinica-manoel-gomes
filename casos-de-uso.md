@@ -133,7 +133,7 @@
 
 1. Administrador insere especialidades disponíveis.
 2. Administrador envia informações.
-3. Sistema analisa informações.
+3. Sistema analisa as informações.
 4. Sistema registra as informações no banco de dados.
 5. Calendário de agendamentos é atualizado.
 
@@ -141,7 +141,7 @@
 
 1. Administrador insere especialidades disponíveis.
 2. Administrador envia informações.
-3. Sistema analisa informações.
+3. Sistema analisa as informações.
 4. A especialidade inserida já está cadastrada.
 5. Sistema não permite a operação.
 6. Sistema exibe mensagem informando o problema.
@@ -158,7 +158,7 @@
 2. Administrador insere datas disponíveis para a especialidade.
 3. Administrador insere horários disponíveis para a especialidade.
 4. Administrador envia informações.
-5. Sistema analisa informações.
+5. Sistema analisa as informações.
 6. Sistema registra as informações no banco de dados.
 7. Calendário de agendamentos é atualizado.
 
@@ -168,7 +168,7 @@
 1. Administrador insere datas disponíveis para a especialidade.
 2. Administrador insere horários disponíveis para a especialidade.
 3. Administrador envia informações.
-4. Sistema analisa informações.
+4. Sistema analisa as informações.
 5. O horário inserido já está cadastrado ou já possui um agendamento.
 6. Sistema não permite a operação.
 7. Sistema exibe mensagem informando o problema.
@@ -183,7 +183,7 @@
 
 1. Paciente escolhe especialidade, data e horário disponível.
 2. Paciente finaliza agendamento.
-3. Sistema analisa informações.
+3. Sistema analisa as informações.
 4. Sistema registra dados.
 5. O horário selecionado não ficará disponível para outros agendamentos.
 
@@ -191,7 +191,7 @@
 
 1. Paciente escolhe especialidade, data e horário disponível.
 2. Paciente finaliza agendamento.
-3. Sistema analisa informações.
+3. Sistema analisa as informações.
 3. Paciente não possui cadastro ou não está logado.
 4. Sistema exibe mensagem informando o problema.
 5. Paciente é direcionado para a página de cadastro/login.
