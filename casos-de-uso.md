@@ -99,7 +99,9 @@
 
 **Fluxo Principal**
 
-1. Usuário insere as informações solicitadas:
+1. Usuário clica em "Login" na página inicial.
+2. Usuário é encaminhado para a página de login.
+3. Usuário insere as informações solicitadas:
 
 **Paciente**
 - CPF e Senha.
@@ -110,8 +112,8 @@
 **Administrador**
 - Nome de usuário e Senha.
 
-2. Sistema analisa as informações.
-3. Sistema libera acesso.
+4. Sistema analisa as informações.
+5. Sistema libera acesso.
 
 **Fluxo Alternativo A**
 
@@ -151,20 +153,24 @@
 
 **Fluxo Principal**
 
-1. Administrador insere especialidades disponíveis.
-2. Administrador envia informações.
-3. Sistema analisa as informações.
-4. Sistema registra as informações no banco de dados.
-5. Calendário de agendamentos é atualizado.
+1. Administrador clica em "Cadastrar Especialidades" na área de perfil.
+2. Administrador é encaminhado para a página de cadastro de especialidades.
+3. Administrador insere especialidades disponíveis.
+4. Administrador envia informações.
+5. Sistema analisa as informações.
+6. Sistema registra as informações no banco de dados.
+7. Calendário de agendamentos é atualizado.
 
 **Fluxo Alternativo A**
 
-1. Administrador insere especialidades disponíveis.
-2. Administrador envia informações.
-3. Sistema analisa as informações.
-4. A especialidade inserida já está cadastrada.
-5. Sistema não permite a operação.
-6. Sistema exibe mensagem informando o problema.
+1. Administrador clica em "Cadastrar Especialidades" na área de perfil.
+2. Administrador é encaminhado para a página de cadastro de especialidades.
+3. Administrador insere especialidades disponíveis.
+4. Administrador envia informações.
+5. Sistema analisa as informações.
+6. A especialidade inserida já está cadastrada.
+7. Sistema não permite a operação.
+8. Sistema exibe mensagem informando o problema.
 
 ### CDU 06
 
@@ -174,24 +180,28 @@
 
 **Fluxo Principal**
 
-1. Administrador seleciona uma determinada especialidade.
-2. Administrador insere datas disponíveis para a especialidade.
-3. Administrador insere horários disponíveis para a especialidade.
-4. Administrador envia informações.
-5. Sistema analisa as informações.
-6. Sistema registra as informações no banco de dados.
-7. Calendário de agendamentos é atualizado.
+1. Administrador clica em "Cadastrar Datas e Horários" na área de perfil.
+2. Administrador é encaminhado para a página de cadastro de datas e horários.
+3. Administrador seleciona uma determinada especialidade.
+4. Administrador insere datas disponíveis para a especialidade.
+5. Administrador insere horários disponíveis para a especialidade.
+6. Administrador envia informações.
+7. Sistema analisa as informações.
+8. Sistema registra as informações no banco de dados.
+9. Calendário de agendamentos é atualizado.
 
 **Fluxo Alternativo A**
 
-1. Administrador seleciona uma determinada especialidade.
-1. Administrador insere datas disponíveis para a especialidade.
-2. Administrador insere horários disponíveis para a especialidade.
-3. Administrador envia informações.
-4. Sistema analisa as informações.
-5. O horário inserido já está cadastrado ou já possui um agendamento.
-6. Sistema não permite a operação.
-7. Sistema exibe mensagem informando o problema.
+1. Administrador clica em "Cadastrar Datas e Horários" na área de perfil.
+2. Administrador é encaminhado para a página de cadastro de datas e horários.
+3. Administrador seleciona uma determinada especialidade.
+4. Administrador insere datas disponíveis para a especialidade.
+5. Administrador insere horários disponíveis para a especialidade.
+6. Administrador envia informações.
+7. Sistema analisa as informações.
+8. O horário inserido já está cadastrado ou já possui um agendamento.
+9. Sistema não permite a operação.
+10. Sistema exibe mensagem informando o problema.
 
 ### CDU 07
 
