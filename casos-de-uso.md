@@ -114,6 +114,7 @@
 
 4. Sistema analisa as informações.
 5. Sistema libera acesso.
+6. Sistema exibe mensagem: "Login Conluído"
 
 **Fluxo Alternativo A**
 
@@ -122,7 +123,7 @@
 3. Paciente insere as informações solicitadas.
 4. Sistema analisa as informações.
 5. A seguinte informação não está cadastrada: CPF.
-6. Sistema exibe mensagem informando o problema.
+6. Sistema exibe mensagem informando o problema: "Usuário Não Cadastrado".
 7. Paciente é encaminhado para a página de cadastro.
 
 **Fluxo Alternativo B**
@@ -131,9 +132,16 @@
 2. Administrador/Médico é encaminhado para a página de login.
 3. Administrador/Médico insere as informações solicitadas.
 4. Sistema analisa as informações.
-5. A seguinte informação não está cadastrada: Nome de usuário/CRM.
-6. Sistema nega acesso.
-7. Sistema exibe mensagem informando o problema.
+5. A seguinte informação não está cadastrada:
+
+**Administrador**
+- Nome de Usuário.
+
+**Médico**
+- CRM.
+
+7. Sistema nega acesso.
+8. Sistema exibe mensagem informando o problema: "Usuário Não Cadastrado".
 
 **Fluxo Alternativo C**
 
@@ -142,7 +150,7 @@
 3. Usuário insere as informações solicitadas.
 4. Sistema analisa as informações.
 5. A senha informada está incorreta.
-6. Sistema exibe mensagem informando o problema.
+6. Sistema exibe mensagem informando o problema: "Senha Inválida".
 7. Usuário repete o processo de login.
 
 ### CDU 05
