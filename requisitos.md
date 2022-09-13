@@ -8,7 +8,7 @@ O sistema deve ter uma área administrativa.
 
 ### RF 02
 
-O sistema deve permitir cadastro de pacientes com nome, CPF, data de nascimento, telefone, email e senha.
+O sistema deve permitir cadastro de pacientes com nome completo, CPF, data de nascimento, telefone, email e senha.
 
 ### RF 03
 
@@ -16,7 +16,7 @@ O sistema deve permitir o login de pacientes com CPF e senha.
 
 ### RF 04
 
-O sistema deve permitir que o administrador cadastre médicos com nome, CRM, especialidade, telefone, email e senha.
+O sistema deve permitir que o administrador cadastre médicos com nome completo, CRM, especialidade, telefone, email e senha.
 
 ### RF 05
 
