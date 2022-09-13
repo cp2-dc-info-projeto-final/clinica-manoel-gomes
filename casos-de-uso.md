@@ -37,7 +37,8 @@
 4. Administrador clica em "Realizar cadastro".
 5. Sistema analisa as informações.
 7. Os dados do Novo Administrador são inseridos no banco de dados.
-8. O acesso à "Área do Administrador / Perfil" é concedido ao Novo Administrador.
+8. Sistema exibe mensagem: "Cadastro Realizado".
+9. O acesso à "Área do Administrador / Perfil" é concedido ao Novo Administrador.
 
 ### CDU 02
 
@@ -53,6 +54,7 @@
 4. Paciente finaliza cadastro.
 5. Sistema analisa as informações.
 6. Sistema registra as informações no banco de dados.
+7. Sistema exibe mensagem: "Cadastro Realizado".
 
 **Fluxo Alternativo A**
 
@@ -62,7 +64,7 @@
 4. Paciente finaliza cadastro.
 5. Sistema analisa as informações.
 6. As seguintes informações já estão cadastradas: CPF, telefone ou email.
-7. Sistema exibe mensagem informando o problema.
+7. Sistema exibe mensagem informando o problema: "As informações inseridas já estão cadastradas".
 8. Paciente repete o processo de cadastro.
 
 ### CDU 03
@@ -78,7 +80,8 @@
 3. Administrador insere as informações solicitadas: nome completo, CRM, especialidade, telefone, email e senha.
 4. Administrador finaliza cadastro.
 5. Sistema analisa as informações.
-6. Sistema registra as informações no banco de dados.
+6. Sistema exibe mensagem: "Cadastro Realizado".
+7. Sistema registra as informações no banco de dados.
 
 **Fluxo Alternativo A**
 
@@ -88,7 +91,7 @@
 4. Administrador finaliza cadastro.
 5. Sistema analisa as informações.
 6. As seguintes informações já estão cadastradas: CRM, telefone ou email.
-7. Sistema exibe mensagem informando o problema.
+7. Sistema exibe mensagem informando o problema: "As informações inseridas já estão cadastradas".
 8. Administrador repete o processo de cadastro.
 
 ### CDU 04
@@ -167,7 +170,8 @@
 4. Administrador envia informações.
 5. Sistema analisa as informações.
 6. Sistema registra as informações no banco de dados.
-7. Calendário de agendamentos é atualizado.
+7. Sistema exibe mensagem: "A respectiva especialidade foi adicionada ao banco de dados".
+8. Calendário de agendamentos é atualizado.
 
 **Fluxo Alternativo A**
 
@@ -178,7 +182,7 @@
 5. Sistema analisa as informações.
 6. A especialidade inserida já está cadastrada.
 7. Sistema não permite a operação.
-8. Sistema exibe mensagem informando o problema.
+8. Sistema exibe mensagem informando o problema: "A respectiva especialidade já está cadastrada".
 
 ### CDU 06
 
@@ -196,7 +200,8 @@
 6. Administrador envia informações.
 7. Sistema analisa as informações.
 8. Sistema registra as informações no banco de dados.
-9. Calendário de agendamentos é atualizado.
+9. Sistema exibe mensagem: "Os dados inseridos (Horário/Data) foram adiconados ao banco de dados".
+10. Calendário de agendamentos é atualizado.
 
 **Fluxo Alternativo A**
 
@@ -209,7 +214,7 @@
 7. Sistema analisa as informações.
 8. O horário inserido já está cadastrado ou já possui um agendamento.
 9. Sistema não permite a operação.
-10. Sistema exibe mensagem informando o problema.
+10. Sistema exibe mensagem informando o problema: "Este horário já está cadastrado ou já possui um agendamento".
 
 ### CDU 07
 
@@ -225,7 +230,8 @@
 4. Paciente finaliza agendamento.
 5. Sistema analisa as informações.
 6. Sistema registra dados.
-7. O horário selecionado não ficará disponível para outros agendamentos.
+7. Sistema exibe mensagem: "Agendamento Concluído".
+8. O horário selecionado não ficará disponível para outros agendamentos.
 
 **Fluxo Alternativo A**
 
@@ -235,7 +241,7 @@
 4. Paciente finaliza agendamento.
 5. Sistema analisa as informações.
 6. Paciente não possui cadastro ou não está logado.
-7. Sistema exibe mensagem informando o problema.
+7. Sistema exibe mensagem informando o problema: "Faça Login/Cadastre-se".
 8. Paciente é direcionado para a página de cadastro/login.
 
 
@@ -273,5 +279,5 @@
 1. Usuário clica em "perfil".
 2. Usuário é encaminhado para página de perfil.
 3. Usuário não possui cadastro ou não está logado.
-4. Sistema exibe mensagem informando o problema.
+4. Sistema exibe mensagem informando o problema: "Faça Login/Cadastre-se".
 5. Usuário é encaminhado para a página de cadastro/login.
