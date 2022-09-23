@@ -40,6 +40,10 @@
 8. Sistema exibe mensagem: "Cadastro Realizado".
 9. O acesso à "Área do Administrador / Perfil" é concedido ao Novo Administrador.
 
+![image](https://user-images.githubusercontent.com/89115632/192054933-a4e6743d-163e-406c-9730-efa02202f7cd.png)
+
+
+
 ### CDU 02
 
 *Cadastro de Pacientes.*
