@@ -73,8 +73,7 @@
 7. Sistema exibe mensagem informando o problema: "As informações inseridas já estão cadastradas".
 8. Paciente repete o processo de cadastro.
 
-![image](https://user-images.githubusercontent.com/89115632/192124140-c21334cc-1bdf-43ee-b272-680601bf0e0e.png)
-
+![image](https://user-images.githubusercontent.com/89115632/192124211-67a28642-e3a5-4aa8-af18-0dac591170a9.png)
 
 ### CDU 03
 
