@@ -42,6 +42,16 @@
 
 ![image](https://user-images.githubusercontent.com/89115632/192123885-72348118-df67-4c1c-a260-d5da37dbff16.png)
 
+**Fluxo Alternativo A**
+
+1. Administrador clica em "Cadastrar Novo Administrador" na área de perfil.
+2. Administrador é encaminhado para a página de cadastro de administrador.
+3. Administrador preenche os campos com os dados necessários.
+4. Administrador clica em "Realizar cadastro".
+5. Sistema analisa as informações.
+6. As informações inseridas já estão cadastradas.
+7. Sistema nega acesso.
+8. Sistema exibe mensagem: "Administrador já cadastrado".
 
 ### CDU 02
 
