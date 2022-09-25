@@ -25,4 +25,4 @@ Projeto voltado para o desenvolvimento de um sistema de agendamento e gerenciame
 
 **Modelagem do Banco de Dados**
 
-![Diagrama de Banco de Dados](diagrama-exemplo.png)
+![diagrama_ER](https://user-images.githubusercontent.com/89115632/192149934-c0d16e98-0844-4540-b390-a1920130d521.png)
