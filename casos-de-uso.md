@@ -40,8 +40,7 @@
 8. Sistema exibe mensagem: "Cadastro Realizado".
 9. O acesso à "Área do Administrador / Perfil" é concedido ao Novo Administrador.
 
-![image](https://user-images.githubusercontent.com/89115632/192054933-a4e6743d-163e-406c-9730-efa02202f7cd.png)
-
+![image](https://user-images.githubusercontent.com/89115632/192123885-72348118-df67-4c1c-a260-d5da37dbff16.png)
 
 
 ### CDU 02
@@ -60,6 +59,9 @@
 6. Sistema registra as informações no banco de dados.
 7. Sistema exibe mensagem: "Cadastro Realizado".
 
+![image](https://user-images.githubusercontent.com/89115632/192123940-2c50bb2d-ab93-4164-bf7d-58993ed467f9.png)
+
+
 **Fluxo Alternativo A**
 
 1. Paciente clica em "Cadastre-se" na página inicial.
@@ -70,6 +72,9 @@
 6. As seguintes informações já estão cadastradas: CPF, telefone ou email.
 7. Sistema exibe mensagem informando o problema: "As informações inseridas já estão cadastradas".
 8. Paciente repete o processo de cadastro.
+
+![image](https://user-images.githubusercontent.com/89115632/192124140-c21334cc-1bdf-43ee-b272-680601bf0e0e.png)
+
 
 ### CDU 03
 
@@ -87,6 +92,9 @@
 6. Sistema exibe mensagem: "Cadastro Realizado".
 7. Sistema registra as informações no banco de dados.
 
+![image](https://user-images.githubusercontent.com/89115632/192123968-9a7d106d-4a12-44ef-b76d-cb7b8817cfa1.png)
+
+
 **Fluxo Alternativo A**
 
 1. Administrador clica em "Cadastrar Médico" na área de perfil.
@@ -97,6 +105,9 @@
 6. As seguintes informações já estão cadastradas: CRM, telefone ou email.
 7. Sistema exibe mensagem informando o problema: "As informações inseridas já estão cadastradas".
 8. Administrador repete o processo de cadastro.
+
+![image](https://user-images.githubusercontent.com/89115632/192124095-e71ba88c-e5ad-480e-bbf2-426aef7e8206.png)
+
 
 ### CDU 04
 
