@@ -50,7 +50,7 @@
 4. Administrador clica em "Realizar cadastro".
 5. Sistema analisa as informações.
 6. As informações inseridas já estão cadastradas.
-7. Sistema nega acesso.
+7. Sistema nega cadastro.
 8. Sistema exibe mensagem: "Administrador já cadastrado".
 
 ### CDU 02
