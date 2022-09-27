@@ -40,7 +40,7 @@
 8. Sistema exibe mensagem: "Cadastro Realizado".
 9. O acesso à "Área do Administrador / Perfil" é concedido ao Novo Administrador.
 
-![image](https://user-images.githubusercontent.com/89115632/192123885-72348118-df67-4c1c-a260-d5da37dbff16.png)
+![image](https://user-images.githubusercontent.com/89115632/192409886-7ec0da01-ea2d-4ba3-bf40-51694c0475ab.png)
 
 **Fluxo Alternativo A**
 
@@ -69,8 +69,7 @@
 6. Sistema registra as informações no banco de dados.
 7. Sistema exibe mensagem: "Cadastro Realizado".
 
-![image](https://user-images.githubusercontent.com/89115632/192123940-2c50bb2d-ab93-4164-bf7d-58993ed467f9.png)
-
+![image](https://user-images.githubusercontent.com/89115632/192409978-1cc3658a-4c57-4a91-aea3-bb303500c765.png)
 
 **Fluxo Alternativo A**
 
@@ -101,8 +100,7 @@
 6. Sistema exibe mensagem: "Cadastro Realizado".
 7. Sistema registra as informações no banco de dados.
 
-![image](https://user-images.githubusercontent.com/89115632/192123968-9a7d106d-4a12-44ef-b76d-cb7b8817cfa1.png)
-
+![image](https://user-images.githubusercontent.com/89115632/192410334-d69c8157-821e-478f-9e51-9277f3a07b1f.png)
 
 **Fluxo Alternativo A**
 
