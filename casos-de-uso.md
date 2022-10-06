@@ -53,7 +53,7 @@
 7. Sistema nega cadastro.
 8. Sistema exibe mensagem: "Administrador já cadastrado".
 
-![image](https://user-images.githubusercontent.com/89115632/192411136-77113ffe-3c7e-4043-8f7c-a282289adc57.png)
+![image](https://user-images.githubusercontent.com/89115632/194372955-67d20442-b186-449e-88fe-59f81edd1b27.png)
 
 ### CDU 02
 
@@ -84,7 +84,7 @@
 7. Sistema exibe mensagem informando o problema: "As informações inseridas já estão cadastradas".
 8. Paciente repete o processo de cadastro.
 
-![image](https://user-images.githubusercontent.com/89115632/192411776-d3a7e58b-9a73-4c4b-938c-580bfccde81a.png)
+![image](https://user-images.githubusercontent.com/89115632/194373502-13a3cbb9-bd3c-458d-bab3-7a95c67b1c8f.png)
 
 ### CDU 03
 
@@ -115,7 +115,7 @@
 7. Sistema exibe mensagem informando o problema: "As informações inseridas já estão cadastradas".
 8. Administrador repete o processo de cadastro.
 
-![image](https://user-images.githubusercontent.com/89115632/192411958-6e2f3198-740e-4c6a-b109-129d4a7b1d96.png)
+![image](https://user-images.githubusercontent.com/89115632/194373809-7153280a-9088-4219-8f31-49fbb9476f42.png)
 
 ### CDU 04
 
