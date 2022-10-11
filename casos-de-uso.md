@@ -6,11 +6,12 @@
  - [CDU 02](#CDU-02): Cadastro de Pacientes.
  - [CDU 03](#CDU-03): Cadastro de Médicos.
  - [CDU 04](#CDU-04): Login de Usuários.
- - [CDU 05](#CDU-05): Cadastro de Serviços.
- - [CDU 06](#CDU-06): Disponibilização de Datas e Horários.
- - [CDU 07](#CDU-07): Agendamento de Consultas.
- - [CDU 08](#CDU-08): Visualizar Perfil.
- - [CDU 09](#CDU-09): Logout.
+ - [CDU 05](#CDU-05): Cadastro de Especialidade.
+ - [CDU 06](#CDU-06): Cadastro de Serviços.
+ - [CDU 07](#CDU-07): Disponibilização de Datas e Horários.
+ - [CDU 08](#CDU-08): Agendamento de Consultas.
+ - [CDU 09](#CDU-09): Visualizar Perfil.
+ - [CDU 010](#CDU-010): Logout.
 
 ## Lista dos Atores
 
@@ -230,7 +231,7 @@
 
 **Fluxo Principal**
 
-1. Administrador insere nome e descrição.
+1. Administrador insere nome, tipo de serviço e descrição.
 2. Sistema analisa as informações.
 3. Sistema valia informações.
 4. Sistema consulta o banco de dados
@@ -241,7 +242,7 @@
 
 **Fluxo Alternativo A**
 
-1. Administrador insere nome e descrição.
+1. Administrador insere nome, tipo de serviço e descrição.
 2. Sistema analisa as informações.
 3. Sistema valia informações.
 4. Sistema consulta o banco de dados
@@ -359,7 +360,7 @@
 
 ![image](https://user-images.githubusercontent.com/89115632/194384489-0a9874b2-2e00-4346-b0c9-dee1b7aa405c.png)
 
-### CDU 09
+### CDU 010
 
 *Logout*
 
