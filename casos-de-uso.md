@@ -358,3 +358,15 @@
 5. Usuário é encaminhado para a página de cadastro/login.
 
 ![image](https://user-images.githubusercontent.com/89115632/194384489-0a9874b2-2e00-4346-b0c9-dee1b7aa405c.png)
+
+### CDU 09
+
+*Logout*
+
+**Atores:** Administrador, Funcionário e Paciente.
+
+**Fluxo Principal**
+
+1. Usuário clica em "Sair" na área de perfil.
+2. Sistema encerra sessão.
+3. Sistema redireciona o usuário para a página inicial.
