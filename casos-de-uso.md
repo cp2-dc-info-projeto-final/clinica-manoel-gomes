@@ -10,6 +10,7 @@
  - [CDU 06](#CDU-06): Disponibilização de Datas e Horários.
  - [CDU 07](#CDU-07): Agendamento de Consultas.
  - [CDU 08](#CDU-08): Visualizar Perfil.
+ - [CDU 09](#CDU-09): Logout.
 
 ## Lista dos Atores
 
