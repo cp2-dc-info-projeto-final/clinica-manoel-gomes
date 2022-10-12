@@ -8,7 +8,7 @@ CREATE TABLE paciente (
     data_nasc varchar(10) NOT NULL, 
     telefone varchar(15) NOT NULL,
     email varchar(30) NOT NULL, 
-    senha varchar(30) NOT NULL, 
+    senha varchar(250) NOT NULL, 
     primary key(cod_paciente) 
 );
 
@@ -20,7 +20,7 @@ CREATE TABLE funcionario (
     data_nasc varchar(30) NOT NULL, 
     telefone varchar(15) NOT NULL,
     email varchar(30) NOT NULL, 
-    senha varchar(30) NOT NULL, 
+    senha varchar(250) NOT NULL, 
     primary key(cod_funcionario) 
 );
 
@@ -29,4 +29,15 @@ CREATE TABLE servicos (
     nome varchar(30) NOT NULL, 
     descricao varchar(120) NOT NULL,
     primary key(cod_servico) 
+);
+
+CREATE TABLE administrador (
+  cod_admin int(11) NOT NULL AUTO_INCREMENT,
+  nome varchar(30) NOT NULL,
+  username varchar(20) NOT NULL,
+  telefone varchar(15) NOT NULL,
+  data_nasc varchar(10) NOT NULL,
+  email varchar(40) NOT NULL,
+  senha varchar(250) NOT NULL,
+  primary key(cod_admin) 
 );
