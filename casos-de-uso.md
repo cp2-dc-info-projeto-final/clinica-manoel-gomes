@@ -371,3 +371,6 @@
 1. Usuário clica em "Sair" na área de perfil.
 2. Sistema encerra sessão.
 3. Sistema redireciona o usuário para a página inicial.
+
+![image](https://user-images.githubusercontent.com/89115632/195243649-7f650228-6b73-46ef-a5c9-53c2f542f016.png)
+
