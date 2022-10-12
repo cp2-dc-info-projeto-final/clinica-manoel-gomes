@@ -238,7 +238,7 @@
 5. Lista de serviços atualizada
 6. Exibe a mensagem "Serviço cadastrado"
 
-![image](https://user-images.githubusercontent.com/89115632/194380280-48e482fd-888d-4e85-a9e7-512c60e7fbf8.png)
+![image](https://user-images.githubusercontent.com/89115632/195245161-f623d7ba-e127-47f7-8455-4f3b92d51851.png)
 
 **Fluxo Alternativo A**
 
@@ -249,7 +249,7 @@
 5. Serviço já cadastrada
 6. Exibe a mensagem "Serviço já cadastrado"
 
-![image](https://user-images.githubusercontent.com/89115632/194380689-1119f085-f052-4a2e-b6b3-0a1cd66f7795.png)
+![image](https://user-images.githubusercontent.com/89115632/195245373-3df0e948-3c88-43cc-a719-8403c3a620d5.png)
 
 ### CDU 07
 
@@ -372,5 +372,4 @@
 2. Sistema encerra sessão.
 3. Sistema redireciona o usuário para a página inicial.
 
-![image](https://user-images.githubusercontent.com/89115632/195243649-7f650228-6b73-46ef-a5c9-53c2f542f016.png)
-
+![image](https://user-images.githubusercontent.com/89115632/195244321-717fbbf9-e165-4094-b654-ea59d889aacb.png)
