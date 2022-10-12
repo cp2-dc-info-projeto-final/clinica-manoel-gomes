@@ -41,3 +41,8 @@ CREATE TABLE administrador (
   senha varchar(250) NOT NULL,
   primary key(cod_admin) 
 );
+CREATE TABLE especialidade (
+  cod_especialidade int(11) NOT NULL AUTO_INCREMENT,
+  especialidade varchar(30) NOT NULL,
+  primary key(cod_especialidade)
+);
