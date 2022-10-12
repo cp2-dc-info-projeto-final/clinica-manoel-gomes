@@ -2,20 +2,21 @@
 include "autentica.php";
 include "conecta_mysql.inc";
 
-if(isset($_SESSION['cod_funcionario'])){
-    $cod_funcionario = $_SESSION["cod_funcionario"];
-    $sql= "SELECT * FROM funcionario WHERE cod_funcionario = $cod_funcionario;";
+if(isset($_SESSION['cod_admin'])){
+    $cod_admin = $_SESSION["cod_admin"];
+    $sql= "SELECT * FROM administrador WHERE cod_admin = $cod_admin;";
     $res= mysqli_query($mysqli,$sql);
-    $funcionario = mysqli_fetch_array ($res);
+    $adm = mysqli_fetch_array ($res);
 
 }
 else{
-    $cod_funcionario = $_REQUEST ["cod_funcionario"];
-    $sql= "SELECT * FROM funcionario WHERE cod_funcionario = $cod_funcionario;";
+    $cod_admin = $_REQUEST ["cod_admin"];
+    $sql= "SELECT * FROM administrador WHERE cod_admin = $cod_admin;";
     $res= mysqli_query($mysqli,$sql);
-    $funcionario = mysqli_fetch_array ($res);
+    $adm = mysqli_fetch_array ($res);
 
 }
+
 
 ?>
 
@@ -49,9 +50,9 @@ else{
                  class="fas fa-hospital me-2"></i>Serviços</a>
               <a href="espec.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-stethoscope me-2"></i>Especialidades</a>
-              <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+              <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-clipboard me-2"></i>Funcionários</a>
-              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                 class="fas fa-user-secret me-2"></i>Administradores</a>
               <a href="clientes.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-users me-2"></i>Pacientes</a>
@@ -80,7 +81,7 @@ else{
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link second-text fw-bold" href="funcionarios.php" id="navbarDropdown"
+                            <a class="nav-link second-text fw-bold" href="adm.php" id="navbarDropdown"
                                 role="button" aria-expanded="false">
                                 <i class="fas fa-arrow-left me-2"></i>Voltar
                             </a>
@@ -90,62 +91,40 @@ else{
             </nav>
 
             <?php
-              if(isset($_SESSION['msg4'])){
-                  echo $_SESSION['msg4'];
-                  unset($_SESSION['msg4']);
+                if(isset($_SESSION['msg2'])){
+                  echo $_SESSION['msg2'];
+                  unset($_SESSION['msg2']);
                 }
-            ?> 
+            ?>
              
-            <div id="cad_cliente" class="block">
+            <div id="cad_adm" class="block">
          <div class="container">
 
           <div class="registration-form">
-            <form action="editar_funcionario.php" method="POST">
+            <form action="editar_adm.php" method="POST">
                 <input type="hidden" name="operacao" value="editar">
-                <input type="hidden" name="cod_funcionario" value="<?php echo $cod_funcionario?>">
+                <input type="hidden" name="cod_admin" value="<?php echo $cod_admin?>">
                 <div class="form-icon">
                     <span><i class="icon far fa-hospital" align-self-center ></i></span>
                 </div>
                 
-                <h5 class="text-uppercase">Editar Funcionário:</h5>
+                <h5 class="text-uppercase">Editar Administrador:</h5>
                 <br>
                 <div class="form-group">
-                    <input type="text" required="required" class="form-control item" name="nome" placeholder="Nome Completo" value="<?php echo $funcionario['nome']?>">
+                    <input type="text" required="required" class="form-control item" name="nome" placeholder="Nome Completo" value="<?php echo $adm['nome']?>">
                 </div>
                 <div class="form-group">
-                    <input type="text" required="required" class="form-control item" name="crm" placeholder="CRM" value="<?php echo $funcionario['crm']?>" id="alt_crm">
-                    <script type="text/javascript">$("#alt_crm").mask("000000-0");  </script>
+                    <input type="text" required="required" class="form-control item" name="username" placeholder="Username" value="<?php echo $adm['username']?>">
                 </div>
                 <div class="form-group">
-                    <select name="especialidade" required="required" class="form item" id="especialidade">
-                    
-                    <option value="<?php echo $funcionario['especialidade']?>"><?php echo $funcionario['especialidade']?></option>
-                    <?php
-
-                        $sql= "SELECT * FROM especialidade";
-                        $res= mysqli_query($mysqli,$sql);
-                        $linhas= mysqli_num_rows($res);
-
-                        for ($i = 0; $i < $linhas; $i++){
-                            $espec = mysqli_fetch_array ($res);
-
-                            echo"
-                            <option value=".$espec['especialidade'].">".$espec['especialidade']."</option>";
-                            
-                        }
-
-                    ?>
-                    </select>
+                    <input type="text" required="required" class="form-control item" name="data_nasc" placeholder="Data de Nascimento" value="<?php echo  $adm['data_nasc']?>">
                 </div>
                 <div class="form-group">
-                    <input type="text" required="required" class="form-control item" name="data_nasc" placeholder="Data de Nascimento" value="<?php echo  $funcionario['data_nasc']?>">
+                    <input type="text" required="required" class="form-control item" name="telefone" placeholder="Telefone" value="<?php echo $adm['telefone']?>" id="telefone_alt_adm">
+                    <script type="text/javascript">$("#telefone_alt_adm").mask("(00) 00000-0000");</script>
                 </div>
                 <div class="form-group">
-                    <input type="text" required="required" class="form-control item" name="telefone" placeholder="Telefone" value="<?php echo $funcionario['telefone']?>" id="telefone_alt_func">
-                    <script type="text/javascript">$("#telefone_alt_func").mask("(00) 00000-0000");</script>
-                </div>
-                <div class="form-group">
-                    <input type="text" required="required" class="form-control item" name="email" placeholder="Email" value="<?php echo  $funcionario['email']?>">
+                    <input type="text" required="required" class="form-control item" name="email" placeholder="Email" value="<?php echo  $adm['email']?>">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-block create-account">Enviar</button>

@@ -23,3 +23,10 @@ CREATE TABLE funcionario (
     senha varchar(30) NOT NULL, 
     primary key(cod_funcionario) 
 );
+
+CREATE TABLE servicos ( 
+    cod_servico int NOT NULL AUTO_INCREMENT, 
+    nome varchar(30) NOT NULL, 
+    descricao varchar(120) NOT NULL,
+    primary key(cod_servico) 
+);

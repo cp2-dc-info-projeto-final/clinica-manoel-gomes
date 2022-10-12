@@ -4,7 +4,7 @@ include "conecta_mysql.inc";
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -13,14 +13,12 @@ include "conecta_mysql.inc";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="_css/perfil.css" />
-
     <title>Perfil Admin</title>
 </head>
 
 <body>
-    
-    <div class="d-flex" id="wrapper">
-        <!-- MENU -->
+<div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="fas fa-user-secret me-2"></i>Admin</div>
@@ -31,9 +29,9 @@ include "conecta_mysql.inc";
                  class="fas fa-hospital me-2"></i>Serviços</a>
               <a href="espec.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-stethoscope me-2"></i>Especialidades</a>
-              <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+              <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-clipboard me-2"></i>Funcionários</a>
-              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                 class="fas fa-user-secret me-2"></i>Administradores</a>
               <a href="clientes.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-users me-2"></i>Pacientes</a>
@@ -62,23 +60,24 @@ include "conecta_mysql.inc";
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                          <a class="nav-link second-text fw-bold" href="funcionarios.php" id="navbarDropdown"
-                          role="button"  aria-expanded="false">
-                          <i class="fas fa-arrow-left me-2"></i>Voltar
-                      </a>
+                            <a class="nav-link second-text fw-bold" href="perfil.php" id="navbarDropdown"
+                                role="button" aria-expanded="false">
+                                <i class="fas fa-arrow-left me-2"></i>Voltar
+                            </a>
                         </li>
                     </ul>
                 </div>
             </nav>
 
-            <div class="buscar">
-                    <form action="buscar_funcionario.php" method="POST" class="buscar">
+             <div class="buscar">
+                    <form action="buscar_adm.php" method="POST" class="buscar">
                         <input name="nome" id="search-input" type="search" id="form1" class="form-control w-25" placeholder="Buscar">
                         <input type="hidden" name="operacao" value="buscar">
                         <button  type="submit" class="btn btn-primary mx-2">
                     <i class="fas fa-search"></i>
                    </form>
             </div>
+
 
             <div class="block">
                 <section class="intro">
@@ -92,10 +91,9 @@ include "conecta_mysql.inc";
                                     <thead class="color">
                                     <tr>
                                         <th scope="col">NOME</th>
-                                        <th scope="col">CPF</th>
-                                        <th scope="col">ESPECIALIDADE</th>
+                                        <th scope="col">USERNAME</th>
+                                        <th scope="col">DATA NASC</th>
                                         <th scope="col">TELEFONE</th>
-                                        <th scope="col">DATA_NASC</th>
                                         <th scope="col">EMAIL</th>
                                         <th scope="col">  </th>
                                         <th scope="col">  </th>
@@ -105,33 +103,28 @@ include "conecta_mysql.inc";
 
                                     <?php
 
-                                    include "conecta_mysql.inc";
-
-                                    $operacao = $_REQUEST ["operacao"];
-
-                                    if($operacao== "buscar"){
-                                        $nome = $_POST["nome"];
-                                        $sql= "SELECT * FROM funcionario WHERE nome like '%$nome%';";
+                                        $sql= "SELECT * FROM administrador WHERE username != '@mgomes'";
                                         $res= mysqli_query($mysqli,$sql);
                                         $linhas= mysqli_num_rows($res);
 
                                         for ($i = 0; $i < $linhas; $i++){
-                                            $funcionario = mysqli_fetch_array ($res);
-                                            
+                                            $adm = mysqli_fetch_array ($res);
+
                                             echo"
-                                                <tr>
-                                                <td>".$funcionario['nome']."</td>
-                                                <td>".$funcionario['crm']."</td>
-                                                <td>".$funcionario['especialidade']."</td>
-                                                <td>".$funcionario['data_nasc']."</td>
-                                                <td>".$funcionario['telefone']."</td>
-                                                <td>".$funcionario['email']."</td>
-                                                <td><a href='altera_funcionario.php?cod_funcionario=".$funcionario["cod_funcionario"]."' class='fas fa-edit'></a></td>
-                                                <td><a href='excluir_funcionario.php?cod_funcionario=".$funcionario["cod_funcionario"]."' class='fas fa-trash text-danger'></a></td>
-                                                </tr>";
-                                                }
-                                            }
+                                            <tr>
+                                            <td>".$adm['nome']."</td>
+                                            <td>".$adm['username']."</td>
+                                            <td>".$adm['data_nasc']."</td>
+                                            <td>".$adm['telefone']."</td>
+                                            <td>".$adm['email']."</td>
+                                            <td><a href='altera_adm.php?cod_admin=".$adm["cod_admin"]."'class='fas fa-edit'></a></td>
+                                            <td><a href='excluir_adm.php?cod_admin=".$adm["cod_admin"]."' class='fas fa-trash text-danger'></a></td>
+                                            </tr>";
+                                            
+                                        }
+
                                     ?>
+                                    
                                     </tbody>
                                 </table>
                                 </div>
@@ -143,10 +136,11 @@ include "conecta_mysql.inc";
                  </section>
                 </div>
 
-    <!-- /CONTEÚDO -->
+
+
+    <!-- /CONTEÚDO  -->
     </div>
 
-  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var el = document.getElementById("wrapper");
@@ -158,4 +152,4 @@ include "conecta_mysql.inc";
     </script>
 </body>
 
-</html>                                    
+</html>

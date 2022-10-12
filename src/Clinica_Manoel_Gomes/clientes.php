@@ -1,4 +1,7 @@
-<?php  include "conecta_mysql.inc"; ?>
+<?php 
+include "autentica.php";
+include "conecta_mysql.inc";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,24 +17,28 @@
 </head>
 
 <body>
-    <div class="d-flex" id="wrapper">
-        <!-- MENU -->
+<div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                class="fas fa-user-secret me-2"></i>Admin</div>
-        <div class="list-group list-group-flush my-3">
-          <a href="perfil.html" class="list-group-item list-group-item-action bg-transparent  second-text fw-bold"><i
-             class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-          <a href="servicos.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-             class="fas fa-hospital me-2"></i>Serviços</a>
-          <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-             class="fas fa-clipboard me-2"></i>Funcionários</a>
-          <a href="clientes.html" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-             class="fas fa-users me-2"></i>Clientes</a>
-          <a href="calendario.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
-             class="fas fa-calendar me-2"></i>Calendário</a>
-          <a href="index.html" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-             class="fas fa-power-off me-2"></i>Sair</a>
+                    class="fas fa-user-secret me-2"></i>Admin</div>
+            <div class="list-group list-group-flush my-3">
+              <a href="perfil.php" class="list-group-item list-group-item-action bg-transparent  second-text fw-bold"><i
+                 class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+              <a href="servicos.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                 class="fas fa-hospital me-2"></i>Serviços</a>
+              <a href="espec.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                 class="fas fa-stethoscope me-2"></i>Especialidades</a>
+              <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                 class="fas fa-clipboard me-2"></i>Funcionários</a>
+              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-user-secret me-2"></i>Administradores</a>
+              <a href="clientes.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                 class="fas fa-users me-2"></i>Pacientes</a>
+              <a href="calendario.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
+                 class="fas fa-calendar me-2"></i>Calendário</a>
+              <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                 class="fas fa-power-off me-2"></i>Sair</a>
             </div>
         </div>
         <!-- /MENU -->
@@ -53,7 +60,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link second-text fw-bold" href="perfil.html" id="navbarDropdown"
+                            <a class="nav-link second-text fw-bold" href="perfil.php" id="navbarDropdown"
                                 role="button" aria-expanded="false">
                                 <i class="fas fa-arrow-left me-2"></i>Voltar
                             </a>
@@ -112,8 +119,8 @@
                                             <td>".$paciente['telefone']."</td>
                                             <td>".$paciente['data_nasc']."</td>
                                             <td>".$paciente['email']."</td>
-                                            <td><a href='altera_cliente.php?cod_paciente=".$paciente["cod_paciente"]."'>Editar</a></td>
-                                            <td><a href='excluir_paciente.php?cod_paciente=".$paciente["cod_paciente"]."'>Excluir</a></td>
+                                            <td><a href='altera_cliente.php?cod_paciente=".$paciente["cod_paciente"]."' class='fas fa-edit'></a></td>
+                                            <td><a href='excluir_paciente.php?cod_paciente=".$paciente["cod_paciente"]."' class='fas fa-trash text-danger'></a></td>
                                             </tr>";
                                             
                                         }
@@ -134,6 +141,44 @@
 
 
     <!-- /CONTEÚDO -->
+    </div>
+
+    <div class="modal modal_altera_paciente">
+        <div class="registration-form">
+            <form action="editar_cliente.php" method="POST">
+                <input type="hidden" name="operacao" value="editar">
+                <input type="hidden" name="cod_paciente" value="<?php echo $cod_paciente?>">
+                <div class="form-icon">
+                    <span><i class="icon far fa-user" align-self-center ></i></span>
+                </div>
+                
+                <h5 class="text-uppercase">Editar Cliente:</h5>
+                <br>
+                <div class="form-group">
+                    <input type="text" required="required" class="form-control item" name="nome" placeholder="Nome Completo" value="<?php echo $paciente['nome']?>">
+                </div>
+                <div class="form-group">
+                    <input type="text" required="required" class="form-control item" name="cpf" placeholder="CPF" value="<?php echo $paciente['cpf']?>">
+                </div>
+                <div class="form-group">
+                    <input type="text" required="required" class="form-control item" name="telefone" placeholder="Telefone" value="<?php echo $paciente['telefone']?>">
+                </div>
+                <div class="form-group">
+                    <input type="text" required="required" class="form-control item" name="data_nasc" placeholder="Data de Nascimento" value="<?php echo $paciente['data_nasc']?>">
+                </div>
+                <div class="form-group">
+                    <input type="text" required="required" class="form-control item" name="email" placeholder="Email" value="<?php echo $paciente['email']?>">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" required="required" class="form-control item" name="senha" placeholder="Senha" value="<?php echo $paciente['senha']?>">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block create-account">Enviar</button>
+                </div>
+            </form>
+
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>

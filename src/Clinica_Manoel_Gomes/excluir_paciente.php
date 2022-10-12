@@ -1,5 +1,7 @@
 <?php 
-    $mysqli = mysqli_connect("localhost","admin","123","bdsql");
+    
+    include "autentica.php";
+    include "conecta_mysql.inc";
 
 
     $cod_paciente = $_GET["cod_paciente"];

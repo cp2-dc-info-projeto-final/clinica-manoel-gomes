@@ -31,9 +31,9 @@ include "conecta_mysql.inc";
                  class="fas fa-hospital me-2"></i>Serviços</a>
               <a href="espec.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-stethoscope me-2"></i>Especialidades</a>
-              <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+              <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-clipboard me-2"></i>Funcionários</a>
-              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                 class="fas fa-user-secret me-2"></i>Administradores</a>
               <a href="clientes.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-users me-2"></i>Pacientes</a>
@@ -62,7 +62,7 @@ include "conecta_mysql.inc";
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                          <a class="nav-link second-text fw-bold" href="funcionarios.php" id="navbarDropdown"
+                          <a class="nav-link second-text fw-bold" href="adm.php" id="navbarDropdown"
                           role="button"  aria-expanded="false">
                           <i class="fas fa-arrow-left me-2"></i>Voltar
                       </a>
@@ -72,7 +72,7 @@ include "conecta_mysql.inc";
             </nav>
 
             <div class="buscar">
-                    <form action="buscar_funcionario.php" method="POST" class="buscar">
+                    <form action="buscar_adm.php" method="POST" class="buscar">
                         <input name="nome" id="search-input" type="search" id="form1" class="form-control w-25" placeholder="Buscar">
                         <input type="hidden" name="operacao" value="buscar">
                         <button  type="submit" class="btn btn-primary mx-2">
@@ -92,10 +92,9 @@ include "conecta_mysql.inc";
                                     <thead class="color">
                                     <tr>
                                         <th scope="col">NOME</th>
-                                        <th scope="col">CPF</th>
-                                        <th scope="col">ESPECIALIDADE</th>
+                                        <th scope="col">USERNAME</th>
+                                        <th scope="col">DATA NASC</th>
                                         <th scope="col">TELEFONE</th>
-                                        <th scope="col">DATA_NASC</th>
                                         <th scope="col">EMAIL</th>
                                         <th scope="col">  </th>
                                         <th scope="col">  </th>
@@ -111,26 +110,25 @@ include "conecta_mysql.inc";
 
                                     if($operacao== "buscar"){
                                         $nome = $_POST["nome"];
-                                        $sql= "SELECT * FROM funcionario WHERE nome like '%$nome%';";
+                                        $sql= "SELECT * FROM administrador WHERE nome like '%$nome%';";
                                         $res= mysqli_query($mysqli,$sql);
                                         $linhas= mysqli_num_rows($res);
 
                                         for ($i = 0; $i < $linhas; $i++){
-                                            $funcionario = mysqli_fetch_array ($res);
+                                            $adm = mysqli_fetch_array ($res);
                                             
                                             echo"
                                                 <tr>
-                                                <td>".$funcionario['nome']."</td>
-                                                <td>".$funcionario['crm']."</td>
-                                                <td>".$funcionario['especialidade']."</td>
-                                                <td>".$funcionario['data_nasc']."</td>
-                                                <td>".$funcionario['telefone']."</td>
-                                                <td>".$funcionario['email']."</td>
-                                                <td><a href='altera_funcionario.php?cod_funcionario=".$funcionario["cod_funcionario"]."' class='fas fa-edit'></a></td>
-                                                <td><a href='excluir_funcionario.php?cod_funcionario=".$funcionario["cod_funcionario"]."' class='fas fa-trash text-danger'></a></td>
+                                                <td>".$adm['nome']."</td>
+                                                <td>".$adm['username']."</td>
+                                                <td>".$adm['data_nasc']."</td>
+                                                <td>".$adm['telefone']."</td>
+                                                <td>".$adm['email']."</td>
+                                                <td><a href='altera_adm.php?cod_admin=".$adm["cod_admin"]."'class='fas fa-edit'></a></td>
+                                                <td><a href='excluir_adm.php?cod_admin=".$adm["cod_admin"]."' class='fas fa-trash text-danger'></a></td>
                                                 </tr>";
-                                                }
                                             }
+                                        }
                                     ?>
                                     </tbody>
                                 </table>
