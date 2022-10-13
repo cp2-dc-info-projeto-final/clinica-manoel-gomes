@@ -1,6 +1,22 @@
-<?php
+<?php 
 include "autentica.php";
 include "conecta_mysql.inc";
+
+if(isset($_SESSION['cod_senha_func'])){
+    $cod_funcionario = $_SESSION["cod_senha_func"];
+    $sql= "SELECT * FROM funcionario WHERE cod_funcionario = $cod_funcionario;";
+    $res= mysqli_query($mysqli,$sql);
+    $funcionario = mysqli_fetch_array ($res);
+
+}
+else{
+    $cod_funcionario = $_REQUEST ["cod_funcionario"];
+    $sql= "SELECT * FROM funcionario WHERE cod_funcionario = $cod_funcionario;";
+    $res= mysqli_query($mysqli,$sql);
+    $funcionario = mysqli_fetch_array ($res);
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -9,16 +25,20 @@ include "conecta_mysql.inc";
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="v  iewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="_css/perfil.css" />
+    <link rel="stylesheet" href="_css/form.css" />
+
     <title>Perfil Admin</title>
 </head>
 
 <body>
-<div class="d-flex" id="wrapper">
-        <!-- Sidebar -->
+    <div class="d-flex" id="wrapper">
+        <!-- MENU -->
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="fas fa-user-secret me-2"></i>Admin</div>
@@ -60,7 +80,7 @@ include "conecta_mysql.inc";
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link second-text fw-bold" href="perfil.php" id="navbarDropdown"
+                            <a class="nav-link second-text fw-bold" href="funcionarios.php" id="navbarDropdown"
                                 role="button" aria-expanded="false">
                                 <i class="fas fa-arrow-left me-2"></i>Voltar
                             </a>
@@ -75,81 +95,37 @@ include "conecta_mysql.inc";
                   unset($_SESSION['msg_senha']);
                 }
             ?> 
+             
+            <div id="cad_cliente" class="block">
+         <div class="container">
 
-             <div class="buscar">
-                    <form action="buscar_funcionario.php" method="POST" class="buscar">
-                        <input name="nome" id="search-input" type="search" id="form1" class="form-control w-25" placeholder="Buscar">
-                        <input type="hidden" name="operacao" value="buscar">
-                        <button  type="submit" class="btn btn-primary mx-2">
-                    <i class="fas fa-search"></i>
-                   </form>
-            </div>
-
-
-            <div class="block">
-                <section class="intro">
-                    <div class="gradient-custom-1 h-100">
-                        <div class="mask d-flex align-items-center h-100">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                            <div class="col-12">
-                                <div class="table-responsive bg-white">
-                                <table class="table mb-0  table-striped ">
-                                    <thead class="color">
-                                    <tr>
-                                        <th scope="col">NOME</th>
-                                        <th scope="col">CRM</th>
-                                        <th scope="col">ESPECIALIDADE</th>
-                                        <th scope="col">DATA NASC</th>
-                                        <th scope="col">TELEFONE</th>
-                                        <th scope="col">EMAIL</th>
-                                        <th scope="col">  </th>
-                                        <th scope="col">  </th>
-                                        <th scope="col">  </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    <?php
-
-                                        $sql= "SELECT * FROM funcionario";
-                                        $res= mysqli_query($mysqli,$sql);
-                                        $linhas= mysqli_num_rows($res);
-
-                                        for ($i = 0; $i < $linhas; $i++){
-                                            $funcionario = mysqli_fetch_array ($res);
-
-                                            echo"
-                                            <tr>
-                                            <td>".$funcionario['nome']."</td>
-                                            <td>".$funcionario['crm']."</td>
-                                            <td>".$funcionario['especialidade']."</td>
-                                            <td>".$funcionario['data_nasc']."</td>
-                                            <td>".$funcionario['telefone']."</td>
-                                            <td>".$funcionario['email']."</td>
-                                            <td><a href='altera_funcionario.php?cod_funcionario=".$funcionario["cod_funcionario"]."' class='fas fa-edit'></a></td>
-                                            <td><a href='altera_senha_func.php?cod_funcionario=".$funcionario["cod_funcionario"]."' class='fas fa-key'></a></td>
-                                            <td><a href='excluir_funcionario.php?cod_funcionario=".$funcionario["cod_funcionario"]."' class='fas fa-trash text-danger'></a></td>
-                                            </tr>";
-                                            
-                                        }
-
-                                    ?>
-                                    
-                                    </tbody>
-                                </table>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                 </section>
+          <div class="registration-form">
+            <form action="editar_senha_func.php" method="POST">
+                <input type="hidden" name="operacao" value="editar_senha">
+                <input type="hidden" name="cod_funcionario" value="<?php echo $cod_funcionario?>">
+                <div class="form-icon">
+                    <span><i class="icon far fa-hospital" align-self-center ></i></span>
                 </div>
+                
+                <h5 class="text-uppercase">Editar Funcionário:</h5>
+                <br>
+                <div class="form-group">
+                    <input type="password" required="required" class="form-control item" name="senha_atual" placeholder="Digite a senha atual">
+                </div>
+                <div class="form-group">
+                    <input type="password" required="required" class="form-control item" name="nova_senha" placeholder="Nova senha">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block create-account">Enviar</button>
+                </div>
+            </form>
+
+        </div>
+      </div>
 
 
 
-    <!-- /CONTEÚDO  -->
+    <!-- /CONTEÚDO -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
