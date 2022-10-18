@@ -345,7 +345,9 @@
 - Lista de Usuários.
 - Calendário com todos os agendamentos.
 - Cadastro de Médicos.
+- Cadastro de Administradores.
 - Cadastro de Datas e Horários.
+- Cadastro de Serviços.
 - Cadastro de Especialidades.
 
 ![image](https://user-images.githubusercontent.com/89115632/194385568-7350ecbb-0b59-42fc-ad07-58255b127dbe.png)
