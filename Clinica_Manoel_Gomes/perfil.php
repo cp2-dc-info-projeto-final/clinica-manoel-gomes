@@ -66,7 +66,7 @@ include "conecta_mysql.inc";
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                          <a class="nav-link second-text fw-bold" href="index.php" id="navbarDropdown"
+                          <a class="nav-link second-text fw-bold" href="index_adm.php" id="navbarDropdown"
                           role="button"  aria-expanded="false">
                           <i class="fas fa-arrow-left me-2"></i>Voltar
                       </a>
