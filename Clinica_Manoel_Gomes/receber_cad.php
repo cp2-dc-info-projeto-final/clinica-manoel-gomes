@@ -1,6 +1,7 @@
 <?php
-include "autentica.php";
 include "conecta_mysql.inc";
+
+session_start();
 
 $cadastro= $_REQUEST["cad"];
 
