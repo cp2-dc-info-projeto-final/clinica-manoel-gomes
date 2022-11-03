@@ -24,6 +24,7 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `bdsql` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `bdsql`;
 
+DROP USER IF EXISTS 'admin'@'localhost';
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '123'; 
 GRANT ALL PRIVILEGES ON bdsql.* TO 'admin'@'localhost';
 
