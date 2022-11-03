@@ -25,7 +25,7 @@ session_start()
   <div id="header">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
          CLÍNICA MANOEL GOMES
         </a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@ session_start()
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto align-items-center">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Página Inicial</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Agendamento</a>

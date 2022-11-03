@@ -35,7 +35,7 @@ include "autentica_paciente.php";
               <a class="nav-link" href="#">Agendamento</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="logout_paciente.php">Logout</a>
+            <a class="nav-link" href="perfil_paciente.php">Perfil</a>
             </li>
             </ul>
           </div>

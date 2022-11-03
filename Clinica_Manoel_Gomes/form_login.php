@@ -23,10 +23,10 @@ session_start();
   <body>
 
     <!-- HEADER -->
-  <div id="header">
+    <div id="header">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
          CLÍNICA MANOEL GOMES
         </a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,22 +35,18 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto align-items-center">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Página Inicial</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Página Inicial</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Agendamento</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               Cadastro/Login
-              </a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="cad_paciente.html">Cadastre-se</a></li>
-                <li><a class="dropdown-item" href="#">Faça Login</a></li>
+                <li><a class="dropdown-item" href="form_loginpaciente.php">Paciente</a></li>
+                <li><a class="dropdown-item" href="form_loginfuncionario.php">Funcionário</a></li>
+                <li><a class="dropdown-item" href="form_login.php">Administrador</a></li>
               </ul>
-              <li class="nav-item">
-                <a class="nav-link" href="perfil.php">Perfil</a>
-              </li>
             </ul>
           </div>
         </nav>
