@@ -83,7 +83,7 @@ $paciente = mysqli_fetch_array ($res);
                     <div class="mt-3">
                       <h4><?php echo $paciente['nome'];?></h4>
                       <p class="text-secondary mb-1">Paciente</p>
-                      <a href="altform_cliente.php" class="btn btn-primary">Editar Perfil</a>
+                      <button class="btn btn-primary">Editar Perfil</button>
                       <button class="btn btn-outline-primary">Editar Senha</button>
 
                       <style>
@@ -171,6 +171,41 @@ $paciente = mysqli_fetch_array ($res);
 
         </div>
     </div>
+
+    <div class="container">
+          <div class="registration-form">
+            <form action="editar_cliente.php" method="POST">
+                <input type="hidden" name="operacao" value="editar">
+                <input type="hidden" name="cod_paciente" value="<?php echo $cod_paciente?>">
+                <div class="form-icon">
+                    <span><i class="icon far fa-user" align-self-center ></i></span>
+                </div>
+                
+                <h5 class="text-uppercase">Editar Cliente:</h5>
+                <br>
+                <div class="form-group">
+                    <input type="text" required="required" class="form-control item" name="nome" placeholder="Nome Completo" value="<?php echo $paciente['nome']?>">
+                </div>
+                <div class="form-group">
+                    <input type="text" required="required" class="form-control item" name="cpf" placeholder="CPF" value="<?php echo $paciente['cpf']?>" id="alt_cpf">
+                    <script type="text/javascript">$("#alt_cpf").mask("000.000.000-00");</script>
+                </div>
+                <div class="form-group">
+                    <input type="text" required="required" class="form-control item" name="telefone" placeholder="Telefone" value="<?php echo $paciente['telefone']?>" id="telefone_alt_paciente">
+                    <script type="text/javascript">$("#telefone_alt_paciente").mask("(00) 00000-0000");</script>
+                </div>
+                <div class="form-group">
+                    <input type="text" required="required" class="form-control item" name="data_nasc" placeholder="Data de Nascimento" value="<?php echo $paciente['data_nasc']?>">
+                </div>
+                <div class="form-group">
+                    <input type="text" required="required" class="form-control item" name="email" placeholder="Email" value="<?php echo $paciente['email']?>">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block create-account">Enviar</button>
+                </div>
+            </form>
+        </div>
+      </div>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>

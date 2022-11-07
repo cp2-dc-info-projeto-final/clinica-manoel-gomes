@@ -46,7 +46,8 @@ a:hover{
     color: var(--primary);
 }
 
+
 .button-primay-outline:hover{
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
+    background-color: #216294;
+    border-color: #216294;
 }
