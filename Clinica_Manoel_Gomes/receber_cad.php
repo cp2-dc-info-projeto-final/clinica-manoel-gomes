@@ -1,5 +1,6 @@
 <?php
 include "conecta_mysql.inc";
+include "envia_email.php";
 
 session_start();
 
@@ -75,6 +76,13 @@ if ($cadastro == 'paciente'){
         }
         
     }
+
+    $para = $email;
+    $assunto = "Boas Vindas";
+    $mensagem = "Olá $nome, seja bem vindo(a)!";
+
+    envia_email($para, $assunto, $mensagem);
+
 
     $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
    

@@ -16,12 +16,12 @@
         header("Location: form_loginpaciente.php");
     }
     else{
-
         $_SESSION["cpf"] = $cpf;
         $_SESSION["senha"] = $paciente["senha"];
         
-        header("Location: index_paciente.php");
         $_SESSION['msg_login_paciente'] = "<div class='alert alert-success' role='alert'>Login realizado com sucesso!</div>";
+        header("Location: index_paciente.php");
+
     }
 
 ?>

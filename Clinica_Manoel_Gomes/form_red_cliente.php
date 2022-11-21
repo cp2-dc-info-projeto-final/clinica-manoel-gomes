@@ -59,27 +59,21 @@ session_start();
         <div class="container">
 
           <div class="registration-form">
-            <form action="login_paciente.php" method="POST">
+            <form action="redefinir_senha.php" method="POST">
                 <div class="form-icon">
                     <span><i class="icon far fa-id-card"></i></span>
                 </div>   
-                <h5 class="text-uppercase">Faça Login:</h5>
+                <h5 class="text-uppercase">Confirme o seu CPF:</h5>
                 <?php
-                    if(isset($_SESSION['msg_login_paciente'])){
-                        echo $_SESSION['msg_login_paciente'];
-                        unset($_SESSION['msg_login_paciente']);
+                    if(isset($_SESSION['msg_red_paciente'])){
+                        echo $_SESSION['msg_red_paciente'];
+                        unset($_SESSION['msg_red_paciente']);
                     }
                 ?>
                 <br>
                 <div class="form-group">
-                    <input type="texts" required="required" class="form-control item" id="cpf" name="cpf" placeholder="CPF" maxlength="15">
+                    <input type="text" required="required" class="form-control item" id="cpf" name="cpf" placeholder="CPF" maxlength="15">
                     <script type="text/javascript">$("#cpf").mask("000.000.000-00");</script>
-                </div>
-                <div class="form-group">
-                    <input type="password" required="required" class="form-control item" name="senha" placeholder="Senha">
-                </div>
-                <div class="form-group">
-                    <a href="form_red_cliente.php">Esqueceu a senha?</a>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-block create-account">Enviar</button>
