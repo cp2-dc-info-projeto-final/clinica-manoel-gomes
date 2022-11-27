@@ -15,7 +15,7 @@ if($resultado["cpf"] == $cpf){
 
     $para = $resultado["email"];
     $assunto = "teste";
-    $mensagem = "Olá teste";
+    $mensagem = "<a href='Clinica_Manoel_Gomes/red_senha.php'";
 
     envia_email($para, $assunto, $mensagem);
 
