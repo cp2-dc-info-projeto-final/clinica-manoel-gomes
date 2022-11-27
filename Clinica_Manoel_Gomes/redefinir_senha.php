@@ -1,13 +1,18 @@
 <?php
 
-$cpf = $_REQUEST["cpf"];
+session_start();
 
 include "conecta_mysql.inc";
-$sql= "SELECT * FROM paciente WHERE cpf = $cpf";
+
+$cpf = $_REQUEST["cpf"];
+
+$sql= "SELECT * FROM paciente WHERE cpf = '$cpf'";
 $res= mysqli_query($mysqli,$sql);
 $linhas= mysqli_num_rows($res);
 
 $resultado = mysqli_fetch_array ($res);
+
+$code = rand(100000,999999);
 
 if($resultado["cpf"] == $cpf){
 
@@ -15,12 +20,15 @@ if($resultado["cpf"] == $cpf){
 
     $para = $resultado["email"];
     $assunto = "teste";
-    $mensagem = "<a href='Clinica_Manoel_Gomes/red_senha.php'";
+    $mensagem = "$code";
 
     envia_email($para, $assunto, $mensagem);
 
     $_SESSION['msg_red_paciente'] = "<div class='alert alert-success' role='alert'>Enviamos uma mensagem para o seu email</div>";
-    header("Location: form_red_cliente.php");
+    header("Location: red_senha.php");
+
+    $_SESSION['cod_senha'] = $code;
+    $_SESSION['cpf_cliente'] = $cpf;
 
     exit;
 }

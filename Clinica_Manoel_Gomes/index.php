@@ -60,6 +60,12 @@ session_start()
         unset($_SESSION['msg_paciente']);
     }
     ?>
+    <?php
+    if(isset($_SESSION['msg_senha'])){
+      echo $_SESSION['msg_senha'];
+      unset($_SESSION['msg_senha']);
+    }
+    ?>
     
     <!--SLIDER-->
     <div id="slider" class="block">
