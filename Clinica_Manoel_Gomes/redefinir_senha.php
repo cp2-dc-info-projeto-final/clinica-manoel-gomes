@@ -30,10 +30,8 @@ if($resultado["cpf"] == $cpf){
     $_SESSION['cod_senha'] = $code;
     $_SESSION['cpf_cliente'] = $cpf;
 
-    exit;
 }
-
-if(empty($resultado)){
+else{
     $_SESSION['msg_red_paciente'] = "<div class='alert alert-danger'>CPF não encontrado</div>";
     header("Location: form_red_cliente.php");  
     exit;
