@@ -17,6 +17,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="_css/main.css">
+    <link rel="stylesheet" href="_css/form.css" />
 
     <title>Página Inicial</title>
   </head>
@@ -60,53 +61,64 @@ session_start();
     </div>
 
     <div class="block">
-                <section class="intro">
-                    <div class="gradient-custom-1 h-100">
-                        <div class="mask d-flex align-items-center h-100">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                            <div class="col-12">
-                                <div class="table-responsive bg-white">
-                                <table class="table mb-0 table-striped ">
-                                    <thead class="color">
-                                    <tr>
-                                        <th scope="col">ESPECIALIDADE</th>
-                                        <th scope="col">  </th>                                        
-                                        
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    <?php
-
-                                        $sql= "SELECT * FROM especialidade";
-                                        $res= mysqli_query($mysqli,$sql);
-                                        $linhas= mysqli_num_rows($res);
-
-                                        for ($i = 0; $i < $linhas; $i++){
-                                            $espec = mysqli_fetch_array ($res);
-
-                                            echo"
-                                            <tr>
-                                            <td>".$espec['especialidade']."</td>
-                                            <td>
-                                            <a href='agenda_espec.php?cod_especialidade=".$espec["cod_especialidade"]."' class='fas fa-calendar'></a>
-                                            </td>";
-                                            
-                                        }
-
-                                    ?>
-                                    
-                                    </tbody>
-                                </table>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
+    <div class="registration-form">
+                <form action="receber_cadfuncionario.php" method="REQUEST">
+                  <input type="hidden" name="cadfuncionario" value="funcionario">
+                    <div class="form-icon">
+                        <span><i class="icon fas fa-hospital"></i></span>
                     </div>
-                 </section>
-                </div>
+                    
+                    <h5 class="text-uppercase">Cadastrar Funcionário:</h5>
+                    <br>
+                    <div class="form-group">
+                        <input type="text" required="required" class="form-control item" name="nome" placeholder="Nome Completo">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" required="required" class="form-control item" id="crm" name="crm" placeholder="CRM">
+                        <script type="text/javascript">$("#crm").mask("000000-0");</script>
+                    </div>
+                    <div class="form-group">
+                        <select name="especialidade" required="required" class="form item" id="espec">
+                        <option value=''>Especialidade</option>
+                        <?php
+
+                        $sql= "SELECT * FROM especialidade";
+                        $res= mysqli_query($mysqli,$sql);
+                        $linhas= mysqli_num_rows($res);
+
+                        for ($i = 0; $i < $linhas; $i++){
+                            $espec = mysqli_fetch_array ($res);
+
+                            echo"
+                            <option value=".$espec['especialidade'].">".$espec['especialidade']."</option>";
+                            
+                        }
+
+                         ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" required="required" class="form-control item" id="telefone" name="telefone" placeholder="Telefone">
+                        <script type="text/javascript">$("#telefone").mask("(00) 00000-0000");</script>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" required="required" class="form-control item" name="data_nasc" placeholder="Data de Nascimento">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" required="required" class="form-control item" name="email" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" required="required" class="form-control item" name="senha" placeholder="Senha">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block create-account">Registrar</button>
+                    </div>
+                </form>
+
+            </div>
+          </div>
+
 
     <!-- //HEADER -->
 

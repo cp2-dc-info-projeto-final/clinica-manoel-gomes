@@ -116,7 +116,7 @@ include "conecta_mysql.inc";
                 </div>
                 
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                  <a href="#" class="destaque">
+                  <a href="#" onclick="acao_horario()" class="destaque">
                     <div class="img-container mb-3">
                       <img src="_img/Events-bro.svg" class="img-fluid">
                     </div>
@@ -272,6 +272,44 @@ include "conecta_mysql.inc";
       </form>
   </div>
   </div>
+
+  <div class="modal modal_horario">
+      <div class="registration-form">
+        <form action="receber_horario.php" method="REQUEST">
+            <div class="form-icon">
+                <span><i class="icon fas fa-calendar"></i></span>
+            </div>
+            
+            <h5 class="text-uppercase">Cadastrar Horário:</h5>
+            <br>
+            <div class="form-group">
+                <input type="text" required="required" class="form-control item" name="nome" placeholder="Nome do Serviço">
+            </div>
+            <div class="form-group">
+                <input type="date" required="required" class="form-control item" name="data" placeholder="Data">
+            </div>
+            <div class="form-group">
+                <input type="text" required="required" class="form-control item" name="horario" placeholder="Horário">
+            </div>
+            <div class="form-group">
+                <input type="text" required="required" class="form-control item" name="profissional" placeholder="Profissional Responsável">
+            </div>
+            <div class="form-group">
+              <select name="tipo_servico" required="required" class="form item" id="tipo_servico">
+              <option value=''>Tipo</option>
+              <option value="Laboratorial">Laboratorial</option>
+              <option value="Odontologico">Odontológico</option>
+              <option value="Clinico">Clínico</option>
+              <option value="Pediatrico">Pediátrico</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-block create-account">Registrar</button>
+              <button type="button" onclick="fechar_horario()" class="btn btn-block create-account2">Cancelar</button>
+            </div>
+        </form>
+      </div>
+    </div>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
