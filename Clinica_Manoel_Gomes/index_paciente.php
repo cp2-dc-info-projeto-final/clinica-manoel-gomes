@@ -31,8 +31,14 @@ include "autentica_paciente.php";
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Agendamento</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Agendamento</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="servico_clinico.php">Clínico</a></li>
+                <li><a class="dropdown-item" href="form_loginfuncionario.php">Odontológico</a></li>
+                <li><a class="dropdown-item" href="form_login.php">Pediátrico</a></li>
+                <li><a class="dropdown-item" href="form_login.php">Laboratorial</a></li>
+              </ul>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="perfil_paciente.php">Perfil</a>

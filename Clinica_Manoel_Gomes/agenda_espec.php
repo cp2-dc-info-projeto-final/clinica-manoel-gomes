@@ -1,6 +1,10 @@
 <?php
+include "autentica_paciente.php";
 include "conecta_mysql.inc";
-session_start();
+
+$sql = "SELECT * FROM paciente WHERE cpf = '$cpf';";
+$res= mysqli_query($mysqli,$sql);
+$paciente = mysqli_fetch_array ($res);
 ?>
 
 <!doctype html>
@@ -62,54 +66,35 @@ session_start();
 
     <div class="block">
     <div class="registration-form">
-                <form action="receber_cadfuncionario.php" method="REQUEST">
-                  <input type="hidden" name="cadfuncionario" value="funcionario">
+                <form action="registra_horario.php" method="REQUEST">
+                  <input type="hidden" name="cod_paciente" value="<?php $paciente["cod_paciente"];?>">
                     <div class="form-icon">
                         <span><i class="icon fas fa-hospital"></i></span>
                     </div>
                     
-                    <h5 class="text-uppercase">Cadastrar Funcionário:</h5>
+                    <h5 class="text-uppercase">Faça o seu agendamento:</h5>
                     <br>
                     <div class="form-group">
-                        <input type="text" required="required" class="form-control item" name="nome" placeholder="Nome Completo">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" required="required" class="form-control item" id="crm" name="crm" placeholder="CRM">
-                        <script type="text/javascript">$("#crm").mask("000000-0");</script>
-                    </div>
-                    <div class="form-group">
-                        <select name="especialidade" required="required" class="form item" id="espec">
-                        <option value=''>Especialidade</option>
-                        <?php
+                        <select name="agendamento" required="required" class="form item">
+                            <option value=''>Data e Horário</option>
+                            <?php
 
-                        $sql= "SELECT * FROM especialidade";
-                        $res= mysqli_query($mysqli,$sql);
-                        $linhas= mysqli_num_rows($res);
+                            $var = $_REQUEST["especialidade"];
 
-                        for ($i = 0; $i < $linhas; $i++){
-                            $espec = mysqli_fetch_array ($res);
+                            $sql= "SELECT * FROM agendamento WHERE nome = '$var'";
+                            $res= mysqli_query($mysqli,$sql);
+                            $linhas= mysqli_num_rows($res);
 
-                            echo"
-                            <option value=".$espec['especialidade'].">".$espec['especialidade']."</option>";
-                            
-                        }
+                            for ($i = 0; $i < $linhas; $i++){
+                                $agendamento = mysqli_fetch_array ($res);
 
-                         ?>
+                                echo"
+                                <option value=".$agendamento['cod_agendamento'].">".$agendamento['dia'].' - '.$agendamento['horario']."</option>";
+                                
+                            }
+
+                            ?>
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" required="required" class="form-control item" id="telefone" name="telefone" placeholder="Telefone">
-                        <script type="text/javascript">$("#telefone").mask("(00) 00000-0000");</script>
-                    </div>
-                    <div class="form-group">
-                        <input type="date" required="required" class="form-control item" name="data_nasc" placeholder="Data de Nascimento">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" required="required" class="form-control item" name="email" placeholder="Email">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="password" required="required" class="form-control item" name="senha" placeholder="Senha">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-block create-account">Registrar</button>

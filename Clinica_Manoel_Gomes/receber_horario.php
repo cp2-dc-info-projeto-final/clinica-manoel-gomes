@@ -3,14 +3,18 @@ include "conecta_mysql.inc";
 
 $nome = $_REQUEST["nome"]; 
 $data = $_REQUEST["data"]; 
-$hora = $_REQUEST["horario"]; 
-$profissional = $_REQUEST["profissional"]; 
-$servico = $_REQUEST["tipo_servico"];
+$hora = utf8_decode($_REQUEST["horario"]); 
+$crm = $_REQUEST["crm"]; 
+$servico = $_REQUEST["servico"];
 
-$sql = "INSERT INTO agendamento (servico, nome, dia, horario, profissional)";
-$sql .= "VALUES ('$servico', '$nome', '$data', '$hora', '$profissional');";  
-mysqli_query($mysqli,$sql);
+$sql = "INSERT INTO agendamento (servico, nome, dia, horario, crm)";
+$sql .= "VALUES ('$servico','$nome','$data','$hora','$crm')"; 
+
+if (!mysqli_query($mysqli,$sql)){
+    echo mysqli_error($mysqli);
+}
 
 header ('location: perfil.php');
+
 
 ?>

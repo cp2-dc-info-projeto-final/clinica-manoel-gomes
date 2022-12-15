@@ -1,6 +1,6 @@
 <?php
+include "autentica_paciente.php";
 include "conecta_mysql.inc";
-session_start();
 ?>
 
 <!doctype html>
@@ -90,7 +90,7 @@ session_start();
                                             <tr>
                                             <td>".$espec['especialidade']."</td>
                                             <td>
-                                            <a href='agenda_espec.php?cod_especialidade=".$espec["cod_especialidade"]."' class='fas fa-calendar'></a>
+                                            <a href='agenda_espec.php?especialidade=".$espec["especialidade"]."' class='fas fa-calendar'></a>
                                             </td>";
                                             
                                         }

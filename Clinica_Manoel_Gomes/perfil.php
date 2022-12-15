@@ -275,7 +275,7 @@ include "conecta_mysql.inc";
 
   <div class="modal modal_horario">
       <div class="registration-form">
-        <form action="receber_horario.php" method="REQUEST">
+        <form action="receber_horario.php" method="POST">
             <div class="form-icon">
                 <span><i class="icon fas fa-calendar"></i></span>
             </div>
@@ -289,13 +289,13 @@ include "conecta_mysql.inc";
                 <input type="date" required="required" class="form-control item" name="data" placeholder="Data">
             </div>
             <div class="form-group">
-                <input type="text" required="required" class="form-control item" name="horario" placeholder="Horário">
+                <input type="time" required="required" class="form-control item" name="horario" placeholder="Horário">
             </div>
             <div class="form-group">
-                <input type="text" required="required" class="form-control item" name="profissional" placeholder="Profissional Responsável">
+                <input type="text" required="required" class="form-control item" name="crm" placeholder="CRM">
             </div>
             <div class="form-group">
-              <select name="tipo_servico" required="required" class="form item" id="tipo_servico">
+              <select name="servico" required="required" class="form item">
               <option value=''>Tipo</option>
               <option value="Laboratorial">Laboratorial</option>
               <option value="Odontologico">Odontológico</option>
