@@ -6,7 +6,7 @@ $cadastro= $_REQUEST["servico"];
 
 if ($cadastro == 'servico'){
 
-    $nome = $_REQUEST["nome"]; 
+    $nome = utf8_decode($_REQUEST["nome"]); 
     $desc = $_REQUEST["descricao"]; 
     $tipo_servico = $_REQUEST["tipo_servico"];
 

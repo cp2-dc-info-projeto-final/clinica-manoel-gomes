@@ -283,7 +283,24 @@ include "conecta_mysql.inc";
             <h5 class="text-uppercase">Cadastrar Horário:</h5>
             <br>
             <div class="form-group">
-                <input type="text" required="required" class="form-control item" name="nome" placeholder="Nome do Serviço">
+            <select name="nome" required="required" class="form item">
+            <option value="">Nome do Serviço</option>
+            <?php
+
+              $sql= "SELECT * FROM servicos";
+              $res= mysqli_query($mysqli,$sql);
+              $linhas= mysqli_num_rows($res);
+
+              for ($i = 0; $i < $linhas; $i++){
+                  $servico = mysqli_fetch_array ($res);
+
+                  echo"
+                  <option value=".$servico['nome'].">".$servico['nome']."</option>";
+                  
+              }
+
+              ?>
+            </select>
             </div>
             <div class="form-group">
                 <input type="date" required="required" class="form-control item" name="data" placeholder="Data">

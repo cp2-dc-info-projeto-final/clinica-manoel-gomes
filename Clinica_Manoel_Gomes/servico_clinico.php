@@ -79,18 +79,18 @@ include "conecta_mysql.inc";
 
                                     <?php
 
-                                        $sql= "SELECT * FROM especialidade";
+                                        $sql= "SELECT * FROM servicos WHERE tipo_servico = 'Clinico'";
                                         $res= mysqli_query($mysqli,$sql);
                                         $linhas= mysqli_num_rows($res);
 
                                         for ($i = 0; $i < $linhas; $i++){
-                                            $espec = mysqli_fetch_array ($res);
+                                            $servico = mysqli_fetch_array ($res);
 
                                             echo"
                                             <tr>
-                                            <td>".$espec['especialidade']."</td>
+                                            <td>".$servico['nome']."</td>
                                             <td>
-                                            <a href='agenda_espec.php?especialidade=".$espec["especialidade"]."' class='fas fa-calendar'></a>
+                                            <a href='agenda_espec.php?servico=".$servico["nome"]."' class='fas fa-calendar'></a>
                                             </td>";
                                             
                                         }

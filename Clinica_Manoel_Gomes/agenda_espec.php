@@ -66,8 +66,8 @@ $paciente = mysqli_fetch_array ($res);
 
     <div class="block">
     <div class="registration-form">
-                <form action="registra_horario.php" method="REQUEST">
-                  <input type="hidden" name="cod_paciente" value="<?php $paciente["cod_paciente"];?>">
+                <form action="registra_horario.php" method="POST">
+                  <input type="hidden" name="cod_paciente" value="<?php echo $paciente['cod_paciente']?>">
                     <div class="form-icon">
                         <span><i class="icon fas fa-hospital"></i></span>
                     </div>
@@ -79,7 +79,7 @@ $paciente = mysqli_fetch_array ($res);
                             <option value=''>Data e Horário</option>
                             <?php
 
-                            $var = $_REQUEST["especialidade"];
+                            $var = $_REQUEST["servico"];
 
                             $sql= "SELECT * FROM agendamento WHERE nome = '$var'";
                             $res= mysqli_query($mysqli,$sql);
@@ -88,12 +88,13 @@ $paciente = mysqli_fetch_array ($res);
                             for ($i = 0; $i < $linhas; $i++){
                                 $agendamento = mysqli_fetch_array ($res);
 
+                                echo"<input type ='hidden' name ='cod_agendamento' value =".$agendamento['cod_agendamento'].">"; 
                                 echo"
                                 <option value=".$agendamento['cod_agendamento'].">".$agendamento['dia'].' - '.$agendamento['horario']."</option>";
                                 
                             }
 
-                            ?>
+                           ?>
                         </select>
                     </div>
                     <div class="form-group">

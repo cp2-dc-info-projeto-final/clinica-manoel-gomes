@@ -1,7 +1,7 @@
 <?php
 include "conecta_mysql.inc";
 
-$nome = $_REQUEST["nome"]; 
+$nome = utf8_decode($_REQUEST["nome"]); 
 $data = $_REQUEST["data"]; 
 $hora = utf8_decode($_REQUEST["horario"]); 
 $crm = $_REQUEST["crm"]; 
