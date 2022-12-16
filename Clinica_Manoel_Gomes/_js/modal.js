@@ -60,3 +60,14 @@ function acao_servico(){
     let modal = document.querySelector('.modal_edita_espec')
     modal.style.display ='none'
   }
+
+  // Cadastrar Horário
+  function acao_horario(){
+    let modal = document.querySelector('.modal_horario')
+    modal.style.display ='block'
+  }
+
+  function fechar_horario(){
+    let modal = document.querySelector('.modal_horario')
+    modal.style.display ='none'
+  }
