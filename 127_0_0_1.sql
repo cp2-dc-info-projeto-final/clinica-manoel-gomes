@@ -25,6 +25,9 @@ DROP DATABASE IF EXISTS `bdsql`;
 CREATE DATABASE IF NOT EXISTS `bdsql` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `bdsql`;
 
+DROP  USER IF EXISTS ' admin ' @ ' localhost ' ;
+CREATE  USER ' admin ' @ ' localhost ' IDENTIFICADO POR ' 123 ' ;
+CONCEDA TODOS OS PRIVILÉGIOS NO bdsql. * TO ' admin ' @ ' localhost ' ;
 -- --------------------------------------------------------
 
 --
