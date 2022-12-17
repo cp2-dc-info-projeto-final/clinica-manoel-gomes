@@ -24,6 +24,10 @@ if ($cadastro == 'servico'){
     $sql .= "VALUES ('$nome','$desc', '$tipo_servico');";  
     mysqli_query($mysqli,$sql);
 
+    if (!mysqli_query($mysqli,$sql)){
+        echo mysqli_error($mysqli);
+    }
+
     header ('location: servicos.php');
 
 }

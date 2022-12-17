@@ -90,7 +90,7 @@ include "conecta_mysql.inc";
                                             <tr>
                                             <td>".$servico['nome']."</td>
                                             <td>
-                                            <a href='agenda_espec.php?servico=".$servico["nome"]."' class='fas fa-calendar'></a>
+                                            <a href='agenda_espec.php?servico=".$servico["cod_servico"]."' class='fas fa-calendar'></a>
                                             </td>";
                                             
                                         }

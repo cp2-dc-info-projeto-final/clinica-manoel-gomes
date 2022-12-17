@@ -81,17 +81,20 @@ $paciente = mysqli_fetch_array ($res);
 
                             $var = $_REQUEST["servico"];
 
-                            $sql= "SELECT * FROM agendamento WHERE nome = '$var'";
+                            $sql= "SELECT * FROM agendamento WHERE cod_servico = '$var'";
                             $res= mysqli_query($mysqli,$sql);
                             $linhas= mysqli_num_rows($res);
 
                             for ($i = 0; $i < $linhas; $i++){
                                 $agendamento = mysqli_fetch_array ($res);
 
-                                echo"<input type ='hidden' name ='cod_agendamento' value =".$agendamento['cod_agendamento'].">"; 
-                                echo"
-                                <option value=".$agendamento['cod_agendamento'].">".$agendamento['dia'].' - '.$agendamento['horario']."</option>";
-                                
+                              if(empty($agendamento['cod_paciente'])){
+
+                                  $_SESSION['cod_agendamento'] = $agendamento['cod_agendamento'];
+                                  echo"
+                                  <option value=".$agendamento['cod_agendamento'].">".$agendamento['dia'].' - '.$agendamento['horario']."</option>";
+
+                              }
                             }
 
                            ?>

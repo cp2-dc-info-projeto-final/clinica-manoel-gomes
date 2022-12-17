@@ -294,9 +294,12 @@ include "conecta_mysql.inc";
               for ($i = 0; $i < $linhas; $i++){
                   $servico = mysqli_fetch_array ($res);
 
+                  $_SESSION['servico_cod'] = $servico['cod_servico'];
+                  $_SESSION['servico_nome'] = $servico['nome'];
+
                   echo"
                   <option value=".$servico['nome'].">".$servico['nome']."</option>";
-                  
+
               }
 
               ?>
