@@ -24,7 +24,7 @@
 
 ## Diagrama de Casos de Uso
 
-<img src= "https://user-images.githubusercontent.com/89115632/195256794-6d7ce1fe-9814-432a-93bb-3d0c933afde5.png" width = 400px>
+<img src= "https://user-images.githubusercontent.com/89115632/208494955-b2e8b103-3ac9-4c20-90d4-7ba1ef53faff.png" width = 350px>
 
 ## Descrição dos Casos de Uso
 
