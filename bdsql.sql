@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Out-2022 às 05:02
+-- Generation Time: 19-Dez-2022 às 16:18
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -24,11 +24,6 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `bdsql` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `bdsql`;
 
-DROP USER IF EXISTS 'admin'@'localhost';
-CREATE USER 'admin'@'localhost' IDENTIFIED BY '123'; 
-GRANT ALL PRIVILEGES ON bdsql.* TO 'admin'@'localhost';
-
-
 -- --------------------------------------------------------
 
 --
@@ -36,15 +31,16 @@ GRANT ALL PRIVILEGES ON bdsql.* TO 'admin'@'localhost';
 --
 
 DROP TABLE IF EXISTS `administrador`;
-CREATE TABLE `administrador` (
-  `cod_admin` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `administrador` (
+  `cod_admin` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(30) NOT NULL,
   `username` varchar(20) NOT NULL,
   `telefone` varchar(15) NOT NULL,
   `data_nasc` varchar(10) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `senha` varchar(250) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `senha` varchar(250) NOT NULL,
+  PRIMARY KEY (`cod_admin`)
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `administrador`
@@ -53,8 +49,37 @@ CREATE TABLE `administrador` (
 INSERT INTO `administrador` (`cod_admin`, `nome`, `username`, `telefone`, `data_nasc`, `email`, `senha`) VALUES
 (1, 'Larissa Da Silva', 'admin2', '21965892431', '2004-10-07', 'ferreira.larissa@gmail.com', '$2y$10$2NDwnZtccW88KTMhZYpyKecCJ.Sq.cLosCRqZr.QaFcCLKiKkJMre'),
 (46, 'JoÃ£o Carvalho Santos', 'joao15', '(21) 99999-5555', '2022-10-05', 'silva.jao@gmail.com', '$2y$10$2ywUtYyOFheT8gdcbJmzx.ZCNl70NCcJYgNU6FFxjqbzKPCBIz4nO'),
-(47, 'Carlos da Cunha', 'carlos', '(21) 95555-4444', '1985-04-22', 'cunha.carlos@gmail.com', '$2y$10$EUp8XgaTwgtbTepSowQjveg2b6jArLiO6FEpnmh4JaDWs4Osda2pa'),
-(48, 'Manoel Gomes', '@mgomes', '(21) 97564-2413', '1969-12-02', 'gomes.manoel@gmail.com', '$2y$10$oRN2p46iVMNoq1W98gkl9OSEGHsArbBu.XcBfoHseJaCjSjG27Vsq');
+(49, 'Manoel Gomes', '@mgomes', '(21) 97564-2413', '1969-12-02', 'gomes.manoel@gmail.com', '$2y$10$8jO7hlbYa8nwUQjQqjkkl.DHEIxszEporDbfBfV32VXGg.6G2x8T2'),
+(51, 'Julia Ribeiro', '@ribeiroju', '(21) 95566-4433', '1996-06-24', 'ribeiro.julia@gmail.com', '$2y$10$hnfbT8yZ9hrya.GCc4aiX.D9HecwlJSHgynrfxx25LmtQimKLrJPC');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `agendamento`
+--
+
+DROP TABLE IF EXISTS `agendamento`;
+CREATE TABLE IF NOT EXISTS `agendamento` (
+  `cod_agendamento` int(11) NOT NULL AUTO_INCREMENT,
+  `cod_paciente` int(11) DEFAULT NULL,
+  `nome_paciente` varchar(40) DEFAULT NULL,
+  `servico` varchar(30) NOT NULL,
+  `nome_servico` varchar(50) NOT NULL,
+  `dia` varchar(20) NOT NULL,
+  `horario` varchar(10) NOT NULL,
+  `responsavel` varchar(50) NOT NULL,
+  `crm` varchar(20) NOT NULL,
+  `cod_servico` int(11) NOT NULL,
+  PRIMARY KEY (`cod_agendamento`)
+) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `agendamento`
+--
+
+INSERT INTO `agendamento` (`cod_agendamento`, `cod_paciente`, `nome_paciente`, `servico`, `nome_servico`, `dia`, `horario`, `responsavel`, `crm`, `cod_servico`) VALUES
+(59, 9, 'Pedro Moralles', 'Laboratorial', 'Hemograma', '2023-03-20', '15:20', 'Gustavo Machado', '000000-1', 18),
+(58, 9, 'Pedro Moralles', 'Clinico', 'Consulta cardiologista', '2023-01-19', '14:30', 'Pedro Moralles', '025655-1', 12);
 
 -- --------------------------------------------------------
 
@@ -63,10 +88,11 @@ INSERT INTO `administrador` (`cod_admin`, `nome`, `username`, `telefone`, `data_
 --
 
 DROP TABLE IF EXISTS `especialidade`;
-CREATE TABLE `especialidade` (
-  `cod_especialidade` int(11) NOT NULL,
-  `especialidade` varchar(30) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `especialidade` (
+  `cod_especialidade` int(11) NOT NULL AUTO_INCREMENT,
+  `especialidade` varchar(30) NOT NULL,
+  PRIMARY KEY (`cod_especialidade`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `especialidade`
@@ -87,16 +113,17 @@ INSERT INTO `especialidade` (`cod_especialidade`, `especialidade`) VALUES
 --
 
 DROP TABLE IF EXISTS `funcionario`;
-CREATE TABLE `funcionario` (
-  `cod_funcionario` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `funcionario` (
+  `cod_funcionario` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(30) NOT NULL,
   `crm` varchar(20) NOT NULL,
   `especialidade` varchar(30) NOT NULL,
   `data_nasc` varchar(30) NOT NULL,
   `telefone` varchar(20) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `senha` varchar(250) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `senha` varchar(250) NOT NULL,
+  PRIMARY KEY (`cod_funcionario`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `funcionario`
@@ -105,6 +132,7 @@ CREATE TABLE `funcionario` (
 INSERT INTO `funcionario` (`cod_funcionario`, `nome`, `crm`, `especialidade`, `data_nasc`, `telefone`, `email`, `senha`) VALUES
 (1, 'Pedro Moralles', '025655-1', 'Cardiologista', '2005-08-25', '(21) 96625-3177', 'pedro.moralles23@gmail.com', '$2y$10$G.DRM7WYihEdO.cazbsNueTBAQwTxVOCJrmLQJZlqtGyZJ0w2Knbm'),
 (2, 'ClÃ©cio C Santos', '111155-5', 'Cardiologista', '1992-08-01', '(21) 97845-5562', 'cleciocsantos@gmail.com', '$2y$10$UzJx3bR18UUvZmrN9.b1cOeVMMD9zeDoziImwZwRTvADNi78iykjq'),
+(5, 'Gustavo Machado', '000000-1', 'Clinico', '2022-12-29', '(21) 99999-9999', 'machadogusta@gmail.com', '$2y$10$OiqltoVYiiAITwD8oFWC9OShOuASGmGHmLHDxRMv4iWULg9T1fE9a'),
 (4, 'Marcos Monteiro', '000000-0', 'Urologista', '2022-10-04', '(21) 90000-0000', 'monteiro.marcos@gmail.com', '$2y$10$3oCjFruS.j9PcBr4mQ3HquwJ0jlRsHiFQQ0v7RbQE2fXEkkh7.iby');
 
 -- --------------------------------------------------------
@@ -114,15 +142,16 @@ INSERT INTO `funcionario` (`cod_funcionario`, `nome`, `crm`, `especialidade`, `d
 --
 
 DROP TABLE IF EXISTS `paciente`;
-CREATE TABLE `paciente` (
-  `cod_paciente` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `paciente` (
+  `cod_paciente` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(30) NOT NULL,
   `cpf` varchar(20) NOT NULL,
   `data_nasc` varchar(10) NOT NULL,
   `telefone` varchar(20) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `senha` varchar(250) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `senha` varchar(250) NOT NULL,
+  PRIMARY KEY (`cod_paciente`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `paciente`
@@ -131,7 +160,9 @@ CREATE TABLE `paciente` (
 INSERT INTO `paciente` (`cod_paciente`, `nome`, `cpf`, `data_nasc`, `telefone`, `email`, `senha`) VALUES
 (1, 'Fernanda Souza', '111.222.556-55', '1998-04-16', '(21) 98657-4561', 'souza.fernanda@gmail.com', '$2y$10$szKd2BnvIdH7Xu4gPEdnBuvKNv6yXik9eSeWr9YU7KzeIrrhMufxm'),
 (4, 'Leonardo Campos', '111.111.222-22', '2022-10-05', '(21) 98888-8888', 'leo.campos@gmail.com', '$2y$10$fwIApoD8p2sYtjE3diAE6Oz7.PUGKUI39HMJHZ/aktOvCsNyU2Kxi'),
-(5, 'Marcos Teixeira', '222.333.444-44', '2022-10-05', '(21) 96666-4444', 'teixeira.marcos@gmail.com', '$2y$10$rZ3jzRi9Bs/jKpZU4xIJAOBJpbTsEf/AzHvPcZADNPm8bIujrZSvW');
+(5, 'Marcos Teixeira', '222.333.444-44', '2022-10-05', '(21) 96666-4444', 'teixeira.marcos@gmail.com', '$2y$10$rZ3jzRi9Bs/jKpZU4xIJAOBJpbTsEf/AzHvPcZADNPm8bIujrZSvW'),
+(9, 'Pedro Moralles', '211.272.067-88', '2005-08-25', '(21) 96625-3177', 'pedrorodriguesmoralles@gmail.com', '$2y$10$fXVwmIy2XZHeFcj0AWbQOe/Qimgh9/0xRt73Cja9XYxmgLe97Xkra'),
+(10, 'LÃºcia Carvalho', '111.222.333-44', '1978-09-08', '(21) 91122-3344', 'carvalholu@hotmail.com', '$2y$10$TaTkKu40KdVLPdmIl58maOfDvfj0SZW4vfCUPx0kEP7YpDu4Zb5wq');
 
 -- --------------------------------------------------------
 
@@ -140,84 +171,26 @@ INSERT INTO `paciente` (`cod_paciente`, `nome`, `cpf`, `data_nasc`, `telefone`, 
 --
 
 DROP TABLE IF EXISTS `servicos`;
-CREATE TABLE `servicos` (
-  `cod_servico` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `servicos` (
+  `cod_servico` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(30) NOT NULL,
   `descricao` varchar(120) NOT NULL,
-  `tipo_servico` varchar(30) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `tipo_servico` varchar(30) NOT NULL,
+  PRIMARY KEY (`cod_servico`)
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `servicos`
 --
 
 INSERT INTO `servicos` (`cod_servico`, `nome`, `descricao`, `tipo_servico`) VALUES
-(3, 'Consulta pediÃ¡trica', '', 'Pediatrico'),
-(5, 'Hemograma', '', 'Laboratorial');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `administrador`
---
-ALTER TABLE `administrador`
-  ADD PRIMARY KEY (`cod_admin`);
-
---
--- Indexes for table `especialidade`
---
-ALTER TABLE `especialidade`
-  ADD PRIMARY KEY (`cod_especialidade`);
-
---
--- Indexes for table `funcionario`
---
-ALTER TABLE `funcionario`
-  ADD PRIMARY KEY (`cod_funcionario`);
-
---
--- Indexes for table `paciente`
---
-ALTER TABLE `paciente`
-  ADD PRIMARY KEY (`cod_paciente`);
-
---
--- Indexes for table `servicos`
---
-ALTER TABLE `servicos`
-  ADD PRIMARY KEY (`cod_servico`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `administrador`
---
-ALTER TABLE `administrador`
-  MODIFY `cod_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
---
--- AUTO_INCREMENT for table `especialidade`
---
-ALTER TABLE `especialidade`
-  MODIFY `cod_especialidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `funcionario`
---
-ALTER TABLE `funcionario`
-  MODIFY `cod_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `paciente`
---
-ALTER TABLE `paciente`
-  MODIFY `cod_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `servicos`
---
-ALTER TABLE `servicos`
-  MODIFY `cod_servico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
+(18, 'Hemograma', '', 'Laboratorial'),
+(16, 'Consulta otorrino', '', 'Clinico'),
+(12, 'Consulta cardiologista', '', 'Clinico'),
+(13, 'Consulta oftalmologista', '', 'Clinico'),
+(19, 'Consulta pediátrica', '', 'Pediatrico'),
+(21, 'Canal', '', 'Odontologico');
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
