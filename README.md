@@ -19,10 +19,6 @@ Projeto voltado para o desenvolvimento de um sistema de agendamento e gerenciame
 - [Casos de Uso](casos-de-uso.md)
 - [Apresentação](apresentacao.pdf)
 
-**Diagrama de Classes**
-
-![Diagrama de Classes](diagrama-exemplo.png)
-
 **Modelagem do Banco de Dados**
 
 ![diagrama-ER](https://github.com/cp2-dc-info-projeto-final/clinica-manoel-gomes/blob/5d43d94e831dc525bbef3478ef718acf2c39f4ab/diagrama-ER.png)
