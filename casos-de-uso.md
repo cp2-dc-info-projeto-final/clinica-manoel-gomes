@@ -9,9 +9,11 @@
  - [CDU 05](#CDU-05): Cadastro de Especialidade.
  - [CDU 06](#CDU-06): Cadastro de Serviços.
  - [CDU 07](#CDU-07): Disponibilização de Datas e Horários.
- - [CDU 08](#CDU-08): Agendamento de Consultas.
- - [CDU 09](#CDU-09): Visualizar Perfil.
- - [CDU 010](#CDU-010): Logout.
+ - [CDU 08](#CDU-08): Agendamento de Serviços.
+ - [CDU 09](#CDU-09): Cancelamento de Serviços.
+ - [CDU 09](#CDU-010): Excluir Agendamento.
+ - [CDU 010](#CDU-011): Visualizar Perfil.
+ - [CDU 011](#CDU-012): Logout.
 
 ## Lista dos Atores
 
@@ -289,13 +291,13 @@
 
 ### CDU 08
 
-*Agendamento de Consultas.*
+*Agendamento de Serviços.*
 
 **Atores:** Paciente.
 
 **Fluxo Principal**
 
-1. Paciente clica em "Agendar Consulta" na página inicial.
+1. Paciente clica em "Agendamento" na página inicial.
 2. Paciente é encaminhado para a página de agendamento.
 3. Paciente escolhe serviço e horário.
 4. Paciente finaliza agendamento.
@@ -308,7 +310,7 @@
 
 **Fluxo Alternativo A**
 
-1. Paciente clica em "Agendar Consulta" na página inicial.
+1. Paciente clica em "Agendamento" na página inicial.
 2. Paciente é encaminhado para a página de agendamento.
 3. Paciente escolhe especialidade, data e horário disponível.
 4. Paciente finaliza agendamento.
@@ -320,6 +322,74 @@
 ![image](https://user-images.githubusercontent.com/89115632/194385000-48144de7-982a-4739-9da7-2f9968acaede.png)
 
 ### CDU 09
+
+*Cancelamento de Serviços.*
+
+**Atores:** Paciente e Administrador.
+
+**Fluxo Principal**
+
+1. Usuária clica no ícone de cancelamento na área de perfil.
+2. Sistema analisa a informação.
+3. O cancelamento é concluído e as informações ficam disponíveis para agendamento novamente.
+
+### CDU 010
+
+*Excluir Agendamento.*
+
+**Atores:** Administrador.
+
+**Fluxo Principal**
+
+1. Administrador clica no ícone "deletar" na área de perfil.
+2. Sistema analisa a informação.
+3. Sistema apaga todos os dados do agendamento selecionado.
+
+### CDU 011
+
+*Recuperar Senha.*
+
+**Atores:** Paciente.
+
+**Fluxo Principal**
+
+1. Paciente clica em "Esqueceu a senha?" no formulário de login.
+2. Paciente é encaminhado para a página de confirmação do CPF.
+3. Paciente insere CPF.
+4. Sistema analisa a informação.
+5. Sistema envia código para o email do paciente.
+6. Paciente é encaminhado para a página de confirmação do código.
+7. Paciente insere o código de verificação.
+8. Sistema analisa a informação.
+9. Paciente é encaminhado para a página de recuperação de senha.
+10. Paciente insere nova senha.
+11. Sistema registra a nova senha.
+
+**Fluxo Alternativo A**
+
+1. Paciente clica em "Esqueceu a senha?" no formulário de login.
+2. Paciente é encaminhado para a página de confirmação do CPF.
+3. Paciente insere CPF.
+4. Sistema analisa a informação.
+5. CPF não cadastrado.
+6. Sistema exibe mensagem: "CPF inválido!".
+7. Paciente é encaminhado para a página de confirmação do CPF.
+
+**Fluxo Alternativo B**
+
+1. Paciente clica em "Esqueceu a senha?" no formulário de login.
+2. Paciente é encaminhado para a página de confirmação do CPF.
+3. Paciente insere CPF.
+4. Sistema analisa a informação.
+5. Sistema envia código para o email do paciente.
+6. Paciente é encaminhado para a página de confirmação do código.
+7. Paciente insere o código de verificação.
+8. Sistema analisa a informação.
+9. Código de verificação inválido.
+10. Sistema exibe mensagem: "Código inválido!".
+11. Paciente é encaminhado para a página de confirmação do código.
+
+### CDU 012
 
 *Vizualização de Perfil.*
 
@@ -362,7 +432,7 @@
 
 ![image](https://user-images.githubusercontent.com/89115632/194384489-0a9874b2-2e00-4346-b0c9-dee1b7aa405c.png)
 
-### CDU 010
+### CDU 013
 
 *Logout*
 
