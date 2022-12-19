@@ -17,7 +17,7 @@
     }
     else{
 
-        $_SESSION["cpf"] = $crm;
+        $_SESSION["crm"] = $crm;
         $_SESSION["senha"] = $funcionario["senha"];
 
         header("Location: index_funcionario.php");

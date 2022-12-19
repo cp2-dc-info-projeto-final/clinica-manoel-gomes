@@ -39,7 +39,7 @@ include "conecta_mysql.inc";
                 class="fas fa-user-secret me-2"></i>Administradores</a>
               <a href="clientes.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-users me-2"></i>Pacientes</a>
-              <a href="calendario.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
+              <a href="calendario_adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
                  class="fas fa-calendar me-2"></i>Calendário</a>
               <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                  class="fas fa-power-off me-2"></i>Sair</a>
@@ -283,7 +283,7 @@ include "conecta_mysql.inc";
             <h5 class="text-uppercase">Cadastrar Horário:</h5>
             <br>
             <div class="form-group">
-            <select name="nome" required="required" class="form item">
+            <select name="nome_agendamento" required="required" class="form item">
             <option value="">Nome do Serviço</option>
             <?php
 
@@ -294,12 +294,14 @@ include "conecta_mysql.inc";
               for ($i = 0; $i < $linhas; $i++){
                   $servico = mysqli_fetch_array ($res);
 
-                  $_SESSION['servico_cod'] = $servico['cod_servico'];
                   $_SESSION['servico_nome'] = $servico['nome'];
 
+                if(isset($servico['cod_servico'])){
                   echo"
-                  <option value=".$servico['nome'].">".$servico['nome']."</option>";
+                  <option value=".$servico['cod_servico'].">".utf8_decode($servico['nome'])."</option>";
 
+                  /*$_SESSION['servico_cod'] = $servico['cod_servico'];*/
+                }
               }
 
               ?>
@@ -312,7 +314,27 @@ include "conecta_mysql.inc";
                 <input type="time" required="required" class="form-control item" name="horario" placeholder="Horário">
             </div>
             <div class="form-group">
-                <input type="text" required="required" class="form-control item" name="crm" placeholder="CRM">
+              <select name="funcionario_agendamento" required="required" class="form item">
+              <option value="">Funcionário</option>
+              <?php
+
+                $sql= "SELECT * FROM funcionario";
+                $res= mysqli_query($mysqli,$sql);
+                $linhas= mysqli_num_rows($res);
+
+                for ($i = 0; $i < $linhas; $i++){
+                    $funcionario = mysqli_fetch_array ($res);
+
+                  if(isset($funcionario['cod_funcionario'])){
+                    echo"
+                    <option value=".$funcionario['cod_funcionario'].">".$funcionario['nome'].' - '.$funcionario['crm']."</option>";
+
+                    /*$_SESSION['servico_cod'] = $servico['cod_servico'];*/
+                  }
+                }
+
+                ?>
+              </select>
             </div>
             <div class="form-group">
               <select name="servico" required="required" class="form item">

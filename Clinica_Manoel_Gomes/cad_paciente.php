@@ -37,7 +37,7 @@ session_start()
               <a class="nav-link active" aria-current="page" href="index.php">Página Inicial</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Agendamento</a>
+              <a class="nav-link active" aria-current="page" href="sobre.php">SOBRE</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>

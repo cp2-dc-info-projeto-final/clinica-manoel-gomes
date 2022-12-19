@@ -1,19 +1,21 @@
-<?php 
+<?php
 include "autentica.php";
 include "conecta_mysql.inc";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="_css/perfil.css" />
-    <title>Perfil Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Perfil Paciente</title>
 </head>
 
 <body>
@@ -31,19 +33,19 @@ include "conecta_mysql.inc";
                  class="fas fa-stethoscope me-2"></i>Especialidades</a>
               <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-clipboard me-2"></i>Funcionários</a>
-              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                 class="fas fa-user-secret me-2"></i>Administradores</a>
               <a href="clientes.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-users me-2"></i>Pacientes</a>
-              <a href="calendario_adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
+              <a href="calendario_adm.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i 
                  class="fas fa-calendar me-2"></i>Calendário</a>
               <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                  class="fas fa-power-off me-2"></i>Sair</a>
             </div>
         </div>
-        <!-- /MENU -->
+        <!-- /#sidebar-wrapper -->
 
-        <!-- CONTEÚDO -->
+        <!-- Page Content -->
         <div id="page-content-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
@@ -69,22 +71,7 @@ include "conecta_mysql.inc";
                 </div>
             </nav>
 
-            <?php
-                if(isset($_SESSION['msg_senha'])){
-                  echo $_SESSION['msg_senha'];
-                  unset($_SESSION['msg_senha']);
-                }
-            ?>
-
-             <div class="buscar">
-                    <form action="buscar_adm.php" method="POST" class="buscar">
-                        <input name="nome" id="search-input" type="search" id="form1" class="form-control w-25" placeholder="Buscar">
-                        <input type="hidden" name="operacao" value="buscar">
-                        <button  type="submit" class="btn btn-primary mx-2">
-                    <i class="fas fa-search"></i>
-                   </form>
-            </div>
-
+    <!-- /#page-content-wrapper -->
 
             <div class="block">
                 <section class="intro">
@@ -97,43 +84,56 @@ include "conecta_mysql.inc";
                                 <table class="table mb-0  table-striped ">
                                     <thead class="color">
                                     <tr>
-                                        <th scope="col">NOME</th>
-                                        <th scope="col">USERNAME</th>
-                                        <th scope="col">DATA NASC</th>
-                                        <th scope="col">TELEFONE</th>
-                                        <th scope="col">EMAIL</th>
-                                        <th scope="col">  </th>
-                                        <th scope="col">  </th>
-                                        <th scope="col">  </th>
+                                        <th scope="col">DATA</th>
+                                        <th scope="col">HORÁRIO</th>
+                                        <th scope="col">SERVIÇO</th>
+                                        <th scope="col">RESPONSÁVEL</th>
+                                        <th scope="col">CRM</th>
+                                        <th scope="col">PACIENTE</th>
+                                        <th scope="col">DISPONÍVEL</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-
                                     <?php
 
-                                        $sql= "SELECT * FROM administrador WHERE username != '@mgomes'";
+                                        $sql= "SELECT * FROM agendamento";
                                         $res= mysqli_query($mysqli,$sql);
                                         $linhas= mysqli_num_rows($res);
 
                                         for ($i = 0; $i < $linhas; $i++){
-                                            $adm = mysqli_fetch_array ($res);
+                                            $agendamento = mysqli_fetch_array ($res);
 
-                                            echo"
-                                            <tr>
-                                            <td>".$adm['nome']."</td>
-                                            <td>".$adm['username']."</td>
-                                            <td>".$adm['data_nasc']."</td>
-                                            <td>".$adm['telefone']."</td>
-                                            <td>".$adm['email']."</td>
-                                            <td><a href='altera_adm.php?cod_admin=".$adm["cod_admin"]."'class='fas fa-edit'></a></td>
-                                            <td><a href='altera_senha_adm.php?cod_admin=".$adm["cod_admin"]."'class='fas fa-key'></a></td>
-                                            <td><a href='excluir_adm.php?cod_admin=".$adm["cod_admin"]."' class='fas fa-trash text-danger'></a></td>
-                                            </tr>";
+                                            echo"<tr>
+                                            <td>".$agendamento['dia']."</td>
+                                            <td>".$agendamento['horario']."</td>
+                                            <td>".utf8_decode($agendamento['nome_servico'])."</td>
+                                            <td>".$agendamento['responsavel']."</td>
+                                            <td>".$agendamento['crm']."</td>";
+
+                                            if(empty($agendamento['nome_paciente'])){
+
+                                                echo"<td align='center'>_____</td>";
+                                                
+                                            }
+                                            else{
+                                                echo "<td>".$agendamento['nome_paciente']."</td>";
+                                            }
+
+                                            if(empty($agendamento['cod_paciente'])){
+
+                                            echo"<td>SIM</td>";
+                                            
+                                            }
+                                            else{
+                                                echo "<td>NÃO</td>";
+                                            }
+                                            echo"<td><a href='excluir_agendamento.php?cod_agendamento=".$agendamento["cod_agendamento"]."' class='fas fa-trash text-danger'></a></td>
+                                            <td><a href='cancela_agendamento_adm.php?cod_agendamento=".$agendamento["cod_agendamento"]."' class='fas fa-calendar-times text-danger'></a></td></tr>";
                                             
                                         }
-
                                     ?>
-                                    
                                     </tbody>
                                 </table>
                                 </div>
@@ -146,9 +146,8 @@ include "conecta_mysql.inc";
                 </div>
 
 
-
-    <!-- /CONTEÚDO  -->
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>

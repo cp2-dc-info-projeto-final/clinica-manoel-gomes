@@ -3,11 +3,12 @@ include "autentica_paciente.php";
 include "conecta_mysql.inc";
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -73,7 +74,7 @@ include "conecta_mysql.inc";
                                     <thead class="color">
                                     <tr>
                                         <th scope="col">SERVIÇOS</th>
-                                        <th scope="col"></th>                                   
+                                        <th scope="col"></th>                                       
                                         
                                     </tr>
                                     </thead>
@@ -81,7 +82,7 @@ include "conecta_mysql.inc";
 
                                     <?php
 
-                                        $sql= "SELECT * FROM servicos WHERE tipo_servico = 'Clinico'";
+                                        $sql= "SELECT * FROM servicos WHERE tipo_servico = 'Laboratorial'";
                                         $res= mysqli_query($mysqli,$sql);
                                         $linhas= mysqli_num_rows($res);
 

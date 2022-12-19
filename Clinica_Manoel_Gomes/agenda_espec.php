@@ -46,9 +46,9 @@ $paciente = mysqli_fetch_array ($res);
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Agendamento</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="servico_clinico.php">Clínico</a></li>
-                <li><a class="dropdown-item" href="form_loginfuncionario.php">Odontológico</a></li>
-                <li><a class="dropdown-item" href="form_login.php">Pediátrico</a></li>
-                <li><a class="dropdown-item" href="form_login.php">Laboratorial</a></li>
+                <li><a class="dropdown-item" href="servico_odonto.php">Odontológico</a></li>
+                <li><a class="dropdown-item" href="servico_pediatrico.php">Pediátrico</a></li>
+                <li><a class="dropdown-item" href="servico_laboratorial.php">Laboratorial</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">

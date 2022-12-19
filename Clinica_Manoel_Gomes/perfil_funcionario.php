@@ -1,10 +1,10 @@
 <?php
-include "autentica_paciente.php";
+include "autentica_funcionario.php";
 include "conecta_mysql.inc";
 
-$sql = "SELECT * FROM paciente WHERE cpf = '$cpf';";
+$sql = "SELECT * FROM funcionario WHERE crm = '$crm';";
 $res= mysqli_query($mysqli,$sql);
-$paciente = mysqli_fetch_array ($res);
+$funcionario = mysqli_fetch_array ($res);
 
 ?>
 
@@ -31,11 +31,11 @@ $paciente = mysqli_fetch_array ($res);
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="fas fa-user me-2"></i>PERFIL</div>
             <div class="list-group list-group-flush my-3">
-              <a href="perfil_paciente.php" class="list-group-item list-group-item-action bg-transparent  second-text active"><i
+              <a href="#" class="list-group-item list-group-item-action bg-transparent  second-text active"><i
                  class="fas fa-user me-2"></i>Perfil</a>
-              <a href="calendario_paciente.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              <a href="calendario_funcionario.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-calendar me-2"></i>Calendário</a>
-              <a href="logout_paciente.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+              <a href="logout_funcionario.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                  class="fas fa-power-off me-2"></i>Sair</a>
             </div>
         </div>
@@ -61,7 +61,7 @@ $paciente = mysqli_fetch_array ($res);
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                          <a class="nav-link second-text fw-bold" href="index_paciente.php" id="navbarDropdown"
+                          <a class="nav-link second-text fw-bold" href="index_funcionario.php" id="navbarDropdown"
                           role="button"  aria-expanded="false">
                           <i class="fas fa-arrow-left me-2"></i>Voltar
                       </a>
@@ -81,10 +81,8 @@ $paciente = mysqli_fetch_array ($res);
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="_img/user.png" alt="Admin" class="" width="150">
                     <div class="mt-3">
-                      <h4><?php echo $paciente['nome'];?></h4>
-                      <p class="text-secondary mb-1">Paciente</p>
-                      <a href="altform_cliente.php" class="btn btn-primary">Editar Perfil</a>
-                      <button class="btn btn-outline-primary">Editar Senha</button>
+                      <h4><?php echo $funcionario['nome'];?></h4>
+                      <p class="text-secondary mb-1">Funcionário</p>
 
                       <style>
                         .btn-primary{
@@ -123,7 +121,7 @@ $paciente = mysqli_fetch_array ($res);
                       <h6 class="mb-0">Nome Completo</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <?php echo $paciente['nome'];?>
+                      <?php echo $funcionario['nome'];?>
                     </div>
                   </div>
                   <hr>
@@ -132,7 +130,7 @@ $paciente = mysqli_fetch_array ($res);
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                     <?php echo $paciente['email'];?>
+                     <?php echo $funcionario['email'];?>
                     </div>
                   </div>
                   <hr>
@@ -141,16 +139,16 @@ $paciente = mysqli_fetch_array ($res);
                       <h6 class="mb-0">Telefone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php echo $paciente['telefone'];?>
+                    <?php echo $funcionario['telefone'];?>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">CPF</h6>
+                      <h6 class="mb-0">CRM</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php echo $paciente['cpf'];?>
+                    <?php echo $funcionario['crm'];?>
                     </div>
                   </div>
                   <hr>
@@ -159,7 +157,7 @@ $paciente = mysqli_fetch_array ($res);
                       <h6 class="mb-0">Data de Nascimento</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                    <?php echo $paciente['data_nasc'];?>
+                    <?php echo $funcionario['data_nasc'];?>
                     </div>
                     <hr>
                   </div>

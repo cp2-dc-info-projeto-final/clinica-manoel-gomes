@@ -32,7 +32,7 @@ include "autentica.php";
               <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Agendamento</a>
+              <a class="nav-link active" aria-current="page" href="sobre.php">SOBRE</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="perfil.php">Perfil</a>
@@ -58,7 +58,6 @@ include "autentica.php";
           <div class="col-md-4 align-self-center mb-md-0 mb-4">
             <h1>Lorem ipsum dolor sit amet</h1>
              <h4 class="mb-4">Etiam blandit libero et velit tincidunt</h4>
-             <a href="cad_paciente.php" class="btn button-primay btn-primary button d-md-inline-block d-block mb-md-0 mb-2 mr-mb-2">Cadastre-se</a>
             
           </div>
               <div class="col-md-8 align-self-center text-center">
@@ -78,12 +77,9 @@ include "autentica.php";
           <img src="_img/Medical care-pana.svg" class="img-fluid" />
         </div>
         <div class="col-md-6 align-self-center mb-md-0 mb-4 order-md-2 order-1">
-          <h2 class="title">Curabitur enim nisl, faucibus quis porta</h1>
-          <h4 class="subtitle">Duis nisi ex, vehicula et diam eget, faucibus cursus ex. Mauris sit amet nisl id mi vehicula varius</h4>
-          <p>Maecenas consequat non urna id volutpat. Nullam tincidunt mauris quis lacus fringilla porttitor. 
-            Proin fermentum elit sed dapibus elementum. Aenean vitae elit sit amet tortor tempor blandit.
-            Nullam egestas vel urna in vestibulum. Praesent luctus pellentesque erat aliquet facilisis.</p>
-            <a href="#" class="btn btn-primary button button-primay">agende sua consulta</a>
+        <h2 class="title">Buscando a qualidade de vida que você merece	</h1>
+          <h4 class="subtitle">A saúde e a alegria promovem-se uma à outra</h4>
+          <p>Há 50 anos ofertando o melhor para a proteção da sua saúde e melhoria da qualidade de vida. Seguindo os princípios de nosso fundador, a Clínia Manoel Gomes prioriza o conforto de nossos pacientes, com os profissionais mais qualificados e ambientes equipados com a mais avançada tecnologia.</p>
         </div>
       </div>
     </div>
@@ -93,7 +89,7 @@ include "autentica.php";
     
   <!-- SERVIÇOS-->
 
-<div id="servicos" class="block">
+  <div id="servicos" class="block">
   <div class="container">
     <h2 class="title text-center">Nossos Serviços</h2>
     <h4 class="subtitle text-center mb-4">Duis nisi ex, vehicula et diam eget, faucibus cursus ex</h4>
@@ -103,8 +99,8 @@ include "autentica.php";
         <div class="img-container mb-3">
           <img src="_img/Medical prescription-bro.svg" class="img-fluid">
         </div>
-        <h5 class="text-uppercase">faucibus cursus</h5>
-        <p class="mb-0">Duis nisi ex, vehicula et diam eget, faucibus cursus ex erat aliquet facilisis</p>
+        <h5 class="text-uppercase">Clínico</h5>
+        <p class="mb-0">Melhores serviços de proteção e recuperação da saúde</p>
        </a>
       </div>
       
@@ -113,18 +109,18 @@ include "autentica.php";
         <div class="img-container mb-3">
           <img src="_img/Oral care-pana.svg" class="img-fluid">
         </div>
-        <h5 class="text-uppercase">faucibus cursus</h5>
-        <p class="mb-0">Duis nisi ex, vehicula et diam eget, faucibus cursus ex erat aliquet facilisis</p>
+        <h5 class="text-uppercase">Odontológico</h5>
+        <p class="mb-0">Os profissionais mais capacitados para cuidar da sua saúde bucal</p>
        </a>
       </div>
 
       <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
         <a href="#" class="destaque">
         <div class="img-container mb-3">
-          <img src="_img/Phisiotherapy-rafiki.svg" class="img-fluid">
+          <img src="_img/Pediatrician-pana.svg" class="img-fluid">
         </div>
-        <h5 class="text-uppercase">faucibus cursus</h5>
-        <p class="mb-0">Duis nisi ex, vehicula et diam eget, faucibus cursus ex erat aliquet facilisis</p>
+        <h5 class="text-uppercase">Pediátrico</h5>
+        <p class="mb-0">Profissionais especializados na saúde dos pequenos</p>
        </a>
       </div>
 
@@ -133,8 +129,8 @@ include "autentica.php";
         <div class="img-container mb-3">
           <img src="_img/Radiography-rafiki.svg" class="img-fluid">
         </div>
-        <h5 class="text-uppercase">faucibus cursus</h5>
-        <p class="mb-0">Duis nisi ex, vehicula et diam eget, faucibus cursus ex erat aliquet facilisis</p>
+        <h5 class="text-uppercase">Laboratorial</h5>
+        <p class="mb-0">Laboratórios aparelhados com tecnologia avançada</p>
        </a>
       </div>
 

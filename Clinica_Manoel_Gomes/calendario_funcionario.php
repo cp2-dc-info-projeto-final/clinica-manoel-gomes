@@ -1,6 +1,11 @@
 <?php
-include "autentica.php";
+include "autentica_funcionario.php";
 include "conecta_mysql.inc";
+
+$sql = "SELECT * FROM funcionario WHERE crm = '$crm';";
+$res= mysqli_query($mysqli,$sql);
+$funcionario = mysqli_fetch_array ($res);
+
 ?>
 
 <!DOCTYPE html>
@@ -15,31 +20,21 @@ include "conecta_mysql.inc";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="_css/perfil.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <title>Perfil Admin</title>
+    <title>Perfil Funcionario</title>
 </head>
 
 <body>
-    <div class="d-flex" id="wrapper">
+<div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-user-secret me-2"></i>Admin</div>
+                    class="fas fa-user me-2"></i>PERFIL</div>
             <div class="list-group list-group-flush my-3">
-              <a href="perfil.php" class="list-group-item list-group-item-action bg-transparent  second-text fw-bold"><i
-                 class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-              <a href="servicos.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                 class="fas fa-hospital me-2"></i>Serviços</a>
-              <a href="espec.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                 class="fas fa-stethoscope me-2"></i>Especialidades</a>
-              <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                 class="fas fa-clipboard me-2"></i>Funcionários</a>
-              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                class="fas fa-user-secret me-2"></i>Administradores</a>
-              <a href="clientes.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                 class="fas fa-users me-2"></i>Pacientes</a>
-              <a href="calendario.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
+              <a href="perfil_funcionario.php" class="list-group-item list-group-item-action bg-transparent  second-text fw-bold"><i
+                 class="fas fa-user me-2"></i>Perfil</a>
+              <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                  class="fas fa-calendar me-2"></i>Calendário</a>
-              <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+              <a href="logout_funcionario.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                  class="fas fa-power-off me-2"></i>Sair</a>
             </div>
         </div>
@@ -62,7 +57,7 @@ include "conecta_mysql.inc";
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link second-text fw-bold" href="perfil.php" id="navbarDropdown"
+                            <a class="nav-link second-text fw-bold" href="perfil_funcionario.php" id="navbarDropdown"
                                 role="button" aria-expanded="false">
                                 <i class="fas fa-arrow-left me-2"></i>Voltar
                             </a>
@@ -72,16 +67,6 @@ include "conecta_mysql.inc";
             </nav>
 
     <!-- /#page-content-wrapper -->
-
-    <div class="buscar">
-                    <form action="buscar_servico.php" method="POST" class="buscar">
-                        <input name="nome" id="search-input" type="search" id="form1" class="form-control w-25" placeholder="Buscar">
-                        <input type="hidden" name="operacao" value="buscar">
-                        <button  type="submit" class="btn btn-primary mx-2">
-                    <i class="fas fa-search"></i>
-                   </form>
-            </div>
-
 
             <div class="block">
                 <section class="intro">
@@ -94,37 +79,35 @@ include "conecta_mysql.inc";
                                 <table class="table mb-0  table-striped ">
                                     <thead class="color">
                                     <tr>
-                                        <th scope="col">NOME</th>
-                                        <th scope="col">DESCRIÇÃO</th>
-                                        <th scope="col">TIPO</th>
-                                        <th scope="col">  </th>
-                                        <th scope="col">  </th>
+                                        <th scope="col">DATA</th>
+                                        <th scope="col">HORÁRIO</th>
+                                        <th scope="col">SERVIÇO</th>
+                                        <th scope="col">PACIENTE</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-
                                     <?php
+                                        $crm = $funcionario["crm"];
 
-                                        $sql= "SELECT * FROM servicos";
+                                        $sql= "SELECT * FROM agendamento WHERE crm = '$crm'";
                                         $res= mysqli_query($mysqli,$sql);
                                         $linhas= mysqli_num_rows($res);
 
                                         for ($i = 0; $i < $linhas; $i++){
-                                            $servico = mysqli_fetch_array ($res);
+                                            $funcionario = mysqli_fetch_array ($res);
 
-                                            echo"
-                                            <tr>
-                                            <td>".utf8_decode($servico['nome'])."</td>
-                                            <td>".$servico['descricao']."</td>
-                                            <td>".$servico['tipo_servico']."</td>
-                                            <td><a href='altera_servico.php?cod_servico=".$servico["cod_servico"]."' class='fas fa-edit'></a></td>
-                                            <td><a href='excluir_servico.php?cod_servico=".$servico["cod_servico"]."' class='fas fa-trash text-danger'></a></td>
-                                            </tr>";
-                                            
+                                            if(isset($funcionario['cod_paciente'])){
+
+                                                echo"<tr>
+                                                <td>".$funcionario['dia']."</td>
+                                                <td>".$funcionario['horario']."</td>
+                                                <td>".utf8_decode($funcionario['nome_servico'])."</td>
+                                                <td>".$funcionario['nome_paciente']."
+                                                </td>
+                                                </tr>";
+                                            }
                                         }
-
                                     ?>
-                                    
                                     </tbody>
                                 </table>
                                 </div>
