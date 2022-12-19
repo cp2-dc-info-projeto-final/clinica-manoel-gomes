@@ -11,9 +11,10 @@
  - [CDU 07](#CDU-07): Disponibilização de Datas e Horários.
  - [CDU 08](#CDU-08): Agendamento de Serviços.
  - [CDU 09](#CDU-09): Cancelamento de Serviços.
- - [CDU 09](#CDU-010): Excluir Agendamento.
- - [CDU 010](#CDU-011): Visualizar Perfil.
- - [CDU 011](#CDU-012): Logout.
+ - [CDU 010](#CDU-010): Excluir Agendamento.
+ - [CDU 010](#CDU-011): Recuperar senha.
+ - [CDU 011](#CDU-012): Visualizar Perfil.
+ - [CDU 012](#CDU-013): Logout.
 
 ## Lista dos Atores
 
