@@ -4,14 +4,14 @@ include "conecta_mysql.inc";
 
 if(isset($_SESSION['cod_admin'])){
     $cod_admin = $_SESSION["cod_admin"];
-    $sql= "SELECT * FROM administrador WHERE cod_admin = $cod_admin;";
+    $sql= "SELECT * FROM administrador WHERE cod_admin = '$cod_admin'";
     $res= mysqli_query($mysqli,$sql);
     $adm = mysqli_fetch_array ($res);
 
 }
 else{
     $cod_admin = $_REQUEST ["cod_admin"];
-    $sql= "SELECT * FROM administrador WHERE cod_admin = $cod_admin;";
+    $sql= "SELECT * FROM administrador WHERE cod_admin = '$cod_admin'";
     $res= mysqli_query($mysqli,$sql);
     $adm = mysqli_fetch_array ($res);
 

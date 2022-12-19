@@ -19,8 +19,9 @@ if($resultado["cpf"] == $cpf){
     include "envia_email.php";
 
     $para = $resultado["email"];
-    $assunto = "teste";
-    $mensagem = "$code";
+    $assunto = "Recuperação de Senha";
+
+    $mensagem = "Seu código de verificação é: $code";
 
     envia_email($para, $assunto, $mensagem);
 

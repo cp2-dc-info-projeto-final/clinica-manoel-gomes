@@ -5,7 +5,7 @@
 
 
     $cod_paciente = $_GET["cod_paciente"];
-    $sql = "DELETE FROM paciente WHERE cod_paciente = $cod_paciente;"; 
+    $sql = "DELETE FROM paciente WHERE cod_paciente = '$cod_paciente'"; 
     mysqli_query($mysqli,$sql);
 
     header('location: clientes.php');

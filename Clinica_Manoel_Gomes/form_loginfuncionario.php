@@ -72,7 +72,7 @@ session_start();
                 ?>
                 <br>
                 <div class="form-group">
-                    <input type="text" required="required" class="form-control item" id="crm" name="crm" placeholder="CRM">
+                    <input type="text" required="required" class="form-control item" name="crm" placeholder="CRM">
                     <script type="text/javascript">$("#crm").mask("000000-0");</script>
                 </div>
                 <div class="form-group">

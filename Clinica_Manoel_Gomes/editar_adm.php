@@ -14,7 +14,7 @@ if($operacao == "editar"){
     $email = $_REQUEST["email"]; 
     $senha = $_REQUEST["senha"];
     
-    $sql = "SELECT * FROM administrador WHERE cod_admin != $cod_admin;";
+    $sql = "SELECT * FROM administrador WHERE cod_admin != '$cod_admin'";
     $res = mysqli_query($mysqli, $sql);
     $linhas = mysqli_num_rows($res);
 

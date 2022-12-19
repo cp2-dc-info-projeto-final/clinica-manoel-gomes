@@ -13,7 +13,7 @@ if ($cad_adm == 'adm'){
     $email = $_REQUEST["email"]; 
     $senha = $_REQUEST["senha"];
 
-    /*$sql = "SELECT * FROM administrador;";
+    $sql = "SELECT * FROM administrador";
     $res = mysqli_query($mysqli, $sql);
     $linhas = mysqli_num_rows($res);
 
@@ -73,7 +73,7 @@ if ($cad_adm == 'adm'){
             exit;
         }
         
-    }*/
+    }
 
     $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
 

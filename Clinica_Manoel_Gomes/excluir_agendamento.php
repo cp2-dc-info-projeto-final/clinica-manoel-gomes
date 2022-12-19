@@ -5,7 +5,7 @@
 
 
     $cod_agendamento = $_REQUEST["cod_agendamento"];
-    $sql = "DELETE FROM agendamento WHERE cod_agendamento = $cod_agendamento;"; 
+    $sql = "DELETE FROM agendamento WHERE cod_agendamento = '$cod_agendamento'"; 
     mysqli_query($mysqli,$sql);
 
     header('location: calendario_adm.php');

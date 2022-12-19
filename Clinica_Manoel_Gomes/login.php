@@ -6,7 +6,7 @@
     $senha = $_POST["senha"];
 
     include "conecta_mysql.inc";
-    $sql = "SELECT * FROM administrador WHERE username = '$username';";
+    $sql = "SELECT * FROM administrador WHERE username = '$username'";
     $res = mysqli_query($mysqli, $sql);
 
     $adm = mysqli_fetch_array($res);

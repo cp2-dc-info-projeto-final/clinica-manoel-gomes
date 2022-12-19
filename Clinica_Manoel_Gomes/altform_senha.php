@@ -1,24 +1,4 @@
-<?php 
-include "autentica.php";
-include "conecta_mysql.inc";
-
-if(isset($_SESSION['cod_senha_func'])){
-    $cod_funcionario = $_SESSION["cod_senha_func"];
-    $sql= "SELECT * FROM funcionario WHERE cod_funcionario = '$cod_funcionario'";
-    $res= mysqli_query($mysqli,$sql);
-    $funcionario = mysqli_fetch_array ($res);
-
-}
-else{
-    $cod_funcionario = $_REQUEST ["cod_funcionario"];
-    $sql= "SELECT * FROM funcionario WHERE cod_funcionario = '$cod_funcionario'";
-    $res= mysqli_query($mysqli,$sql);
-    $funcionario = mysqli_fetch_array ($res);
-
-}
-
-?>
-
+<?php include "autentica_paciente.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,34 +17,27 @@ else{
 </head>
 
 <body>
-    <div class="d-flex" id="wrapper">
-        <!-- MENU -->
+<div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-user-secret me-2"></i>Admin</div>
+                    class="fas fa-user me-2"></i>PERFIL</div>
             <div class="list-group list-group-flush my-3">
-              <a href="perfil.php" class="list-group-item list-group-item-action bg-transparent  second-text fw-bold"><i
-                 class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-              <a href="servicos.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                 class="fas fa-hospital me-2"></i>Serviços</a>
-              <a href="espec.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                 class="fas fa-stethoscope me-2"></i>Especialidades</a>
-              <a href="funcionarios.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                 class="fas fa-clipboard me-2"></i>Funcionários</a>
-              <a href="adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                class="fas fa-user-secret me-2"></i>Administradores</a>
-              <a href="clientes.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                 class="fas fa-users me-2"></i>Pacientes</a>
-              <a href="calendario.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
+              <a href="perfil_paciente.php" class="list-group-item list-group-item-action bg-transparent  second-text active"><i
+                 class="fas fa-user me-2"></i>Perfil</a>
+              <a href="calendario_paciente.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-calendar me-2"></i>Calendário</a>
-              <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+              <a href="logout_paciente.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                  class="fas fa-power-off me-2"></i>Sair</a>
             </div>
         </div>
-        <!-- /MENU -->
+        <!-- /#sidebar-wrapper -->
 
-        <!-- CONTEÚDO -->
-        <div id="page-content-wrapper">
+        <!-- Page Content -->
+       
+        
+
+        <div id="page-content-wrapper"> 
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
@@ -80,34 +53,32 @@ else{
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link second-text fw-bold" href="funcionarios.php" id="navbarDropdown"
-                                role="button" aria-expanded="false">
-                                <i class="fas fa-arrow-left me-2"></i>Voltar
-                            </a>
+                          <a class="nav-link second-text fw-bold" href="perfil_paciente.php" id="navbarDropdown"
+                          role="button"  aria-expanded="false">
+                          <i class="fas fa-arrow-left me-2"></i>Voltar
+                      </a>
                         </li>
                     </ul>
                 </div>
             </nav>
-
-            <?php
-              if(isset($_SESSION['msg_senha'])){
-                  echo $_SESSION['msg_senha'];
-                  unset($_SESSION['msg_senha']);
-                }
-            ?> 
-             
+            
             <div id="cad_cliente" class="block">
          <div class="container">
 
           <div class="registration-form">
-            <form action="editar_senha_func.php" method="POST">
+            <form action="editar_senha_cliente.php" method="POST">
                 <input type="hidden" name="operacao" value="editar_senha">
-                <input type="hidden" name="cod_funcionario" value="<?php echo $cod_funcionario?>">
                 <div class="form-icon">
-                    <span><i class="icon far fa-hospital" align-self-center ></i></span>
+                    <span><i class="fas fa-key" align-self-center ></i></span>
                 </div>
                 
-                <h5 class="text-uppercase">Editar Funcionário:</h5>
+                <h5 class="text-uppercase">Editar Senha:</h5>
+                <?php
+                 if(isset($_SESSION['msg_senha'])){
+                   echo $_SESSION['msg_senha'];
+                   unset($_SESSION['msg_senha']);
+                  }
+                ?> 
                 <br>
                 <div class="form-group">
                     <input type="password" required="required" class="form-control item" name="senha_atual" placeholder="Digite a senha atual">

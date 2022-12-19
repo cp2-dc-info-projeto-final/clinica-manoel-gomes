@@ -4,14 +4,14 @@ include "conecta_mysql.inc";
 
 if(isset($_SESSION['cod_especialidade'])){
     $cod_espec = $_SESSION["cod_especialidade"];
-    $sql= "SELECT * FROM especialidade WHERE cod_especialidade = $cod_espec;";
+    $sql= "SELECT * FROM especialidade WHERE cod_especialidade = '$cod_espec'";
     $res= mysqli_query($mysqli,$sql);
     $espec = mysqli_fetch_array ($res);
 
 }
 else{
     $cod_espec = $_REQUEST["cod_especialidade"];
-    $sql= "SELECT * FROM especialidade WHERE cod_especialidade = $cod_espec;";
+    $sql= "SELECT * FROM especialidade WHERE cod_especialidade = '$cod_espec'";
     $res= mysqli_query($mysqli,$sql);
     $espec = mysqli_fetch_array ($res);
 

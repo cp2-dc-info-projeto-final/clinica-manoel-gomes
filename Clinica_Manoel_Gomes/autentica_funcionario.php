@@ -13,7 +13,7 @@
     }
     else{
         include "conecta_mysql.inc";
-        $sql = "SELECT * FROM funcionario WHERE crm = '$crm';";
+        $sql = "SELECT * FROM funcionario WHERE crm = '$crm'";
         $res = mysqli_query($mysqli, $sql);
 
         if(mysqli_num_rows($res) != 1){

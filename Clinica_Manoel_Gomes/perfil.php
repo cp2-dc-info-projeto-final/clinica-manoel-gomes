@@ -136,8 +136,10 @@ include "conecta_mysql.inc";
               </div>
             </div>
           </div>
+
     <!-- /#page-content-wrapper -->
     </div>
+
 
     <div class="modal modal_servico">
       <div class="registration-form">
@@ -207,6 +209,15 @@ include "conecta_mysql.inc";
                   }
 
                 ?>
+              </select>
+            </div>
+            <div class="form-group">
+              <select name="servico" required="required" class="form item">
+              <option value=''>Tipo de Serviço</option>
+              <option value="Laboratorial">Laboratorial</option>
+              <option value="Odontologico">Odontológico</option>
+              <option value="Clinico">Clínico</option>
+              <option value="Pediatrico">Pediátrico</option>
               </select>
             </div>
             <div class="form-group">
@@ -300,7 +311,6 @@ include "conecta_mysql.inc";
                   echo"
                   <option value=".$servico['cod_servico'].">".utf8_decode($servico['nome'])."</option>";
 
-                  /*$_SESSION['servico_cod'] = $servico['cod_servico'];*/
                 }
               }
 
@@ -327,9 +337,8 @@ include "conecta_mysql.inc";
 
                   if(isset($funcionario['cod_funcionario'])){
                     echo"
-                    <option value=".$funcionario['cod_funcionario'].">".$funcionario['nome'].' - '.$funcionario['crm']."</option>";
+                    <option value=".$funcionario['cod_funcionario'].">".$funcionario['nome'].' - '.$funcionario['crm'].' - '.$funcionario['tipo_servico']."</option>";
 
-                    /*$_SESSION['servico_cod'] = $servico['cod_servico'];*/
                   }
                 }
 

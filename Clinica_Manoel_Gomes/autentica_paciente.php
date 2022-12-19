@@ -13,7 +13,7 @@
     }
     else{
         include "conecta_mysql.inc";
-        $sql = "SELECT * FROM paciente WHERE cpf = '$cpf';";
+        $sql = "SELECT * FROM paciente WHERE cpf = '$cpf'";
         $res = mysqli_query($mysqli, $sql);
 
         if(mysqli_num_rows($res) != 1){

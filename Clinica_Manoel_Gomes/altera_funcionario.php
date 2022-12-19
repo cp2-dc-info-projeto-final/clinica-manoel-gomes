@@ -4,14 +4,14 @@ include "conecta_mysql.inc";
 
 if(isset($_SESSION['cod_funcionario'])){
     $cod_funcionario = $_SESSION["cod_funcionario"];
-    $sql= "SELECT * FROM funcionario WHERE cod_funcionario = $cod_funcionario;";
+    $sql= "SELECT * FROM funcionario WHERE cod_funcionario = '$cod_funcionario'";
     $res= mysqli_query($mysqli,$sql);
     $funcionario = mysqli_fetch_array ($res);
 
 }
 else{
     $cod_funcionario = $_REQUEST ["cod_funcionario"];
-    $sql= "SELECT * FROM funcionario WHERE cod_funcionario = $cod_funcionario;";
+    $sql= "SELECT * FROM funcionario WHERE cod_funcionario = '$cod_funcionario'";
     $res= mysqli_query($mysqli,$sql);
     $funcionario = mysqli_fetch_array ($res);
 
@@ -135,6 +135,17 @@ else{
                         }
 
                     ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="servico" required="required" class="form item" id="tipo_servico">
+                    
+                    <option value="<?php echo $funcionario['tipo_servico']?>"><?php echo $funcionario['tipo_servico']?></option>
+                    <option value="Laboratorial">Laboratorial</option>
+                    <option value="Odontologico">Odontológico</option>
+                    <option value="Clinico">Clínico</option>
+                    <option value="Pediatrico">Pediátrico</option>
+
                     </select>
                 </div>
                 <div class="form-group">

@@ -70,6 +70,12 @@ session_start();
                         unset($_SESSION['msg_login_paciente']);
                     }
                 ?>
+                 <?php
+                 if(isset($_SESSION['msg_senha'])){
+                   echo $_SESSION['msg_senha'];
+                   unset($_SESSION['msg_senha']);
+                  }
+                ?> 
                 <br>
                 <div class="form-group">
                     <input type="texts" required="required" class="form-control item" id="cpf" name="cpf" placeholder="CPF" maxlength="15">

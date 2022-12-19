@@ -8,7 +8,7 @@ if ($cad_espec == 'cad_espec'){
 
     $espec = $_REQUEST["especialidade"];
 
-    $sql = "SELECT * FROM especialidade WHERE especialidade = '$espec';";
+    $sql = "SELECT * FROM especialidade WHERE especialidade = '$espec'";
         $res = mysqli_query($mysqli, $sql);
 
         if(mysqli_num_rows($res) == 1){

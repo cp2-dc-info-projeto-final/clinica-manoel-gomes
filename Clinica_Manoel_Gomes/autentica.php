@@ -13,7 +13,7 @@
     }
     else{
         include "conecta_mysql.inc";
-        $sql = "SELECT * FROM administrador WHERE username = '$username';";
+        $sql = "SELECT * FROM administrador WHERE username = '$username'";
         $res = mysqli_query($mysqli, $sql);
 
         if(mysqli_num_rows($res) != 1){

@@ -2,7 +2,7 @@
 include "autentica_funcionario.php";
 include "conecta_mysql.inc";
 
-$sql = "SELECT * FROM funcionario WHERE crm = '$crm';";
+$sql = "SELECT * FROM funcionario WHERE crm = '$crm'";
 $res= mysqli_query($mysqli,$sql);
 $funcionario = mysqli_fetch_array ($res);
 

@@ -2,7 +2,7 @@
 include "autentica_paciente.php";
 include "conecta_mysql.inc";
 
-$sql = "SELECT * FROM paciente WHERE cpf = '$cpf';";
+$sql = "SELECT * FROM paciente WHERE cpf = '$cpf'";
 $res= mysqli_query($mysqli,$sql);
 $paciente = mysqli_fetch_array ($res);
 
@@ -69,7 +69,13 @@ $paciente = mysqli_fetch_array ($res);
                     </ul>
                 </div>
             </nav>
-            
+
+            <?php
+              if(isset($_SESSION['msg_senha'])){
+                  echo $_SESSION['msg_senha'];
+                  unset($_SESSION['msg_senha']);
+                }
+            ?> 
 
 <div class="container">
     <div class="main-body">
@@ -84,8 +90,7 @@ $paciente = mysqli_fetch_array ($res);
                       <h4><?php echo $paciente['nome'];?></h4>
                       <p class="text-secondary mb-1">Paciente</p>
                       <a href="altform_cliente.php" class="btn btn-primary">Editar Perfil</a>
-                      <button class="btn btn-outline-primary">Editar Senha</button>
-
+                      <a href="altform_senha.php" class="btn btn-outline-primary">Editar Senha</a>
                       <style>
                         .btn-primary{
                           background-color:#216294;

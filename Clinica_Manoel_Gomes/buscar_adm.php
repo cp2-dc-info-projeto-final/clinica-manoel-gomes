@@ -110,7 +110,7 @@ include "conecta_mysql.inc";
 
                                     if($operacao== "buscar"){
                                         $nome = $_POST["nome"];
-                                        $sql= "SELECT * FROM administrador WHERE nome like '%$nome%';";
+                                        $sql= "SELECT * FROM administrador WHERE nome like '%$nome%'";
                                         $res= mysqli_query($mysqli,$sql);
                                         $linhas= mysqli_num_rows($res);
 

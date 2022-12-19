@@ -2,7 +2,7 @@
 include "autentica_paciente.php";
 include "conecta_mysql.inc";
 
-$sql = "SELECT * FROM paciente WHERE cpf = '$cpf';";
+$sql = "SELECT * FROM paciente WHERE cpf = '$cpf'";
 $res= mysqli_query($mysqli,$sql);
 $paciente = mysqli_fetch_array ($res);
 ?>
@@ -90,7 +90,7 @@ $paciente = mysqli_fetch_array ($res);
 
                               if(empty($agendamento['cod_paciente'])){
 
-                                  $_SESSION['cod_agendamento'] = $agendamento['cod_agendamento'];
+                                  
                                   echo"
                                   <option value=".$agendamento['cod_agendamento'].">".$agendamento['dia'].' - '.$agendamento['horario']."</option>";
 

@@ -35,7 +35,7 @@ include "conecta_mysql.inc";
                 class="fas fa-user-secret me-2"></i>Administradores</a>
               <a href="clientes.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                  class="fas fa-users me-2"></i>Pacientes</a>
-              <a href="calendario.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
+              <a href="calendario_adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
                  class="fas fa-calendar me-2"></i>Calendário</a>
               <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                  class="fas fa-power-off me-2"></i>Sair</a>
@@ -100,6 +100,7 @@ include "conecta_mysql.inc";
                                         <th scope="col">NOME</th>
                                         <th scope="col">CRM</th>
                                         <th scope="col">ESPECIALIDADE</th>
+                                        <th scope="col">TIPO SERVIÇO</th>
                                         <th scope="col">DATA NASC</th>
                                         <th scope="col">TELEFONE</th>
                                         <th scope="col">EMAIL</th>
@@ -124,6 +125,7 @@ include "conecta_mysql.inc";
                                             <td>".$funcionario['nome']."</td>
                                             <td>".$funcionario['crm']."</td>
                                             <td>".$funcionario['especialidade']."</td>
+                                            <td>".$funcionario['tipo_servico']."</td>
                                             <td>".$funcionario['data_nasc']."</td>
                                             <td>".$funcionario['telefone']."</td>
                                             <td>".$funcionario['email']."</td>

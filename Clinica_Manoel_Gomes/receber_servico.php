@@ -10,7 +10,7 @@ if ($cadastro == 'servico'){
     $desc = $_REQUEST["descricao"]; 
     $tipo_servico = $_REQUEST["tipo_servico"];
 
-    $sql = "SELECT * FROM servicos WHERE nome = '$nome';";
+    $sql = "SELECT * FROM servicos WHERE nome = '$nome'";
         $res = mysqli_query($mysqli, $sql);
 
         if(mysqli_num_rows($res) == 1){
@@ -19,7 +19,6 @@ if ($cadastro == 'servico'){
             exit;
         }
     
-   
     $sql = "INSERT INTO servicos (nome, descricao, tipo_servico)";
     $sql .= "VALUES ('$nome','$desc', '$tipo_servico');";  
     mysqli_query($mysqli,$sql);

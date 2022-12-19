@@ -10,7 +10,7 @@ if($operacao == "editar"){
     $cod_espec = $_REQUEST["cod_especialidade"];
     $espec = $_REQUEST["especialidade"]; 
     
-    $sql = "SELECT * FROM especialidade WHERE cod_especialidade != $cod_espec;";
+    $sql = "SELECT * FROM especialidade WHERE cod_especialidade != '$cod_espec'";
     $res = mysqli_query($mysqli, $sql);
     $linhas = mysqli_num_rows($res);
 

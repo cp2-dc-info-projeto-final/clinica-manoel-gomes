@@ -4,17 +4,16 @@ include "conecta_mysql.inc";
 
 if(isset($_SESSION['cod_servico'])){
     $cod_servico = $_SESSION["cod_servico"];
-    $sql= "SELECT * FROM servicos WHERE cod_servico = $cod_servico;";
+    $sql= "SELECT * FROM servicos WHERE cod_servico = '$cod_servico'";
     $res= mysqli_query($mysqli,$sql);
     $servico = mysqli_fetch_array ($res);
 
 }
 elseif(empty($_SESSION['cod_servico'])){
     $cod_servico = $_REQUEST ["cod_servico"];
-    $sql= "SELECT * FROM servicos WHERE cod_servico = $cod_servico;";
+    $sql= "SELECT * FROM servicos WHERE cod_servico = '$cod_servico'";
     $res= mysqli_query($mysqli,$sql);
     $servico = mysqli_fetch_array ($res);
-
 }
 
 ?>

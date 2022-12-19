@@ -5,7 +5,7 @@
 
 
     $cod_espec = $_REQUEST["cod_especialidade"];
-    $sql = "DELETE FROM especialidade WHERE cod_especialidade = $cod_espec;"; 
+    $sql = "DELETE FROM especialidade WHERE cod_especialidade = '$cod_espec'"; 
     mysqli_query($mysqli,$sql);
 
     header('location: espec.php');

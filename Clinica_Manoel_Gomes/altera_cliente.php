@@ -4,14 +4,14 @@ include "conecta_mysql.inc";
 
 if(isset($_SESSION['cod_paciente'])){
     $cod_paciente = $_SESSION["cod_paciente"];
-    $sql= "SELECT * FROM paciente WHERE cod_paciente = $cod_paciente;";
+    $sql= "SELECT * FROM paciente WHERE cod_paciente = '$cod_paciente'";
     $res= mysqli_query($mysqli,$sql);
     $paciente = mysqli_fetch_array ($res);
 
 }
 else{
     $cod_paciente = $_REQUEST["cod_paciente"];
-    $sql= "SELECT * FROM paciente WHERE cod_paciente = $cod_paciente;";
+    $sql= "SELECT * FROM paciente WHERE cod_paciente = '$cod_paciente'";
     $res= mysqli_query($mysqli,$sql);
     $paciente = mysqli_fetch_array ($res);
 

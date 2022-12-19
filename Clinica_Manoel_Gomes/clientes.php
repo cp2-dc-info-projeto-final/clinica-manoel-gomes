@@ -35,7 +35,7 @@ include "conecta_mysql.inc";
                 class="fas fa-user-secret me-2"></i>Administradores</a>
               <a href="clientes.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                  class="fas fa-users me-2"></i>Pacientes</a>
-              <a href="calendario.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
+              <a href="calendario_adm.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i 
                  class="fas fa-calendar me-2"></i>Calendário</a>
               <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                  class="fas fa-power-off me-2"></i>Sair</a>
@@ -96,7 +96,6 @@ include "conecta_mysql.inc";
                                         <th scope="col">DATA NASC</th>
                                         <th scope="col">EMAIL</th>
                                         <th scope="col">  </th>
-                                        <th scope="col">  </th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -119,7 +118,6 @@ include "conecta_mysql.inc";
                                             <td>".$paciente['telefone']."</td>
                                             <td>".$paciente['data_nasc']."</td>
                                             <td>".$paciente['email']."</td>
-                                            <td><a href='altera_cliente.php?cod_paciente=".$paciente["cod_paciente"]."' class='fas fa-edit'></a></td>
                                             <td><a href='excluir_paciente.php?cod_paciente=".$paciente["cod_paciente"]."' class='fas fa-trash text-danger'></a></td>
                                             </tr>";
                                             

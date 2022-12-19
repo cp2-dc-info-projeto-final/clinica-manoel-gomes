@@ -32,9 +32,6 @@ include "autentica.php";
               <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="sobre.php">SOBRE</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="perfil.php">Perfil</a>
             </li>
             </ul>

@@ -15,7 +15,7 @@ if ($cadastro == 'paciente'){
     $email = $_REQUEST["email"]; 
     $senha = $_REQUEST["senha"];
     
-    $sql = "SELECT * FROM paciente;";
+    $sql = "SELECT * FROM paciente";
     $res = mysqli_query($mysqli, $sql);
     $linhas = mysqli_num_rows($res);
 
@@ -79,7 +79,7 @@ if ($cadastro == 'paciente'){
 
     $para = $email;
     $assunto = "Boas Vindas";
-    $mensagem = "Olá $nome, seja bem vindo(a)!";
+    $mensagem = "Olá $nome, seja bem vindo(a) a Clínica Manoel Gomes!";
 
     envia_email($para, $assunto, $mensagem);
 
@@ -89,8 +89,9 @@ if ($cadastro == 'paciente'){
     $sql = "INSERT INTO paciente (nome, cpf, data_nasc, telefone, email, senha)";
     $sql .= "VALUES ('$nome','$cpf','$data_nasc','$telefone','$email','$senha_cript');";  
     mysqli_query($mysqli,$sql);
-
-    header ('location: index.php');
+    
+    $_SESSION['msg_login_paciente'] = "<div class='alert alert-success' role='alert'>Cadastro realizado com sucesso! Faça login.</div>";
+    header ('location: form_loginpaciente.php');
 
 }
 

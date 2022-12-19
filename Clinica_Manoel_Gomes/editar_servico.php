@@ -12,7 +12,7 @@ if($operacao == "editar"){
     $descricao = $_REQUEST["descricao"];
     $tipo_servico = $_REQUEST["tipo_servico"];
     
-    $sql = "SELECT * FROM servicos WHERE cod_servico != $cod_servico;";
+    $sql = "SELECT * FROM servicos WHERE cod_servico != '$cod_servico'";
     $res = mysqli_query($mysqli, $sql);
     $linhas = mysqli_num_rows($res);
 

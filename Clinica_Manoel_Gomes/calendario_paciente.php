@@ -2,7 +2,7 @@
 include "autentica_paciente.php";
 include "conecta_mysql.inc";
 
-$sql = "SELECT * FROM paciente WHERE cpf = '$cpf';";
+$sql = "SELECT * FROM paciente WHERE cpf = '$cpf'";
 $res= mysqli_query($mysqli,$sql);
 $paciente = mysqli_fetch_array ($res);
 
@@ -20,7 +20,7 @@ $paciente = mysqli_fetch_array ($res);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="_css/perfil.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <title>Perfil Paciente</title>
+    <title>Calendário</title>
 </head>
 
 <body>

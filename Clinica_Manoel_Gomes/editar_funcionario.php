@@ -8,14 +8,15 @@ $operacao = $_REQUEST['operacao'];
 if($operacao == "editar"){
 
     $cod_funcionario = $_REQUEST["cod_funcionario"];
-    $nome = $_REQUEST["nome"]; 
+    $nome = $_REQUEST["nome"];
+    $servico = $_REQUEST["servico"]; 
     $crm = $_REQUEST["crm"];
     $espec = $_REQUEST["especialidade"];
     $data_nasc = $_REQUEST["data_nasc"]; 
     $telefone = $_REQUEST["telefone"]; 
     $email = $_REQUEST["email"]; 
     
-    $sql = "SELECT * FROM funcionario WHERE cod_funcionario != $cod_funcionario;";
+    $sql = "SELECT * FROM funcionario WHERE cod_funcionario != '$cod_funcionario'";
     $res = mysqli_query($mysqli, $sql);
     $linhas = mysqli_num_rows($res);
 
@@ -97,8 +98,8 @@ if($operacao == "editar"){
         }
         else{
 
-            $sql = "UPDATE funcionario SET nome = '$nome', crm = '$crm', especialidade = '$espec',  data_nasc = '$data_nasc', telefone = '$telefone', email = '$email'";
-            $sql .= "WHERE cod_funcionario = $cod_funcionario;";
+            $sql = "UPDATE funcionario SET nome = '$nome', crm = '$crm', tipo_servico ='$servico', especialidade = '$espec',  data_nasc = '$data_nasc', telefone = '$telefone', email = '$email'";
+            $sql .= "WHERE cod_funcionario = '$cod_funcionario'";
             mysqli_query($mysqli,$sql);
         
             session_destroy('cod_funcionario');

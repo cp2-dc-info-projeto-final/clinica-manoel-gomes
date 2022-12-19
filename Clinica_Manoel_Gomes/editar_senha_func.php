@@ -10,7 +10,7 @@ if($operacao == "editar_senha"){
     $senha_atual = $_REQUEST["senha_atual"]; 
     $nova_senha = $_REQUEST["nova_senha"];
     
-    $sql = "SELECT * FROM funcionario WHERE cod_funcionario = $cod_funcionario;";
+    $sql = "SELECT * FROM funcionario WHERE cod_funcionario = '$cod_funcionario'";
     $res = mysqli_query($mysqli, $sql);
     $linhas = mysqli_num_rows($res);
 

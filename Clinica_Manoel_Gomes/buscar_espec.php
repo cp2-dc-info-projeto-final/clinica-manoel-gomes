@@ -107,7 +107,7 @@ include "conecta_mysql.inc";
 
                                     if($operacao== "buscar"){
                                         $espec = $_POST["espec"];
-                                        $sql= "SELECT * FROM especialidade WHERE especialidade like '%$espec%';";
+                                        $sql= "SELECT * FROM especialidade WHERE especialidade like '%$espec%'";
                                         $res= mysqli_query($mysqli,$sql);
                                         $linhas= mysqli_num_rows($res);
 
