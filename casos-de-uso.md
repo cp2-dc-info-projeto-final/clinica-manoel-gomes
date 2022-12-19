@@ -12,9 +12,9 @@
  - [CDU 08](#CDU-08): Agendamento de Serviços.
  - [CDU 09](#CDU-09): Cancelamento de Serviços.
  - [CDU 010](#CDU-010): Excluir Agendamento.
- - [CDU 010](#CDU-011): Recuperar senha.
- - [CDU 011](#CDU-012): Visualizar Perfil.
- - [CDU 012](#CDU-013): Logout.
+ - [CDU 011](#CDU-011): Recuperar senha.
+ - [CDU 012](#CDU-012): Visualizar Perfil.
+ - [CDU 013](#CDU-013): Logout.
 
 ## Lista dos Atores
 
