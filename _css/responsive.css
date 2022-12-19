@@ -1,0 +1,14 @@
+@media (max-width: 991.98px) {
+    #header  .navbarNav{
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px){
+    #servicos a.destaque .img-container{
+        height: 120px;
+    }
+    #servicos a.destaque .img-container img{
+        max-height: 120px;
+    } 
+}
