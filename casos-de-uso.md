@@ -324,7 +324,7 @@
 
 ### CDU 09
 
-*Cancelamento de Serviços.*
+*Cancelamento de Agendamento.*
 
 **Atores:** Paciente e Administrador.
 
@@ -334,6 +334,8 @@
 2. Sistema analisa a informação.
 3. O cancelamento é concluído e as informações ficam disponíveis para agendamento novamente.
 
+![image](https://user-images.githubusercontent.com/89115632/208507757-ce7893c5-e8e7-4fe5-8c00-bcd48552f14f.png)
+
 ### CDU 010
 
 *Excluir Agendamento.*
@@ -342,9 +344,12 @@
 
 **Fluxo Principal**
 
-1. Administrador clica no ícone "deletar" na área de perfil.
+1. Administrador clica no ícone de deletar na área de perfil.
 2. Sistema analisa a informação.
 3. Sistema apaga todos os dados do agendamento selecionado.
+
+![image](https://user-images.githubusercontent.com/89115632/208508075-5bbe1498-f3ce-403f-b154-17050a586eeb.png)
+
 
 ### CDU 011
 
@@ -366,6 +371,9 @@
 10. Paciente insere nova senha.
 11. Sistema registra a nova senha.
 
+![image](https://user-images.githubusercontent.com/89115632/208510573-5fd47ee1-f579-4ae7-b14c-5abbf07556d0.png)
+
+
 **Fluxo Alternativo A**
 
 1. Paciente clica em "Esqueceu a senha?" no formulário de login.
@@ -375,6 +383,9 @@
 5. CPF não cadastrado.
 6. Sistema exibe mensagem: "CPF inválido!".
 7. Paciente é encaminhado para a página de confirmação do CPF.
+
+![image](https://user-images.githubusercontent.com/89115632/208511375-c80482a5-5e31-497d-891e-4d08bc6fe236.png)
+
 
 **Fluxo Alternativo B**
 
@@ -389,6 +400,9 @@
 9. Código de verificação inválido.
 10. Sistema exibe mensagem: "Código inválido!".
 11. Paciente é encaminhado para a página de confirmação do código.
+
+![image](https://user-images.githubusercontent.com/89115632/208512777-dc1ac17b-917a-4226-899a-1b3311d26676.png)
+
 
 ### CDU 012
 
@@ -422,16 +436,6 @@
 - Cadastro de Especialidades.
 
 ![image](https://user-images.githubusercontent.com/89115632/194385568-7350ecbb-0b59-42fc-ad07-58255b127dbe.png)
-
-**Fluxo Alternativo A**
-
-1. Usuário clica em "perfil".
-2. Usuário é encaminhado para página de perfil.
-3. Usuário não possui cadastro ou não está logado.
-4. Sistema exibe mensagem informando o problema: "Faça Login/Cadastre-se".
-5. Usuário é encaminhado para a página de cadastro/login.
-
-![image](https://user-images.githubusercontent.com/89115632/194384489-0a9874b2-2e00-4346-b0c9-dee1b7aa405c.png)
 
 ### CDU 013
 
