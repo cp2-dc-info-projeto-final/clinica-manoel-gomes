@@ -25,4 +25,4 @@ Projeto voltado para o desenvolvimento de um sistema de agendamento e gerenciame
 
 **Modelagem do Banco de Dados**
 
-![diagrama-ER](https://user-images.githubusercontent.com/89115632/195253390-cf1918e3-4cbc-47bb-924c-55f7517ec883.png)
+![diagrama-ER](https://github.com/cp2-dc-info-projeto-final/clinica-manoel-gomes/blob/5d43d94e831dc525bbef3478ef718acf2c39f4ab/diagrama-ER.png)
