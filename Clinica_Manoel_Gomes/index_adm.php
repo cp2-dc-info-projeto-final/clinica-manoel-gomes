@@ -53,8 +53,8 @@ include "autentica.php";
       <div class="container pt-5">
         <div class="row">
           <div class="col-md-4 align-self-center mb-md-0 mb-4">
-            <h1>Lorem ipsum dolor sit amet</h1>
-             <h4 class="mb-4">Etiam blandit libero et velit tincidunt</h4>
+          <h1>SUA SAÚDE EM PRIMEIRO LUGAR</h1>
+             <h4 class="mb-4">O lugar mais seguro para a sua saúde</h4>
             
           </div>
               <div class="col-md-8 align-self-center text-center">
@@ -89,8 +89,7 @@ include "autentica.php";
   <div id="servicos" class="block">
   <div class="container">
     <h2 class="title text-center">Nossos Serviços</h2>
-    <h4 class="subtitle text-center mb-4">Duis nisi ex, vehicula et diam eget, faucibus cursus ex</h4>
-    <div class="row">
+    <h4 class="subtitle text-center mb-4">Conheça nosso trabalho</h4>
       <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
         <a href="#" class="destaque">
         <div class="img-container mb-3">
@@ -134,7 +133,6 @@ include "autentica.php";
     </div>
   </div>
 </div>
-
   <!-- //SERVIÇOS-->
 
 

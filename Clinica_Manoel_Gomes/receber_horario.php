@@ -99,8 +99,8 @@ for ($i = 0; $i < $linhas; $i++){
     
 
 
-$sql = "INSERT INTO agendamento (servico, nome_servico, dia, horario, responsavel, crm, cod_servico)";
-$sql .= "VALUES ('$servico','$nome_servico','$data','$hora','$responsavel', '$crm', '$cod_servico')";
+$sql = "INSERT INTO agendamento (servico, nome_servico, tipo_servico, dia, horario, responsavel, crm, cod_servico)";
+$sql .= "VALUES ('$servico','$nome_servico', '$tipo_servico', '$data','$hora','$responsavel', '$crm', '$cod_servico')";
 
 if (!mysqli_query($mysqli,$sql)){
     echo mysqli_error($mysqli);

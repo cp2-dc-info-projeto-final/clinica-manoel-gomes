@@ -59,7 +59,7 @@ session_start();
         <div class="container">
 
           <div class="registration-form">
-            <form action="editar_senha_cliente.php" method="POST">
+            <form action="altera_senha_cliente.php" method="POST">
                 <input type="hidden" name="operacao" value="editar_senha">
                 <div class="form-icon">
                     <span><i class="icon far fa-id-card"></i></span>
