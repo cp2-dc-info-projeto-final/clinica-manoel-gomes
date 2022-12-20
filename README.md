@@ -14,7 +14,7 @@ Projeto voltado para o desenvolvimento de um sistema de agendamento e gerenciame
 
 ## Documentação
 
-- [Manual do Usuário](manual.md)
+- [Manual do Usuário](manual_de_usuario.pdf)
 - [Requisitos](requisitos.md)
 - [Casos de Uso](casos-de-uso.md)
 - [Apresentação](apresentacao.pdf)
