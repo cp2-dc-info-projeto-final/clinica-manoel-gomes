@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `bdsql` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `bdsql`;
 
-DROP  USER IF EXISTS ' admin ' @ ' localhost ' ;
+DROP  USER IF EXISTS 'admin'@'localhost';
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '123'; 
 GRANT ALL PRIVILEGES ON bdsql.* TO 'admin'@'localhost';
 
@@ -183,7 +183,7 @@ DROP TABLE IF EXISTS `servicos`;
 CREATE TABLE IF NOT EXISTS `servicos` (
   `cod_servico` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(30) NOT NULL,
-  `descricao` varchar(120) NOT NULL,
+  `descricao` varchar(120) DEFAULT NULL,
   `tipo_servico` varchar(30) NOT NULL,
   PRIMARY KEY (`cod_servico`)
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
