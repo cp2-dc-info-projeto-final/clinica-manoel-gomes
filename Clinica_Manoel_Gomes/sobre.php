@@ -55,7 +55,7 @@ session_start()
     </div>
    <!-- //SLIDER-->
     <div>
-        <h2 class="title text-left container pb-5">SOBRE NÓS:</h2>
+        <h2 class="title text-center container pb-5">SOBRE NÓS</h2>
     </div>
   <!-- SOBRE-->
 
@@ -68,7 +68,7 @@ session_start()
         <div class="col-md-6 align-self-center mb-md-0 mb-4 order-md-2 order-1">
           <h2 class="title">Quem foi Manoel Gomes?</h1>
           <h4 class="subtitle">Conheça o homem que tornou esse sonho possível</h4>
-          <p>Nascido no dia 2 de dezembro de 1920 na cidade de Balsas, no Maranhão, Manoel Gomes era de origem humilde e, aos 12 anos, já trabalhava para ajudar com as despesas da casa. Criado por sua vó, já debilitada de um câncer que a afligia, Manoel criou o desejo de cuidar e a empatia para com os enfermos. Em razão das dificuldades financeiras, Manoel Gomes deixou sua cidade natal após a morte de sua avó e saiu rumo ao Rio de Janeiro. Manoel também sempre teve inclinação para a música e durante a noite como vigilante e nas tardes de domingo se apresentava em bares. Com muito esforço, conseguiu ingressar na URJ, atual UFRJ, onde cursou medicina.</p>
+          <p>Nascido no dia 2 de dezembro de 1920 na cidade de Balsas, no Maranhão, Manoel Gomes era de origem humilde e, aos 12 anos, já trabalhava para ajudar com as despesas da casa. Criado por sua vó, já debilitada de um câncer que a afligia, Manoel criou o desejo de cuidar e a empatia para com os enfermos. Em razão das dificuldades financeiras, Manoel Gomes deixou sua cidade natal após a morte de sua avó e saiu rumo ao Rio de Janeiro. Manoel também sempre teve inclinação para a música e durante a noite trabalhava como vigilante e nas tardes de domingo se apresentava em bares. Com muito esforço, conseguiu ingressar na URJ, atual UFRJ, onde cursou medicina.</p>
         </div>
       </div>
     </div>
